@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --luvant-black: #000000;
+  --luvant-white: #ffffff;
+  --luvant-gray-950: #0a0a0a;
+  --luvant-gray-900: #111111;
+  --luvant-gray-800: #171717;
+  --luvant-gray-600: #525252;
+  --luvant-gray-400: #a3a3a3;
+  --luvant-gray-200: #e5e5e5;
+  --luvant-accent: #ffffff;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--luvant-gray-950);
+    color: var(--luvant-white);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-24 md:px-8 lg:py-32;
+  }
+
+  .container-main {
+    @apply mx-auto max-w-7xl;
+  }
+
+  /* Gradient border card effect */
+  .gradient-border {
+    position: relative;
+    background: #111111;
+    border-radius: 16px;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-border:hover::before {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+
+  /* Noise texture overlay */
+  .noise-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Glow effect */
+  .glow-sm {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Dotted grid pattern */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 0
+    );
+    background-size: 32px 32px;
+  }
+
+  /* Cross grid pattern */
+  .cross-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #ffffff, #a3a3a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-bright {
+    background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
