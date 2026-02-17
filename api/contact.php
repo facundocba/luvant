@@ -296,7 +296,7 @@ function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo
     $msg  = "From: " . SMTP_FROM_NAME . " <" . SMTP_FROM . ">\r\n";
     $msg .= "Reply-To: {$replyTo}\r\n";
     $msg .= "To: {$to}\r\n";
-    if ($cc) $msg .= "Cc: {$cc}\r\n";
+    // $cc is sent as BCC: delivered via RCPT TO but not exposed in headers
     $msg .= "Subject: {$subject}\r\n";
     $msg .= "MIME-Version: 1.0\r\n";
     $msg .= "Content-Type: text/html; charset=UTF-8\r\n";
