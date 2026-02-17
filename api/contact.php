@@ -49,7 +49,8 @@ if (!$input) {
 if (!empty($input['website'])) { echo json_encode(['ok' => true]); exit; }
 
 $timestamp = intval($input['_t'] ?? 0);
-if ($timestamp > 0 && (time() - $timestamp) < 3) { echo json_encode(['ok' => true]); exit; }
+$elapsed = time() - $timestamp;
+if ($timestamp > 0 && $elapsed >= 0 && $elapsed < 3) { echo json_encode(['ok' => true]); exit; }
 
 $name    = trim($input['name'] ?? '');
 $email   = trim($input['email'] ?? '');
