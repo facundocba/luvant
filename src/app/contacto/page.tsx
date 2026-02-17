@@ -156,7 +156,7 @@ export default function ContactoPage() {
               className="max-w-md text-lg text-luvant-400"
             >
               Contanos sobre tu proyecto y encontremos juntos la mejor solución
-              para tu empresa.
+              técnica.
             </motion.p>
           </Container>
         </section>
@@ -229,7 +229,7 @@ export default function ContactoPage() {
                           <Input
                             label="Empresa"
                             name="company"
-                            placeholder="Nombre de tu empresa"
+                            placeholder="Empresa u organización"
                           />
                         </div>
                         <Input
@@ -372,8 +372,8 @@ export default function ContactoPage() {
                         a: "Depende del alcance. Después de la primera reunión enviamos una estimación detallada sin compromiso.",
                       },
                       {
-                        q: "¿Trabajan con empresas chicas?",
-                        a: "Trabajamos con empresas de todos los tamaños que tengan un problema real que resolver con tecnología.",
+                        q: "¿Con qué tipo de clientes trabajan?",
+                        a: "Con empresas, emprendedores y profesionales independientes. B2B o B2C, lo que importa es tener un problema concreto que resolver con tecnología.",
                       },
                       {
                         q: "¿Puedo ver una demo primero?",

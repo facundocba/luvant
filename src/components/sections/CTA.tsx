@@ -29,11 +29,11 @@ export default function CTA() {
           transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] as const }}
         >
           <h2 className="mx-auto max-w-2xl text-h2 md:text-h1 text-gradient-bright">
-            ¿Listo para optimizar tus procesos?
+            ¿Tenés un proyecto en mente?
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-body text-luvant-400">
-            Contanos sobre tu proyecto y diseñamos juntos la solución ideal para
-            tu empresa.
+            Contanos qué necesitás resolver. Analizamos tu caso y te proponemos
+            el camino técnico más directo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button as="a" href="/contacto" size="lg">

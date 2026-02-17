@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nosotros - Empresa de software B2B en Argentina",
+  title: "Nosotros - Empresa de desarrollo de software en Argentina",
   description:
-    "Luvant es una empresa de software B2B con base en Argentina. Desarrollamos tecnología con estándares enterprise para empresas que necesitan resultados concretos.",
+    "Luvant es una empresa de desarrollo de software con base en Argentina. Construimos soluciones a medida con estándares profesionales para quienes necesitan resultados concretos.",
   alternates: {
     canonical: "/nosotros",
   },
   openGraph: {
     title: "Nosotros | Luvant",
     description:
-      "Empresa de software B2B en Argentina. Excelencia técnica, transparencia total e impacto medible en cada proyecto.",
+      "Empresa de desarrollo de software en Argentina. Calidad técnica, transparencia total e impacto medible en cada proyecto.",
   },
 };
 

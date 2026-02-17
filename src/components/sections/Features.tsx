@@ -35,12 +35,12 @@ export default function Features() {
             Por qué elegirnos
           </span>
           <h2 className="text-h2 md:text-h1 mb-4">
-            Ingeniería que se nota en los{" "}
+            Software que se mide por{" "}
             <span className="text-gradient-bright">resultados</span>
           </h2>
           <p className="text-body text-luvant-400">
-            No vendemos features, resolvemos problemas. Cada decisión técnica
-            está orientada al impacto en tu operación.
+            Cada proyecto se diseña para resolver un problema concreto de tu
+            empresa. Sin soluciones genéricas, sin funcionalidades que no usás.
           </p>
         </motion.div>
 
@@ -63,12 +63,10 @@ export default function Features() {
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
                   <Code size={22} strokeWidth={1.5} />
                 </div>
-                <h3 className="mb-2 text-lg font-medium">
-                  Desarrollo a medida
-                </h3>
+                <h3 className="mb-2 text-lg font-medium">Hecho a tu medida</h3>
                 <p className="text-sm leading-relaxed text-luvant-400">
-                  Cada solución se diseña específicamente para tu empresa. Nada
-                  de templates genéricos ni limitaciones artificiales.
+                  No adaptamos plantillas. Diseñamos y construimos software
+                  desde cero, pensado para cómo opera tu negocio.
                 </p>
               </div>
 
@@ -99,10 +97,10 @@ export default function Features() {
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
                 <Plug size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="mb-2 text-lg font-medium">Integración nativa</h3>
+              <h3 className="mb-2 text-lg font-medium">Se conecta con todo</h3>
               <p className="text-sm leading-relaxed text-luvant-400">
-                APIs REST documentadas, webhooks y SDKs. Se conecta con tu stack
-                existente sin reescribir nada.
+                APIs documentadas, webhooks y SDKs. Integramos con tu ERP, CRM o
+                cualquier sistema que ya uses.
               </p>
             </div>
           </motion.div>
@@ -118,10 +116,12 @@ export default function Features() {
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
                   <Zap size={22} strokeWidth={1.5} />
                 </div>
-                <h3 className="mb-2 text-lg font-medium">Rápido de verdad</h3>
+                <h3 className="mb-2 text-lg font-medium">
+                  Rendimiento enterprise
+                </h3>
                 <p className="text-sm leading-relaxed text-luvant-400">
-                  Infraestructura optimizada para latencias menores a 500ms.
-                  Procesamiento en paralelo para volúmenes enterprise.
+                  Arquitectura optimizada para responder en milisegundos. Escala
+                  con tu negocio sin degradar la experiencia.
                 </p>
               </div>
 
@@ -144,9 +144,9 @@ export default function Features() {
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
                 <Headphones size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="mb-2 text-base font-medium">Soporte real</h3>
+              <h3 className="mb-2 text-base font-medium">Soporte humano</h3>
               <p className="text-sm leading-relaxed text-luvant-500">
-                Equipo técnico, no bots. Respuesta en horas, no días.
+                Hablás con ingenieros, no con bots. Respuesta en horas.
               </p>
             </div>
           </motion.div>
@@ -157,9 +157,12 @@ export default function Features() {
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
                 <Shield size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="mb-2 text-base font-medium">Seguro</h3>
+              <h3 className="mb-2 text-base font-medium">
+                Tus datos, tu control
+              </h3>
               <p className="text-sm leading-relaxed text-luvant-500">
-                Encriptación end-to-end. Tus datos nunca salen de tu infra.
+                Encriptación end-to-end. Tu información nunca sale de tu
+                infraestructura.
               </p>
             </div>
           </motion.div>

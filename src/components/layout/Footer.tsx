@@ -81,8 +81,8 @@ export default function Footer() {
           <p className="text-caption text-luvant-600">
             &copy; {currentYear} Luvant. Todos los derechos reservados.
           </p>
-          <span className="inline-flex items-center gap-1.5 font-mono text-caption text-luvant-600">
-            Hecho en Argentina
+          <span className="font-mono text-caption text-luvant-600">
+            luvant.
           </span>
         </div>
       </Container>

@@ -69,8 +69,8 @@ export default function Products() {
           <span className="mb-4 block font-mono text-caption uppercase tracking-widest text-luvant-600">
             Productos
           </span>
-          <h2 className="text-h2 md:text-h1 text-gradient max-w-lg">
-            Herramientas construidas para escalar
+          <h2 className="text-h2 md:text-h1 text-gradient">
+            Tecnología que resuelve problemas reales
           </h2>
         </motion.div>
 
@@ -98,9 +98,9 @@ export default function Products() {
 
                 <h3 className="text-h2 mb-3">Luvant Lens</h3>
                 <p className="mb-6 max-w-md text-body leading-relaxed text-luvant-400">
-                  Procesamiento inteligente de documentos. Extraé datos de
-                  facturas, recetas, formularios y más con precisión mediante
-                  OCR avanzado y machine learning.
+                  Extraé datos de facturas, remitos, recetas y formularios de
+                  forma automática. OCR avanzado con machine learning entrenado
+                  para documentos en español.
                 </p>
 
                 <div className="mb-8 grid grid-cols-3 gap-4">
@@ -159,28 +159,28 @@ export default function Products() {
         >
           {[
             {
-              title: "Automatización",
+              title: "Automatización de procesos",
               icon: <Workflow size={20} strokeWidth={1.5} />,
               description:
-                "Eliminá tareas manuales conectando tus sistemas con flujos inteligentes.",
+                "Eliminá horas de trabajo manual. Conectamos tus sistemas con flujos que se ejecutan solos.",
             },
             {
-              title: "Integración",
+              title: "Integración de sistemas",
               icon: <RefreshCw size={20} strokeWidth={1.5} />,
               description:
-                "Conectamos tus plataformas para que la información fluya sin fricciones.",
+                "Tu ERP, CRM y herramientas internas hablando entre sí. Datos sincronizados en tiempo real.",
             },
             {
-              title: "Desarrollo a medida",
+              title: "Software a medida",
               icon: <Code size={20} strokeWidth={1.5} />,
               description:
-                "Software diseñado para tu negocio. Dashboards, plataformas, APIs.",
+                "Plataformas, dashboards y APIs diseñadas exclusivamente para tu operación.",
             },
             {
-              title: "Consultoría",
+              title: "Consultoría técnica",
               icon: <Lightbulb size={20} strokeWidth={1.5} />,
               description:
-                "Te ayudamos a elegir e implementar la solución correcta.",
+                "Evaluamos tu stack actual y te ayudamos a tomar la decisión tecnológica correcta.",
             },
           ].map((solution) => (
             <motion.div
@@ -190,7 +190,7 @@ export default function Products() {
                 show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
               }}
             >
-              <div className="group rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-5 transition-all duration-300 hover:border-white/[0.08]">
+              <div className="group h-full rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-5 transition-all duration-300 hover:border-white/[0.08]">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-luvant-800 text-luvant-400 transition-colors group-hover:text-white">
                   {solution.icon}
                 </div>

@@ -512,8 +512,8 @@ export default function LensPage() {
                 ¿Querés ver Lens en acción?
               </h2>
               <p className="mx-auto mt-4 max-w-md text-body text-luvant-400">
-                Agendá una demo con documentos reales de tu empresa y medí los
-                resultados vos mismo.
+                Agendá una demo con tus documentos reales y medí los resultados
+                vos mismo.
               </p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button as="a" href="/contacto" size="lg">

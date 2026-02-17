@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Productos y soluciones de software B2B",
+  title: "Productos y soluciones de software a medida",
   description:
-    "Productos de software B2B de Luvant: Luvant Lens para procesamiento de documentos con OCR, automatización de procesos, integración de sistemas y desarrollo a medida.",
+    "Luvant Lens para procesamiento de documentos con OCR, automatización de procesos, integración de sistemas y desarrollo de software a medida.",
   alternates: {
     canonical: "/productos",
   },
   openGraph: {
     title: "Productos y soluciones | Luvant",
     description:
-      "OCR inteligente, automatización, integración de sistemas y desarrollo a medida. Soluciones tecnológicas para empresas argentinas.",
+      "OCR inteligente, automatización, integración de sistemas y desarrollo a medida. Soluciones tecnológicas desde Argentina.",
   },
 };
 

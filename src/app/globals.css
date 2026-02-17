@@ -124,6 +124,52 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 64px 64px;
   }
+
+  /* Blog article prose */
+  .prose-luvant {
+    @apply text-base leading-relaxed text-luvant-400;
+  }
+
+  .prose-luvant p {
+    @apply mb-6;
+  }
+
+  .prose-luvant h2 {
+    @apply mt-12 mb-4 text-2xl font-semibold text-white;
+  }
+
+  .prose-luvant h3 {
+    @apply mt-8 mb-3 text-lg font-medium text-white;
+  }
+
+  .prose-luvant strong {
+    @apply font-medium text-white;
+  }
+
+  .prose-luvant ul,
+  .prose-luvant ol {
+    @apply mb-6 ml-6 space-y-3;
+  }
+
+  .prose-luvant ul {
+    @apply list-disc;
+  }
+
+  .prose-luvant ol {
+    @apply list-decimal;
+  }
+
+  .prose-luvant li {
+    @apply pl-1;
+  }
+
+  .prose-luvant a {
+    @apply text-white underline decoration-luvant-700 underline-offset-4 transition-colors hover:decoration-white;
+  }
+
+  .prose-luvant h2:first-child {
+    @apply mt-0;
+  }
 }
 
 @layer utilities {

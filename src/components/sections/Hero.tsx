@@ -178,7 +178,7 @@ export default function Hero() {
               transition={{ duration: 0.5, ease }}
             >
               <Badge variant="outline" className="mb-6">
-                Software B2B &middot; Argentina
+                Desarrollo de software a medida
               </Badge>
             </motion.div>
 
@@ -188,9 +188,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1, ease }}
               className="text-[40px] font-semibold leading-[1.08] tracking-tight md:text-display"
             >
-              Software que
+              El software que tu
               <br />
-              impulsa <span className="text-gradient-bright">negocios</span>
+              negocio <span className="text-gradient-bright">necesita</span>
             </motion.h1>
 
             <motion.p
@@ -199,8 +199,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2, ease }}
               className="mt-6 max-w-md text-body text-luvant-400 md:text-lg"
             >
-              Desarrollamos soluciones tecnológicas a medida para empresas que
-              necesitan eficiencia, integración y escalabilidad.
+              Desarrollo de software a medida, automatización de procesos e
+              integración de sistemas. Construimos la tecnología que tu
+              operación necesita para crecer.
             </motion.p>
 
             <motion.div
@@ -210,10 +211,10 @@ export default function Hero() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <Button as="a" href="/productos" size="lg">
-                Ver productos
+                Ver soluciones
               </Button>
               <Button as="a" href="/contacto" variant="secondary" size="lg">
-                Contactar
+                Hablar con nosotros
               </Button>
             </motion.div>
 
@@ -225,9 +226,9 @@ export default function Hero() {
               className="mt-12 flex items-center gap-6 border-t border-white/[0.06] pt-6"
             >
               {[
-                { value: "99.2%", label: "Precisión OCR" },
-                { value: "<500ms", label: "Tiempo respuesta" },
-                { value: "24/7", label: "Disponibilidad" },
+                { value: "100%", label: "Código propio" },
+                { value: "24/7", label: "Soporte técnico" },
+                { value: "API", label: "Integraciones" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="font-mono text-sm font-medium text-white">

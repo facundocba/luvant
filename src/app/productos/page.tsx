@@ -272,7 +272,7 @@ export default function ProductosPage() {
               </h2>
               <p className="max-w-xl text-body text-luvant-400">
                 Más allá de nuestros productos, desarrollamos soluciones a
-                medida para resolver los desafíos técnicos de tu empresa.
+                medida para resolver desafíos técnicos concretos.
               </p>
             </motion.div>
 
@@ -306,7 +306,7 @@ export default function ProductosPage() {
                   title: "Consultoría técnica",
                   icon: <Lightbulb size={22} strokeWidth={1.5} />,
                   description:
-                    "Te ayudamos a evaluar, planificar e implementar la solución tecnológica correcta para tu empresa.",
+                    "Te ayudamos a evaluar, planificar e implementar la solución tecnológica correcta para tu proyecto.",
                 },
               ].map((solution) => (
                 <motion.div key={solution.title} variants={itemVariants}>

@@ -21,51 +21,53 @@ const itemVariants = {
 
 const ARTICLES = [
   {
-    slug: "ocr-documentos-argentina",
-    category: "Producto",
-    title: "Cómo funciona el OCR en documentos argentinos",
+    slug: "por-que-tu-empresa-necesita-software-a-medida",
+    category: "Estrategia",
+    title: "Por qué tu empresa necesita software a medida (y cuándo no)",
     excerpt:
-      "Los desafíos específicos de procesar facturas, remitos y formularios de AFIP con reconocimiento óptico de caracteres. Formatos de CUIT, fechas y monedas locales.",
-    date: "Próximamente",
+      "No toda empresa necesita desarrollo custom. Analizamos cuándo tiene sentido invertir en software propio vs usar soluciones existentes, y qué preguntas hacerte antes de decidir.",
+    date: "Febrero 2026",
+    href: "/blog/por-que-tu-empresa-necesita-software-a-medida",
   },
   {
     slug: "automatizar-carga-facturas",
-    category: "Guía",
-    title: "Automatizar la carga de facturas: antes y después",
+    category: "Guía práctica",
+    title: "Cómo dejar de cargar facturas a mano",
     excerpt:
-      "El proceso manual de cargar facturas al sistema contable consume horas por semana. Analizamos cómo la extracción automática de datos cambia esa ecuación.",
+      "Tu equipo pierde horas por semana tipeando datos de facturas en el sistema. Hay una forma mejor: extracción automática con OCR que se integra con tu software contable.",
+    date: "Febrero 2026",
+    href: "/blog/automatizar-carga-facturas",
+  },
+  {
+    slug: "que-es-una-api-y-por-que-importa",
+    category: "Conceptos",
+    title: "Qué es una API y por qué le importa a tu negocio",
+    excerpt:
+      "Una explicación sin tecnicismos de qué son las APIs, por qué tus sistemas necesitan hablar entre sí, y cómo una buena integración puede ahorrarte horas de trabajo manual.",
     date: "Próximamente",
   },
   {
-    slug: "api-first-productos-b2b",
-    category: "Ingeniería",
-    title: "Por qué diseñamos productos API-first",
+    slug: "ocr-documentos-argentina",
+    category: "Producto",
+    title: "OCR para documentos argentinos: desafíos y soluciones",
     excerpt:
-      "Cada producto de Luvant empieza por la API. Las ventajas de este enfoque para empresas que necesitan integrar, no reemplazar, sus sistemas existentes.",
+      "Procesar facturas AFIP, remitos con formato libre y comprobantes con CUIT requiere OCR entrenado para las particularidades locales. Así lo resolvemos con Luvant Lens.",
     date: "Próximamente",
   },
   {
-    slug: "precision-vs-velocidad-ml",
-    category: "Técnico",
-    title: "Precisión vs velocidad en modelos de extracción",
+    slug: "senales-de-que-necesitas-automatizar",
+    category: "Estrategia",
+    title: "5 señales de que tu empresa necesita automatizar procesos",
     excerpt:
-      "El trade-off entre exactitud y tiempo de respuesta en procesamiento de documentos. Cómo Lens logra 99%+ de precisión en menos de 500ms.",
+      "Si tu equipo copia datos entre planillas, manda los mismos emails todos los días o depende de una persona para un proceso crítico, es hora de automatizar.",
     date: "Próximamente",
   },
   {
-    slug: "digitalizacion-pymes-latam",
-    category: "Industria",
-    title: "El estado de la digitalización en PyMEs de LATAM",
+    slug: "elegir-proveedor-desarrollo-software",
+    category: "Guía práctica",
+    title: "Cómo elegir un proveedor de desarrollo de software",
     excerpt:
-      "La mayoría de las empresas medianas en Argentina todavía procesan documentos manualmente. Qué frena la adopción y cómo desbloquearla.",
-    date: "Próximamente",
-  },
-  {
-    slug: "typescript-produccion-b2b",
-    category: "Ingeniería",
-    title: "TypeScript en producción: lecciones de software B2B",
-    excerpt:
-      "Strict mode, tipos compartidos entre frontend y backend, y por qué elegimos TypeScript para todo el stack de Luvant.",
+      "Qué preguntar, qué pedir como prueba y qué señales de alerta buscar antes de contratar a alguien para construir software para tu empresa.",
     date: "Próximamente",
   },
 ];
@@ -120,9 +122,9 @@ export default function BlogPage() {
               viewport={{ once: true }}
               className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
-              {ARTICLES.map((article) => (
-                <motion.article key={article.slug} variants={itemVariants}>
-                  <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-900/30 p-6 transition-all duration-300 hover:border-white/10">
+              {ARTICLES.map((article) => {
+                const cardContent = (
+                  <>
                     <div className="pointer-events-none absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-white/[0.02] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                     <div className="mb-4 flex items-center justify-between">
@@ -141,15 +143,32 @@ export default function BlogPage() {
                     </p>
 
                     <div className="flex items-center gap-1.5 font-mono text-xs text-luvant-400 transition-colors group-hover:text-white">
-                      Leer artículo
-                      <ArrowRight
-                        size={12}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
+                      {article.href ? "Leer artículo" : "Próximamente"}
+                      {article.href && (
+                        <ArrowRight
+                          size={12}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      )}
                     </div>
-                  </div>
-                </motion.article>
-              ))}
+                  </>
+                );
+
+                const cardClass =
+                  "group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-900/30 p-6 transition-all duration-300 hover:border-white/10";
+
+                return (
+                  <motion.article key={article.slug} variants={itemVariants}>
+                    {article.href ? (
+                      <Link href={article.href} className={cardClass}>
+                        {cardContent}
+                      </Link>
+                    ) : (
+                      <div className={cardClass}>{cardContent}</div>
+                    )}
+                  </motion.article>
+                );
+              })}
             </motion.div>
 
             {/* Newsletter / Coming soon */}

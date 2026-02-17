@@ -14,24 +14,25 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Luvant | Software B2B y procesamiento de documentos | Argentina",
+    default:
+      "Luvant | Desarrollo de software a medida y automatización | Argentina",
     template: "%s | Luvant",
   },
   description:
-    "Luvant desarrolla software B2B y soluciones de procesamiento inteligente de documentos para empresas argentinas. OCR con +99% de precisión, automatización e integración de sistemas.",
+    "Desarrollo de software a medida, automatización de procesos e integración de sistemas. OCR avanzado con Luvant Lens, APIs y soluciones técnicas que resuelven problemas reales.",
   keywords: [
-    "software B2B",
-    "desarrollo de software Argentina",
+    "desarrollo de software a medida",
+    "software a medida Argentina",
+    "automatización de procesos",
+    "integración de sistemas",
     "OCR documentos",
     "procesamiento de documentos",
-    "automatización empresarial",
     "extracción de datos facturas",
-    "software a medida",
-    "integración de sistemas",
     "Luvant",
     "Luvant Lens",
-    "machine learning documentos",
-    "digitalización empresas",
+    "software empresarial",
+    "consultoría técnica",
+    "APIs e integraciones",
   ],
   authors: [{ name: "Luvant", url: BASE_URL }],
   creator: "Luvant",
@@ -44,15 +45,15 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: BASE_URL,
     siteName: "Luvant",
-    title: "Luvant | Software B2B y procesamiento de documentos",
+    title: "Luvant | Desarrollo de software a medida y automatización",
     description:
-      "Software B2B y procesamiento inteligente de documentos para empresas argentinas. OCR avanzado, automatización e integración de sistemas.",
+      "Desarrollo de software a medida, automatización de procesos e integración de sistemas. Soluciones técnicas que resuelven problemas reales.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luvant | Software B2B y procesamiento de documentos",
+    title: "Luvant | Desarrollo de software a medida y automatización",
     description:
-      "Software B2B y procesamiento inteligente de documentos para empresas argentinas. OCR avanzado, automatización e integración de sistemas.",
+      "Desarrollo de software a medida, automatización de procesos e integración de sistemas. Soluciones técnicas que resuelven problemas reales.",
     creator: "@luvant_ar",
   },
   robots: {
@@ -81,7 +82,7 @@ const organizationJsonLd = {
   url: BASE_URL,
   logo: `${BASE_URL}/favicon.ico`,
   description:
-    "Empresa de software B2B en Argentina especializada en procesamiento inteligente de documentos, automatización e integración de sistemas.",
+    "Empresa de desarrollo de software en Argentina. Software a medida, automatización de procesos, integración de sistemas y procesamiento inteligente de documentos.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "AR",
@@ -96,7 +97,7 @@ const websiteJsonLd = {
   name: "Luvant",
   url: BASE_URL,
   description:
-    "Software B2B y procesamiento inteligente de documentos para empresas argentinas.",
+    "Desarrollo de software a medida, automatización de procesos e integración de sistemas.",
   publisher: {
     "@type": "Organization",
     name: "Luvant",

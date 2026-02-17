@@ -29,29 +29,29 @@ const itemVariants = {
 const VALUES = [
   {
     icon: <Target size={22} strokeWidth={1.5} />,
-    title: "Excelencia técnica",
+    title: "Obsesión por la calidad",
     description:
-      "Cada línea de código se escribe con estándares enterprise. Code reviews, testing automatizado y CI/CD en cada proyecto.",
+      "Testing, code reviews y despliegue automatizado en cada proyecto. No entregamos software que no usaríamos nosotros mismos.",
   },
   {
     icon: <Eye size={22} strokeWidth={1.5} />,
-    title: "Transparencia total",
+    title: "Transparencia real",
     description:
-      "Acceso al repositorio, reportes de avance, demos frecuentes. Siempre sabés exactamente en qué estado está tu proyecto.",
+      "Acceso al repositorio, demos cada 2 semanas y comunicación directa. Siempre sabés en qué está tu proyecto y por qué.",
   },
   {
     icon: <Lightbulb size={22} strokeWidth={1.5} />,
-    title: "Impacto medible",
+    title: "Resultados, no promesas",
     description:
-      "Se definen KPIs antes de escribir la primera línea de código. Si no mejora tu operación con números concretos, no se construye.",
+      "Definimos métricas de éxito antes de arrancar. Si no podemos demostrar impacto concreto, te lo decimos de entrada.",
   },
 ];
 
 const NUMBERS = [
   { value: "2024", label: "Fundada" },
   { value: "100%", label: "Remoto" },
-  { value: "B2B", label: "Enfoque" },
-  { value: "AR", label: "Origen" },
+  { value: "100%", label: "Código propio" },
+  { value: "API", label: "Todo integrado" },
 ];
 
 export default function NosotrosPage() {
@@ -80,8 +80,8 @@ export default function NosotrosPage() {
               transition={{ duration: 0.5, delay: 0.1, ease }}
               className="text-h1 md:text-display mb-6 max-w-3xl leading-[1.05]"
             >
-              Tecnología con{" "}
-              <span className="text-gradient-bright">propósito</span>
+              Software con{" "}
+              <span className="text-gradient-bright">criterio</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -89,9 +89,10 @@ export default function NosotrosPage() {
               transition={{ duration: 0.5, delay: 0.2, ease }}
               className="max-w-2xl text-lg leading-relaxed text-luvant-400"
             >
-              Luvant es una empresa de software B2B con base en Argentina.
-              Construimos herramientas y soluciones para empresas que necesitan
-              tecnología seria — no promesas, sino resultados concretos.
+              Luvant nació de una convicción simple: quien invierte en software
+              merece soluciones que resuelvan problemas reales, no que creen
+              nuevos. Somos una empresa de desarrollo de software enfocada en
+              construir tecnología que funcione desde el día uno.
             </motion.p>
           </Container>
         </section>
@@ -141,12 +142,11 @@ export default function NosotrosPage() {
                   Principios
                 </span>
                 <h2 className="text-h2 md:text-h1 mb-4">
-                  Lo que <span className="text-gradient-bright">define</span> a
-                  Luvant
+                  Cómo <span className="text-gradient-bright">pensamos</span>
                 </h2>
                 <p className="text-body text-luvant-400">
-                  Tres principios que guían cada decisión, desde la arquitectura
-                  de un sistema hasta cómo se comunica el avance de un proyecto.
+                  Tres ideas que guían cada decisión que tomamos, desde qué
+                  tecnología usar hasta cómo comunicamos el avance.
                 </p>
               </motion.div>
 
@@ -208,10 +208,10 @@ export default function NosotrosPage() {
                       Misión
                     </span>
                     <p className="max-w-3xl text-h3 md:text-h2 leading-relaxed text-gradient">
-                      Desarrollar software que permita a las empresas
-                      latinoamericanas competir al más alto nivel tecnológico,
-                      eliminando fricciones operativas con soluciones elegantes
-                      y escalables.
+                      Construir software que elimine fricciones operativas y le
+                      permita a cada empresa enfocarse en lo que mejor sabe
+                      hacer — sin perder tiempo en procesos que la tecnología
+                      puede resolver.
                     </p>
                   </div>
                 </div>
@@ -249,27 +249,27 @@ export default function NosotrosPage() {
               {[
                 {
                   icon: <Code size={20} strokeWidth={1.5} />,
-                  title: "Stack moderno",
+                  title: "Tecnología que elegimos con criterio",
                   description:
-                    "TypeScript, React, Next.js, Python, PostgreSQL, AWS. Las herramientas correctas para cada problema, no las que están de moda.",
+                    "TypeScript, React, Next.js, Python, PostgreSQL. Elegimos la herramienta correcta para cada problema, no la más popular.",
                 },
                 {
                   icon: <Shield size={20} strokeWidth={1.5} />,
-                  title: "Calidad como estándar",
+                  title: "Nada sale sin revisión",
                   description:
-                    "Testing automatizado, code review estricto, CI/CD. Cada deploy pasa por un pipeline completo antes de llegar a producción.",
+                    "Testing automatizado, code review y CI/CD. Cada cambio pasa por un pipeline completo antes de llegar a producción.",
                 },
                 {
-                  title: "Entregas iterativas",
+                  title: "Ves avances, no slides",
                   icon: <Layers size={20} strokeWidth={1.5} />,
                   description:
-                    "Entregas concretas cada 2 semanas. Demo, feedback, ajuste. Sin sorpresas a fin de proyecto.",
+                    "Entregas funcionales cada 2 semanas. Demo, feedback, ajuste. Nunca te llevás una sorpresa a fin de proyecto.",
                 },
                 {
-                  title: "Documentación incluida",
+                  title: "Tu equipo puede mantenerlo",
                   icon: <Eye size={20} strokeWidth={1.5} />,
                   description:
-                    "Cada proyecto incluye documentación técnica, runbooks y transferencia de conocimiento. Tu equipo puede mantenerlo.",
+                    "Cada proyecto incluye documentación técnica completa y transferencia de conocimiento. No creamos dependencia.",
                 },
               ].map((item) => (
                 <motion.div key={item.title} variants={itemVariants}>
@@ -305,10 +305,11 @@ export default function NosotrosPage() {
               transition={{ duration: 0.6, ease }}
             >
               <h2 className="mx-auto max-w-xl text-h2 md:text-h1 text-gradient-bright">
-                ¿Tenés un desafío técnico?
+                ¿Tenés un proyecto en mente?
               </h2>
               <p className="mx-auto mt-4 max-w-md text-body text-luvant-400">
-                Contanos el problema y evaluamos juntos la mejor solución.
+                Contanos qué problema querés resolver y te decimos cómo podemos
+                ayudarte.
               </p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button as="a" href="/contacto" size="lg">

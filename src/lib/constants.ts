@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   url: "https://luvant.com.ar",
   email: "hola@luvant.com.ar",
   description:
-    "Desarrollamos soluciones tecnológicas a medida para empresas que necesitan eficiencia, integración y escalabilidad.",
+    "Desarrollo de software a medida, automatización de procesos e integración de sistemas.",
 } as const;
 
 export const NAV_LINKS = [
@@ -29,46 +29,46 @@ export const SOLUTIONS = [
   {
     title: "Automatización de procesos",
     description:
-      "Eliminá tareas manuales repetitivas conectando tus sistemas con flujos inteligentes que se adaptan a tu operación.",
+      "Eliminá horas de trabajo manual. Conectamos tus sistemas con flujos inteligentes que se ejecutan solos.",
     icon: "Workflow" as const,
   },
   {
     title: "Integración de sistemas",
     description:
-      "Conectamos tus plataformas para que la información fluya en tiempo real, sin duplicados ni inconsistencias.",
+      "Tu ERP, CRM y herramientas internas hablando entre sí. Datos sincronizados en tiempo real, sin duplicados.",
     icon: "RefreshCw" as const,
   },
   {
-    title: "Desarrollo a medida",
+    title: "Software a medida",
     description:
-      "Software diseñado específicamente para tu negocio. Desde dashboards internos hasta plataformas completas.",
+      "Plataformas, dashboards y APIs diseñadas exclusivamente para cómo opera tu negocio.",
     icon: "Code" as const,
   },
   {
     title: "Consultoría técnica",
     description:
-      "Te ayudamos a evaluar, planificar e implementar la solución tecnológica correcta para tu empresa.",
+      "Evaluamos tu stack actual y te ayudamos a tomar la decisión tecnológica correcta.",
     icon: "Lightbulb" as const,
   },
 ] as const;
 
 export const FEATURES = [
   {
-    title: "Desarrollo a medida",
+    title: "Hecho a tu medida",
     description:
-      "Cada solución se diseña específicamente para las necesidades de tu empresa. Sin templates genéricos.",
+      "No adaptamos plantillas. Diseñamos y construimos software desde cero, pensado para cómo opera tu negocio.",
     icon: "Code" as const,
   },
   {
-    title: "Integración sin fricción",
+    title: "Se conecta con todo",
     description:
-      "Nuestros productos se conectan con tus sistemas existentes de manera fluida y sin interrupciones.",
+      "APIs documentadas, webhooks y SDKs. Integramos con tu ERP, CRM o cualquier sistema que ya uses.",
     icon: "Plug" as const,
   },
   {
-    title: "Soporte dedicado",
+    title: "Soporte humano",
     description:
-      "Equipo técnico disponible para acompañarte en cada etapa, desde la implementación hasta el escalado.",
+      "Hablás con ingenieros, no con bots. Acompañamiento técnico desde la implementación hasta el escalado.",
     icon: "Headphones" as const,
   },
 ] as const;
@@ -76,27 +76,27 @@ export const FEATURES = [
 export const STEPS = [
   {
     number: "01",
-    title: "Descubrimiento",
+    title: "Entendemos tu problema",
     description:
-      "Analizamos tus procesos actuales, identificamos oportunidades de mejora y definimos objetivos claros.",
+      "Escuchamos, analizamos tus procesos y entendemos qué necesita tu negocio antes de escribir una línea de código.",
   },
   {
     number: "02",
-    title: "Diseño",
+    title: "Diseñamos la solución",
     description:
-      "Diseñamos la arquitectura técnica y la experiencia de usuario adaptada a tu flujo de trabajo.",
+      "Definimos la arquitectura, las integraciones y la experiencia de usuario. Vos aprobás antes de avanzar.",
   },
   {
     number: "03",
-    title: "Desarrollo",
+    title: "Construimos y mostramos",
     description:
-      "Construimos la solución con tecnología moderna, iterando con tu feedback en cada sprint.",
+      "Desarrollamos en sprints cortos con demos cada 2 semanas. Ves avances reales, no promesas.",
   },
   {
     number: "04",
-    title: "Entrega",
+    title: "Entregamos y acompañamos",
     description:
-      "Desplegamos, capacitamos a tu equipo y aseguramos una transición sin fricciones.",
+      "Desplegamos, capacitamos a tu equipo y seguimos disponibles. El soporte no termina con la entrega.",
   },
 ] as const;
 
