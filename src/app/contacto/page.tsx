@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -64,12 +64,7 @@ export default function ContactoPage() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const timestampRef = useRef(0);
   const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    timestampRef.current = Math.floor(Date.now() / 1000);
-  }, []);
 
   function toggleService(service: string) {
     setSelectedServices((prev) =>
@@ -99,7 +94,6 @@ export default function ContactoPage() {
       services: selectedServices,
       message: formData.get("message") as string,
       website: formData.get("website") as string, // honeypot
-      _t: timestampRef.current,
     };
 
     try {
