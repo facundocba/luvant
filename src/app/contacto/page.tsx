@@ -93,7 +93,7 @@ export default function ContactoPage() {
       phone: formData.get("phone") as string,
       services: selectedServices,
       message: formData.get("message") as string,
-      website: formData.get("website") as string, // honeypot
+      company_fax: formData.get("company_fax") as string, // honeypot
     };
 
     try {
@@ -213,9 +213,9 @@ export default function ContactoPage() {
                         >
                           <input
                             type="text"
-                            name="website"
+                            name="company_fax"
                             tabIndex={-1}
-                            autoComplete="off"
+                            autoComplete="nope"
                           />
                         </div>
 

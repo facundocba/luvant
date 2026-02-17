@@ -53,7 +53,7 @@ if (!$input) {
 }
 
 // --- Anti-spam ---
-if (!empty($input['website'])) { echo json_encode(['ok' => true]); exit; }
+if (!empty($input['company_fax'])) { echo json_encode(['ok' => true]); exit; }
 
 
 $name    = trim($input['name'] ?? '');
