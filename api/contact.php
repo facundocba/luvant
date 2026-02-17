@@ -23,22 +23,11 @@ if (!file_exists($configPath)) {
 }
 require_once $configPath;
 
-$logFile = __DIR__ . '/smtp_debug.log';
-
-function smtpLog(string $msg) {
-    global $logFile;
-    file_put_contents($logFile, date('[Y-m-d H:i:s] ') . $msg . "\n", FILE_APPEND);
-}
-
-// Read full SMTP response (handles multi-line responses)
 function smtpRead($socket): string {
     $response = '';
     while ($line = fgets($socket, 512)) {
         $response .= $line;
-        smtpLog("<<< " . trim($line));
-        // Last line of multi-line response: code followed by space (not dash)
         if (isset($line[3]) && $line[3] === ' ') break;
-        // Single line response (less than 4 chars)
         if (strlen($line) < 4) break;
     }
     return $response;
@@ -97,40 +86,167 @@ $servicesText = is_array($services) && count($services) > 0
     ? implode(', ', array_map('htmlspecialchars', $services))
     : 'No especificado';
 
-$body = "<html><body style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#333;max-width:600px\">
-<h2 style=\"color:#111;border-bottom:2px solid #eee;padding-bottom:12px\">Nuevo contacto desde luvant.com.ar</h2>
-<table style=\"width:100%;border-collapse:collapse\">
-<tr><td style=\"padding:8px 0;color:#666;width:120px\">Nombre</td><td style=\"padding:8px 0;font-weight:600\">" . htmlspecialchars($name) . "</td></tr>
-<tr><td style=\"padding:8px 0;color:#666\">Email</td><td style=\"padding:8px 0\"><a href=\"mailto:" . htmlspecialchars($email) . "\">" . htmlspecialchars($email) . "</a></td></tr>"
-. ($company ? "<tr><td style=\"padding:8px 0;color:#666\">Empresa</td><td style=\"padding:8px 0\">" . htmlspecialchars($company) . "</td></tr>" : "")
-. ($phone ? "<tr><td style=\"padding:8px 0;color:#666\">Teléfono</td><td style=\"padding:8px 0\">" . htmlspecialchars($phone) . "</td></tr>" : "")
-. "<tr><td style=\"padding:8px 0;color:#666\">Servicios</td><td style=\"padding:8px 0\">" . $servicesText . "</td></tr>
+$safeName    = htmlspecialchars($name);
+$safeEmail   = htmlspecialchars($email);
+$safeCompany = htmlspecialchars($company);
+$safePhone   = htmlspecialchars($phone);
+$safeMessage = nl2br(htmlspecialchars($message));
+$safeIp      = htmlspecialchars($ip);
+$dateStr     = date('d/m/Y H:i');
+$year        = date('Y');
+
+$contactRows = "
+<tr>
+  <td style=\"padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;width:110px;vertical-align:top\">Nombre</td>
+  <td style=\"padding:14px 16px;font-size:15px;color:#111111;font-weight:500\">{$safeName}</td>
+</tr>
+<tr><td colspan=\"2\" style=\"border-bottom:1px solid #e5e5e5\"></td></tr>
+<tr>
+  <td style=\"padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;vertical-align:top\">Email</td>
+  <td style=\"padding:14px 16px;font-size:15px\"><a href=\"mailto:{$safeEmail}\" style=\"color:#111111;text-decoration:none;border-bottom:1px solid #d4d4d4\">{$safeEmail}</a></td>
+</tr>";
+
+if ($company) {
+    $contactRows .= "
+<tr><td colspan=\"2\" style=\"border-bottom:1px solid #e5e5e5\"></td></tr>
+<tr>
+  <td style=\"padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;vertical-align:top\">Empresa</td>
+  <td style=\"padding:14px 16px;font-size:15px;color:#111111\">{$safeCompany}</td>
+</tr>";
+}
+if ($phone) {
+    $contactRows .= "
+<tr><td colspan=\"2\" style=\"border-bottom:1px solid #e5e5e5\"></td></tr>
+<tr>
+  <td style=\"padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;vertical-align:top\">Teléfono</td>
+  <td style=\"padding:14px 16px;font-size:15px;color:#111111\">{$safePhone}</td>
+</tr>";
+}
+$contactRows .= "
+<tr><td colspan=\"2\" style=\"border-bottom:1px solid #e5e5e5\"></td></tr>
+<tr>
+  <td style=\"padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;vertical-align:top\">Servicios</td>
+  <td style=\"padding:14px 16px;font-size:15px;color:#111111\">{$servicesText}</td>
+</tr>";
+
+$body = <<<HTML
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background-color:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased">
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f5f5">
+<tr><td align="center" style="padding:32px 16px">
+
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+
+  <!-- Header -->
+  <tr>
+    <td style="background-color:#0a0a0a;padding:32px 40px 28px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="vertical-align:middle;padding-right:12px">
+                  <img src="https://luvant.com.ar/favicon.ico" width="32" height="32" alt="Luvant" style="display:block;border-radius:7px">
+                </td>
+                <td style="vertical-align:middle;font-size:18px;font-weight:500;letter-spacing:0.04em;color:#ffffff">
+                  LUVANT
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-top:20px;font-size:22px;font-weight:600;color:#ffffff;letter-spacing:-0.01em">
+            Nuevo mensaje de contacto
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-top:6px;font-size:13px;color:#737373">
+            Recibido el {$dateStr} desde luvant.com.ar
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Body -->
+  <tr>
+    <td style="background-color:#ffffff;padding:32px 40px">
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e5e5;border-radius:8px;overflow:hidden">
+        {$contactRows}
+      </table>
+
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px">
+        <tr>
+          <td style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#737373;padding-bottom:10px">
+            Mensaje
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color:#fafafa;border:1px solid #e5e5e5;border-radius:8px;padding:20px;font-size:15px;line-height:1.7;color:#262626">
+            {$safeMessage}
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:28px">
+        <tr>
+          <td style="background-color:#0a0a0a;border-radius:8px">
+            <a href="mailto:{$safeEmail}?subject=Re: Contacto desde luvant.com.ar" style="display:inline-block;padding:12px 28px;font-size:14px;font-weight:500;color:#ffffff;text-decoration:none;letter-spacing:0.02em">
+              Responder a {$safeName}
+            </a>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr>
+    <td style="background-color:#0a0a0a;padding:24px 40px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="font-size:12px;color:#525252;line-height:1.6">
+            &copy; {$year} Luvant &middot;
+            <a href="https://luvant.com.ar" style="color:#a3a3a3;text-decoration:none">luvant.com.ar</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-size:11px;color:#525252;padding-top:4px">
+            IP: {$safeIp}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
 </table>
-<div style=\"margin-top:20px;padding:16px;background:#f9f9f9;border-radius:8px;border-left:3px solid #111\">
-<p style=\"margin:0;color:#666;font-size:12px;text-transform:uppercase;letter-spacing:1px\">Mensaje</p>
-<p style=\"margin:8px 0 0;line-height:1.6\">" . nl2br(htmlspecialchars($message)) . "</p>
-</div>
-<p style=\"margin-top:24px;font-size:12px;color:#999\">Enviado el " . date('d/m/Y H:i') . " · IP: " . htmlspecialchars($ip) . "</p>
-</body></html>";
+
+</td></tr>
+</table>
+
+</body>
+</html>
+HTML;
 
 // --- Send via SMTP ---
 $subject = "Nuevo contacto: " . $name;
-smtpLog("=== Nuevo envío: {$name} <{$email}> ===");
 
 $result = sendSmtp(MAIL_TO, $subject, $body, $email, MAIL_CC);
 
 if ($result === true) {
-    smtpLog("RESULTADO: OK");
     echo json_encode(['ok' => true]);
 } else {
-    smtpLog("RESULTADO: FALLO - " . $result);
     http_response_code(500);
-    echo json_encode(['error' => 'No se pudo enviar el mensaje. Intentá de nuevo o escribí a hola@luvant.com.ar', 'debug' => $result]);
+    echo json_encode(['error' => 'No se pudo enviar el mensaje. Intentá de nuevo o escribí a hola@luvant.com.ar']);
 }
 
 function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo, string $cc = '') {
-    smtpLog("Conectando a ssl://" . SMTP_HOST . ":" . SMTP_PORT);
-
     $ctx = stream_context_create(['ssl' => ['verify_peer' => false, 'verify_peer_name' => false]]);
     $socket = @stream_socket_client('ssl://' . SMTP_HOST . ':' . SMTP_PORT, $errno, $errstr, 15, STREAM_CLIENT_CONNECT, $ctx);
 
@@ -140,61 +256,42 @@ function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo
 
     stream_set_timeout($socket, 10);
 
-    // 220 Banner
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '220') { fclose($socket); return "Banner: " . trim($resp); }
 
-    // EHLO
     fwrite($socket, "EHLO luvant.com.ar\r\n");
-    smtpLog(">>> EHLO luvant.com.ar");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '250') { fclose($socket); return "EHLO: " . trim($resp); }
 
-    // AUTH LOGIN
     fwrite($socket, "AUTH LOGIN\r\n");
-    smtpLog(">>> AUTH LOGIN");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '334') { fclose($socket); return "AUTH: " . trim($resp); }
 
-    // Username
     fwrite($socket, base64_encode(SMTP_USER) . "\r\n");
-    smtpLog(">>> [user]");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '334') { fclose($socket); return "USER: " . trim($resp); }
 
-    // Password
     fwrite($socket, base64_encode(SMTP_PASS) . "\r\n");
-    smtpLog(">>> [pass]");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '235') { fclose($socket); return "PASS: " . trim($resp); }
 
-    // MAIL FROM
     fwrite($socket, "MAIL FROM:<" . SMTP_FROM . ">\r\n");
-    smtpLog(">>> MAIL FROM:<" . SMTP_FROM . ">");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '250') { fclose($socket); return "FROM: " . trim($resp); }
 
-    // RCPT TO
     fwrite($socket, "RCPT TO:<{$to}>\r\n");
-    smtpLog(">>> RCPT TO:<{$to}>");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '250') { fclose($socket); return "RCPT: " . trim($resp); }
 
-    // RCPT CC
     if ($cc) {
         fwrite($socket, "RCPT TO:<{$cc}>\r\n");
-        smtpLog(">>> RCPT TO:<{$cc}>");
-        $resp = smtpRead($socket);
-        smtpLog("CC resp: " . smtpCode($resp));
+        smtpRead($socket);
     }
 
-    // DATA
     fwrite($socket, "DATA\r\n");
-    smtpLog(">>> DATA");
     $resp = smtpRead($socket);
     if (smtpCode($resp) !== '354') { fclose($socket); return "DATA: " . trim($resp); }
 
-    // Email content
     $msgId = md5(uniqid((string)time()));
     $msg  = "From: " . SMTP_FROM_NAME . " <" . SMTP_FROM . ">\r\n";
     $msg .= "Reply-To: {$replyTo}\r\n";
@@ -208,7 +305,6 @@ function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo
     $msg .= "\r\n" . $htmlBody . "\r\n.\r\n";
 
     fwrite($socket, $msg);
-    smtpLog(">>> [message sent]");
     $resp = smtpRead($socket);
     $ok = (smtpCode($resp) === '250');
 
