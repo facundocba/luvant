@@ -4,13 +4,11 @@ header('Access-Control-Allow-Origin: https://luvant.com.ar');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Handle preflight
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
     exit;
 }
 
-// Only POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Método no permitido']);
@@ -26,6 +24,14 @@ if (!file_exists($configPath)) {
 }
 require_once $configPath;
 
+// Log file for debugging
+$logFile = __DIR__ . '/smtp_debug.log';
+
+function smtpLog(string $msg) {
+    global $logFile;
+    file_put_contents($logFile, date('[Y-m-d H:i:s] ') . $msg . "\n", FILE_APPEND);
+}
+
 // Parse JSON body
 $input = json_decode(file_get_contents('php://input'), true);
 
@@ -37,20 +43,17 @@ if (!$input) {
 
 // --- Anti-spam checks ---
 
-// 1. Honeypot
 if (!empty($input['website'])) {
     echo json_encode(['ok' => true]);
     exit;
 }
 
-// 2. Time-based (min 3 seconds)
 $timestamp = intval($input['_t'] ?? 0);
 if ($timestamp > 0 && (time() - $timestamp) < 3) {
     echo json_encode(['ok' => true]);
     exit;
 }
 
-// 3. Extract & validate fields
 $name    = trim($input['name'] ?? '');
 $email   = trim($input['email'] ?? '');
 $message = trim($input['message'] ?? '');
@@ -70,13 +73,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// 4. Block excessive URLs
 if (preg_match_all('/https?:\/\//i', $message) > 2) {
     echo json_encode(['ok' => true]);
     exit;
 }
 
-// 5. Rate limiting (1 per IP per 60s)
 $rateLimitDir = sys_get_temp_dir() . '/luvant_contact_rate';
 if (!is_dir($rateLimitDir)) @mkdir($rateLimitDir, 0755, true);
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
@@ -118,19 +119,25 @@ Enviado el " . date('d/m/Y H:i') . " · IP: " . htmlspecialchars($ip) . "
 // --- Send via SMTP ---
 
 $subject = "Nuevo contacto: " . $name;
-$sent = sendSmtp(MAIL_TO, $subject, $body, $email, MAIL_CC);
 
-if ($sent === true) {
+smtpLog("=== Nuevo envío: {$name} <{$email}> ===");
+
+$result = sendSmtp(MAIL_TO, $subject, $body, $email, MAIL_CC);
+
+if ($result === true) {
+    smtpLog("RESULTADO: OK - Email enviado");
     echo json_encode(['ok' => true]);
 } else {
+    smtpLog("RESULTADO: FALLO - " . $result);
     http_response_code(500);
-    echo json_encode(['error' => 'No se pudo enviar el mensaje. Intentá de nuevo o escribí a hola@luvant.com.ar']);
+    echo json_encode(['error' => 'No se pudo enviar el mensaje. Intentá de nuevo o escribí a hola@luvant.com.ar', 'debug' => $result]);
 }
 
-// --- SMTP function (SSL, port 465) ---
+// --- SMTP function with logging ---
 
-function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo, string $cc = ''): bool
-{
+function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo, string $cc = '') {
+    smtpLog("Conectando a ssl://" . SMTP_HOST . ":" . SMTP_PORT);
+
     $socket = @stream_socket_client(
         'ssl://' . SMTP_HOST . ':' . SMTP_PORT,
         $errno, $errstr, 15,
@@ -138,52 +145,66 @@ function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo
         stream_context_create(['ssl' => ['verify_peer' => false, 'verify_peer_name' => false]])
     );
 
-    if (!$socket) return false;
+    if (!$socket) {
+        smtpLog("ERROR conexión: [{$errno}] {$errstr}");
+        return "Conexión fallida: [{$errno}] {$errstr}";
+    }
 
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '220') { fclose($socket); return false; }
+    smtpLog("CONNECT: " . trim($resp));
+    if (substr($resp, 0, 3) !== '220') { fclose($socket); return "Banner inesperado: " . trim($resp); }
 
-    // EHLO
     fwrite($socket, "EHLO luvant.com.ar\r\n");
+    smtpLog(">>> EHLO luvant.com.ar");
     while ($line = fgets($socket, 512)) {
+        smtpLog("<<< " . trim($line));
         if (substr($line, 3, 1) === ' ') break;
     }
 
-    // AUTH LOGIN
     fwrite($socket, "AUTH LOGIN\r\n");
+    smtpLog(">>> AUTH LOGIN");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '334') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '334') { fclose($socket); return "AUTH no soportado: " . trim($resp); }
 
     fwrite($socket, base64_encode(SMTP_USER) . "\r\n");
+    smtpLog(">>> [usuario]");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '334') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '334') { fclose($socket); return "Usuario rechazado: " . trim($resp); }
 
     fwrite($socket, base64_encode(SMTP_PASS) . "\r\n");
+    smtpLog(">>> [contraseña]");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '235') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '235') { fclose($socket); return "Auth fallido: " . trim($resp); }
 
-    // MAIL FROM
     fwrite($socket, "MAIL FROM:<" . SMTP_FROM . ">\r\n");
+    smtpLog(">>> MAIL FROM:<" . SMTP_FROM . ">");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '250') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '250') { fclose($socket); return "MAIL FROM rechazado: " . trim($resp); }
 
-    // RCPT TO (main)
     fwrite($socket, "RCPT TO:<{$to}>\r\n");
+    smtpLog(">>> RCPT TO:<{$to}>");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '250') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '250') { fclose($socket); return "RCPT TO rechazado: " . trim($resp); }
 
-    // RCPT TO (CC)
     if ($cc) {
         fwrite($socket, "RCPT TO:<{$cc}>\r\n");
-        fgets($socket, 512);
+        smtpLog(">>> RCPT TO:<{$cc}>");
+        $resp = fgets($socket, 512);
+        smtpLog("<<< " . trim($resp));
     }
 
-    // DATA
     fwrite($socket, "DATA\r\n");
+    smtpLog(">>> DATA");
     $resp = fgets($socket, 512);
-    if (substr($resp, 0, 3) !== '354') { fclose($socket); return false; }
+    smtpLog("<<< " . trim($resp));
+    if (substr($resp, 0, 3) !== '354') { fclose($socket); return "DATA rechazado: " . trim($resp); }
 
-    $boundary = md5(uniqid(time()));
+    $msgId = md5(uniqid(time()));
     $headers = "From: " . SMTP_FROM_NAME . " <" . SMTP_FROM . ">\r\n";
     $headers .= "Reply-To: {$replyTo}\r\n";
     $headers .= "To: {$to}\r\n";
@@ -192,15 +213,17 @@ function sendSmtp(string $to, string $subject, string $htmlBody, string $replyTo
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "Date: " . date('r') . "\r\n";
-    $headers .= "Message-ID: <" . $boundary . "@luvant.com.ar>\r\n";
+    $headers .= "Message-ID: <{$msgId}@luvant.com.ar>\r\n";
 
     fwrite($socket, $headers . "\r\n" . $htmlBody . "\r\n.\r\n");
+    smtpLog(">>> [headers + body + .]");
     $resp = fgets($socket, 512);
+    smtpLog("<<< " . trim($resp));
     $success = (substr($resp, 0, 3) === '250');
 
-    // QUIT
     fwrite($socket, "QUIT\r\n");
+    smtpLog(">>> QUIT");
     fclose($socket);
 
-    return $success;
+    return $success ? true : "DATA final rechazado: " . trim($resp);
 }
