@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
+# Excluir /api/ del rewrite (PHP directo)
+RewriteRule ^api/ - [L]
+
 # Raíz del sitio
 RewriteRule ^$ out/index.html [L]
 

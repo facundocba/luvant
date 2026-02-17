@@ -1,12 +1,21 @@
 "use client";
 
+import { useState, useRef, useEffect, FormEvent } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
-import { Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Clock,
+  ArrowRight,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 
 const ease = [0.25, 0.4, 0.25, 1] as const;
 
@@ -40,7 +49,86 @@ const CONTACT_INFO = [
   },
 ];
 
+const SERVICE_OPTIONS = [
+  "Procesamiento de documentos",
+  "Automatización",
+  "Integración de sistemas",
+  "Desarrollo a medida",
+  "Consultoría",
+  "Otro",
+];
+
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 export default function ContactoPage() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const timestampRef = useRef(0);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    timestampRef.current = Math.floor(Date.now() / 1000);
+  }, []);
+
+  function toggleService(service: string) {
+    setSelectedServices((prev) =>
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service],
+    );
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "loading") return;
+
+    setStatus("loading");
+    setErrorMsg("");
+
+    const form = formRef.current;
+    if (!form) return;
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") as string,
+      company: formData.get("company") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      services: selectedServices,
+      message: formData.get("message") as string,
+      website: formData.get("website") as string, // honeypot
+      _t: timestampRef.current,
+    };
+
+    try {
+      const res = await fetch("/api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.ok) {
+        setStatus("success");
+        form.reset();
+        setSelectedServices([]);
+      } else {
+        setStatus("error");
+        setErrorMsg(
+          data.error || "Hubo un error al enviar el mensaje. Intentá de nuevo.",
+        );
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg(
+        "No se pudo conectar con el servidor. Intentá de nuevo o escribí a hola@luvant.com.ar",
+      );
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -95,74 +183,142 @@ export default function ContactoPage() {
                   <div className="relative p-8 md:p-10">
                     <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 bg-gradient-to-bl from-white/[0.02] to-transparent" />
 
-                    <form
-                      onSubmit={(e) => e.preventDefault()}
-                      className="relative space-y-6"
-                    >
-                      <div className="grid gap-6 sm:grid-cols-2">
+                    {status === "success" ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="relative flex flex-col items-center py-12 text-center"
+                      >
+                        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/10 text-green-400 ring-1 ring-green-500/20">
+                          <CheckCircle2 size={28} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="mb-2 text-xl font-medium">
+                          Mensaje enviado
+                        </h3>
+                        <p className="max-w-sm text-sm text-luvant-400">
+                          Recibimos tu consulta. Te respondemos dentro de las
+                          próximas 24 horas hábiles.
+                        </p>
+                        <button
+                          onClick={() => setStatus("idle")}
+                          className="mt-6 font-mono text-xs text-luvant-500 transition-colors hover:text-white"
+                        >
+                          Enviar otro mensaje
+                        </button>
+                      </motion.div>
+                    ) : (
+                      <form
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        className="relative space-y-6"
+                      >
+                        {/* Honeypot — hidden from users, bots fill it */}
+                        <div
+                          aria-hidden="true"
+                          className="absolute -left-[9999px] -top-[9999px]"
+                        >
+                          <input
+                            type="text"
+                            name="website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                          />
+                        </div>
+
+                        <div className="grid gap-6 sm:grid-cols-2">
+                          <Input
+                            label="Nombre"
+                            name="name"
+                            placeholder="Tu nombre"
+                            required
+                          />
+                          <Input
+                            label="Empresa"
+                            name="company"
+                            placeholder="Nombre de tu empresa"
+                          />
+                        </div>
                         <Input
-                          label="Nombre"
-                          placeholder="Tu nombre"
+                          label="Email"
+                          name="email"
+                          type="email"
+                          placeholder="tu@empresa.com"
                           required
                         />
                         <Input
-                          label="Empresa"
-                          placeholder="Nombre de tu empresa"
+                          label="Teléfono"
+                          name="phone"
+                          type="tel"
+                          placeholder="+54 9 11 1234 5678"
                         />
-                      </div>
-                      <Input
-                        label="Email"
-                        type="email"
-                        placeholder="tu@empresa.com"
-                        required
-                      />
-                      <Input
-                        label="Teléfono"
-                        type="tel"
-                        placeholder="+54 9 11 1234 5678"
-                      />
 
-                      <div className="space-y-2">
-                        <label className="block text-caption uppercase text-luvant-600">
-                          ¿Qué necesitás?
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {[
-                            "Procesamiento de documentos",
-                            "Automatización",
-                            "Integración de sistemas",
-                            "Desarrollo a medida",
-                            "Consultoría",
-                            "Otro",
-                          ].map((option) => (
-                            <label
-                              key={option}
-                              className="cursor-pointer rounded-lg border border-luvant-800/60 bg-luvant-950/50 px-3 py-2 font-mono text-xs text-luvant-400 transition-all hover:border-white/10 hover:text-white has-[:checked]:border-white/20 has-[:checked]:bg-white/[0.05] has-[:checked]:text-white"
-                            >
-                              <input
-                                type="checkbox"
-                                name="services"
-                                value={option}
-                                className="sr-only"
-                              />
-                              {option}
-                            </label>
-                          ))}
+                        <div className="space-y-2">
+                          <label className="block text-caption uppercase text-luvant-600">
+                            ¿Qué necesitás?
+                          </label>
+                          <div className="flex flex-wrap gap-2">
+                            {SERVICE_OPTIONS.map((option) => (
+                              <button
+                                key={option}
+                                type="button"
+                                onClick={() => toggleService(option)}
+                                className={`rounded-lg border px-3 py-2 font-mono text-xs transition-all ${
+                                  selectedServices.includes(option)
+                                    ? "border-white/20 bg-white/[0.05] text-white"
+                                    : "border-luvant-800/60 bg-luvant-950/50 text-luvant-400 hover:border-white/10 hover:text-white"
+                                }`}
+                              >
+                                {option}
+                              </button>
+                            ))}
+                          </div>
                         </div>
-                      </div>
 
-                      <Textarea
-                        label="Mensaje"
-                        placeholder="Contanos sobre tu proyecto, el problema que querés resolver, o cualquier duda que tengas..."
-                        rows={5}
-                        required
-                      />
+                        <Textarea
+                          label="Mensaje"
+                          name="message"
+                          placeholder="Contanos sobre tu proyecto, el problema que querés resolver, o cualquier duda que tengas..."
+                          rows={5}
+                          required
+                        />
 
-                      <Button type="submit" size="lg" className="w-full">
-                        Enviar mensaje
-                        <ArrowRight size={16} className="ml-1.5" />
-                      </Button>
-                    </form>
+                        {status === "error" && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex items-start gap-3 rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-3"
+                          >
+                            <AlertCircle
+                              size={18}
+                              className="mt-0.5 shrink-0 text-red-400"
+                            />
+                            <p className="text-sm text-red-300">{errorMsg}</p>
+                          </motion.div>
+                        )}
+
+                        <Button
+                          type="submit"
+                          size="lg"
+                          className="w-full"
+                          disabled={status === "loading"}
+                        >
+                          {status === "loading" ? (
+                            <>
+                              <Loader2
+                                size={16}
+                                className="mr-2 animate-spin"
+                              />
+                              Enviando...
+                            </>
+                          ) : (
+                            <>
+                              Enviar mensaje
+                              <ArrowRight size={16} className="ml-1.5" />
+                            </>
+                          )}
+                        </Button>
+                      </form>
+                    )}
                   </div>
                 </div>
               </motion.div>
