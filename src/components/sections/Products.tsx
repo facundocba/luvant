@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import { ArrowRight, ScanLine, Workflow, RefreshCw } from "lucide-react";
+import {
+  ArrowRight,
+  ScanLine,
+  Workflow,
+  RefreshCw,
+  Code,
+  Lightbulb,
+} from "lucide-react";
 
 const ease = [0.25, 0.4, 0.25, 1] as const;
 
@@ -130,51 +137,66 @@ export default function Products() {
           </div>
         </motion.div>
 
-        {/* Secondary products */}
+        {/* Solutions */}
         <motion.div
-          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-6"
+        >
+          <span className="mb-4 block font-mono text-caption uppercase tracking-widest text-luvant-600">
+            Soluciones
+          </span>
+        </motion.div>
+
+        <motion.div
+          variants={{ show: { transition: { staggerChildren: 0.08 } } }}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-6 md:grid-cols-2"
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {[
             {
-              name: "Luvant Flow",
+              title: "Automatización",
               icon: <Workflow size={20} strokeWidth={1.5} />,
-              badge: "Automatización",
               description:
-                "Automatización de procesos empresariales. Conectá tus sistemas y eliminá tareas manuales con flujos inteligentes.",
+                "Eliminá tareas manuales conectando tus sistemas con flujos inteligentes.",
             },
             {
-              name: "Luvant Sync",
+              title: "Integración",
               icon: <RefreshCw size={20} strokeWidth={1.5} />,
-              badge: "Integración",
               description:
-                "Integración de datos en tiempo real entre tus plataformas. Sincronizá información sin fricciones ni duplicados.",
+                "Conectamos tus plataformas para que la información fluya sin fricciones.",
             },
-          ].map((product) => (
+            {
+              title: "Desarrollo a medida",
+              icon: <Code size={20} strokeWidth={1.5} />,
+              description:
+                "Software diseñado para tu negocio. Dashboards, plataformas, APIs.",
+            },
+            {
+              title: "Consultoría",
+              icon: <Lightbulb size={20} strokeWidth={1.5} />,
+              description:
+                "Te ayudamos a elegir e implementar la solución correcta.",
+            },
+          ].map((solution) => (
             <motion.div
-              key={product.name}
+              key={solution.title}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
               }}
             >
-              <div className="group rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-6 transition-all duration-300 hover:border-white/[0.08]">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-luvant-800 text-luvant-400">
-                      {product.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-base font-medium">{product.name}</h3>
-                    </div>
-                  </div>
-                  <Badge variant="outline">Próximamente</Badge>
+              <div className="group rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-5 transition-all duration-300 hover:border-white/[0.08]">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-luvant-800 text-luvant-400 transition-colors group-hover:text-white">
+                  {solution.icon}
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-luvant-500">
-                  {product.description}
+                <h3 className="mb-2 text-sm font-medium">{solution.title}</h3>
+                <p className="text-xs leading-relaxed text-luvant-500">
+                  {solution.description}
                 </p>
               </div>
             </motion.div>

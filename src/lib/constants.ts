@@ -23,23 +23,32 @@ export const PRODUCTS = [
     status: "active" as const,
     href: "/productos/lens",
   },
+] as const;
+
+export const SOLUTIONS = [
   {
-    name: "Luvant Flow",
-    slug: "flow",
+    title: "Automatización de procesos",
     description:
-      "Automatización de procesos empresariales. Conectá tus sistemas y eliminá tareas manuales con flujos inteligentes.",
-    badge: "Automatización",
-    status: "coming-soon" as const,
-    href: "#",
+      "Eliminá tareas manuales repetitivas conectando tus sistemas con flujos inteligentes que se adaptan a tu operación.",
+    icon: "Workflow" as const,
   },
   {
-    name: "Luvant Sync",
-    slug: "sync",
+    title: "Integración de sistemas",
     description:
-      "Integración de datos en tiempo real entre tus plataformas. Sincronizá información sin fricciones ni duplicados.",
-    badge: "Integración",
-    status: "coming-soon" as const,
-    href: "#",
+      "Conectamos tus plataformas para que la información fluya en tiempo real, sin duplicados ni inconsistencias.",
+    icon: "RefreshCw" as const,
+  },
+  {
+    title: "Desarrollo a medida",
+    description:
+      "Software diseñado específicamente para tu negocio. Desde dashboards internos hasta plataformas completas.",
+    icon: "Code" as const,
+  },
+  {
+    title: "Consultoría técnica",
+    description:
+      "Te ayudamos a evaluar, planificar e implementar la solución tecnológica correcta para tu empresa.",
+    icon: "Lightbulb" as const,
   },
 ] as const;
 
@@ -94,8 +103,7 @@ export const STEPS = [
 export const FOOTER_LINKS = {
   productos: [
     { label: "Luvant Lens", href: "/productos/lens" },
-    { label: "Luvant Flow", href: "#" },
-    { label: "Luvant Sync", href: "#" },
+    { label: "Soluciones", href: "/productos" },
   ],
   empresa: [
     { label: "Nosotros", href: "/nosotros" },
