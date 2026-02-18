@@ -12,6 +12,31 @@ export const metadata: Metadata = {
     description:
       "Empresa de desarrollo de software en Argentina. Calidad técnica, transparencia total e impacto medible en cada proyecto.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nosotros | Luvant",
+    description:
+      "Empresa de desarrollo de software en Argentina. Calidad técnica, transparencia total e impacto medible en cada proyecto.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://luvant.com.ar",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Nosotros",
+      item: "https://luvant.com.ar/nosotros",
+    },
+  ],
 };
 
 export default function NosotrosLayout({
@@ -19,5 +44,15 @@ export default function NosotrosLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
+      {children}
+    </>
+  );
 }

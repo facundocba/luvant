@@ -12,6 +12,31 @@ export const metadata: Metadata = {
     description:
       "OCR inteligente, automatización, integración de sistemas y desarrollo a medida. Soluciones tecnológicas desde Argentina.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Productos y soluciones | Luvant",
+    description:
+      "OCR inteligente, automatización, integración de sistemas y desarrollo a medida. Soluciones tecnológicas desde Argentina.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://luvant.com.ar",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Productos",
+      item: "https://luvant.com.ar/productos",
+    },
+  ],
 };
 
 export default function ProductosLayout({
@@ -19,5 +44,15 @@ export default function ProductosLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
+      {children}
+    </>
+  );
 }

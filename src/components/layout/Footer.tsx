@@ -55,25 +55,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="mb-4 font-mono text-caption uppercase tracking-wider text-luvant-600">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-luvant-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom */}

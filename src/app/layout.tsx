@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
@@ -80,7 +81,6 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Luvant",
   url: BASE_URL,
-  logo: `${BASE_URL}/favicon.ico`,
   description:
     "Empresa de desarrollo de software en Argentina. Software a medida, automatización de procesos, integración de sistemas y procesamiento inteligente de documentos.",
   address: {
@@ -103,6 +103,14 @@ const websiteJsonLd = {
     name: "Luvant",
   },
   inLanguage: "es",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({
@@ -113,29 +121,6 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N86HLLWQ');`,
-          }}
-        />
-        {/* Google Analytics (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YS1TSMR4NJ"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-YS1TSMR4NJ');`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -160,6 +145,34 @@ gtag('config', 'G-YS1TSMR4NJ');`,
           />
         </noscript>
         {children}
+
+        {/* Google Tag Manager */}
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N86HLLWQ');`,
+          }}
+        />
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YS1TSMR4NJ"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YS1TSMR4NJ');`,
+          }}
+        />
       </body>
     </html>
   );

@@ -12,6 +12,31 @@ export const metadata: Metadata = {
     description:
       "Ideas, técnica y producto. Artículos sobre procesamiento de documentos, ingeniería de software y los problemas reales que resolvemos con tecnología.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Luvant",
+    description:
+      "Ideas, técnica y producto. Artículos sobre procesamiento de documentos, ingeniería de software y los problemas reales que resolvemos con tecnología.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://luvant.com.ar",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://luvant.com.ar/blog",
+    },
+  ],
 };
 
 export default function BlogLayout({
@@ -19,5 +44,15 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
+      {children}
+    </>
+  );
 }

@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     publishedTime: "2026-02-10T00:00:00-03:00",
     authors: ["Luvant"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cómo dejar de cargar facturas a mano",
+    description:
+      "Extracción automática de datos de facturas con OCR. Cómo funciona y qué resultados esperar.",
+  },
 };
 
 const articleJsonLd = {
@@ -29,7 +35,10 @@ const articleJsonLd = {
   headline: "Cómo dejar de cargar facturas a mano",
   description:
     "Tu equipo pierde horas por semana tipeando datos de facturas en el sistema. Hay una forma mejor: extracción automática con OCR.",
+  image:
+    "https://luvant.com.ar/blog/automatizar-carga-facturas/opengraph-image",
   datePublished: "2026-02-10T00:00:00-03:00",
+  dateModified: "2026-02-10T00:00:00-03:00",
   author: {
     "@type": "Organization",
     name: "Luvant",
@@ -46,12 +55,41 @@ const articleJsonLd = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://luvant.com.ar",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://luvant.com.ar/blog",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Cómo dejar de cargar facturas a mano",
+      item: "https://luvant.com.ar/blog/automatizar-carga-facturas",
+    },
+  ],
+};
+
 export default function ArticlePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Navbar />
       <main id="main-content">

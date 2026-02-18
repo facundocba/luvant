@@ -110,8 +110,4 @@ export const FOOTER_LINKS = {
     { label: "Blog", href: "/blog" },
     { label: "Contacto", href: "/contacto" },
   ],
-  legal: [
-    { label: "Privacidad", href: "#" },
-    { label: "Términos", href: "#" },
-  ],
 } as const;

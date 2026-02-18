@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     publishedTime: "2026-02-01T00:00:00-03:00",
     authors: ["Luvant"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Por qué tu empresa necesita software a medida (y cuándo no)",
+    description:
+      "Analizamos cuándo tiene sentido invertir en software propio vs usar soluciones existentes.",
+  },
 };
 
 const articleJsonLd = {
@@ -29,7 +35,10 @@ const articleJsonLd = {
   headline: "Por qué tu empresa necesita software a medida (y cuándo no)",
   description:
     "No toda empresa necesita desarrollo custom. Analizamos cuándo tiene sentido invertir en software propio vs usar soluciones existentes.",
+  image:
+    "https://luvant.com.ar/blog/por-que-tu-empresa-necesita-software-a-medida/opengraph-image",
   datePublished: "2026-02-01T00:00:00-03:00",
+  dateModified: "2026-02-01T00:00:00-03:00",
   author: {
     "@type": "Organization",
     name: "Luvant",
@@ -47,12 +56,41 @@ const articleJsonLd = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://luvant.com.ar",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://luvant.com.ar/blog",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Por qué tu empresa necesita software a medida",
+      item: "https://luvant.com.ar/blog/por-que-tu-empresa-necesita-software-a-medida",
+    },
+  ],
+};
+
 export default function ArticlePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Navbar />
       <main id="main-content">
