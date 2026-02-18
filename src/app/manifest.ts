@@ -1,0 +1,21 @@
+import type { MetadataRoute } from "next";
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: "Luvant - Desarrollo de software a medida",
+    short_name: "Luvant",
+    description:
+      "Desarrollo de software a medida, automatización de procesos e integración de sistemas.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#0a0a0a",
+    theme_color: "#0a0a0a",
+    icons: [
+      {
+        src: "/icon",
+        sizes: "any",
+        type: "image/png",
+      },
+    ],
+  };
+}

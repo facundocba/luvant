@@ -69,9 +69,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [{ url: "/icon", type: "image/png" }, { url: "/favicon.ico" }],
+    apple: [{ url: "/icon", sizes: "32x32", type: "image/png" }],
   },
   category: "technology",
 };
@@ -89,6 +88,62 @@ const organizationJsonLd = {
   },
   email: "hola@luvant.com.ar",
   sameAs: [],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Luvant",
+  url: BASE_URL,
+  email: "hola@luvant.com.ar",
+  description:
+    "Empresa de desarrollo de software a medida en Argentina. Automatización de procesos, integración de sistemas y procesamiento inteligente de documentos con OCR.",
+  areaServed: {
+    "@type": "Country",
+    name: "Argentina",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios de software",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Desarrollo de software a medida",
+          description:
+            "Construcción de aplicaciones web, APIs y sistemas internos adaptados a los procesos de cada empresa.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Automatización de procesos",
+          description:
+            "Eliminación de tareas manuales repetitivas mediante flujos automatizados e integraciones entre sistemas.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Integración de sistemas",
+          description:
+            "Conexión de plataformas existentes mediante APIs para que la información fluya en tiempo real sin duplicados.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "SoftwareApplication",
+          name: "Luvant Lens",
+          description:
+            "OCR inteligente para procesamiento automático de facturas, remitos y documentos empresariales argentinos.",
+        },
+      },
+    ],
+  },
 };
 
 const websiteJsonLd = {
@@ -125,6 +180,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceJsonLd),
           }}
         />
         <script
