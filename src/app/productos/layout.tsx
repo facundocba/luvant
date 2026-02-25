@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Luvant Lens para procesamiento de documentos con OCR, automatización de procesos, integración de sistemas y desarrollo de software a medida.",
   alternates: {
     canonical: "/productos",
+    languages: {
+      "es-AR": "https://luvant.com.ar/productos",
+      "x-default": "https://luvant.com.ar/productos",
+    },
   },
   openGraph: {
     title: "Productos y soluciones | Luvant",

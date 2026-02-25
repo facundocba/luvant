@@ -8,7 +8,7 @@ export default function Icon() {
   return new ImageResponse(
     <div
       style={{
-        background: "#000000",
+        background: "#0a0a0a",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -17,7 +17,6 @@ export default function Icon() {
         borderRadius: "6px",
       }}
     >
-      {/* Delta shape */}
       <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
         <path
           d="M14 40L28 16L42 40"

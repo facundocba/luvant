@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     "No toda empresa necesita desarrollo custom. Analizamos cuándo tiene sentido invertir en software propio vs usar soluciones existentes, y qué preguntas hacerte antes de decidir.",
   alternates: {
     canonical: "/blog/por-que-tu-empresa-necesita-software-a-medida",
+    languages: {
+      "es-AR":
+        "https://luvant.com.ar/blog/por-que-tu-empresa-necesita-software-a-medida",
+      "x-default":
+        "https://luvant.com.ar/blog/por-que-tu-empresa-necesita-software-a-medida",
+    },
   },
   openGraph: {
     title: "Por qué tu empresa necesita software a medida (y cuándo no)",

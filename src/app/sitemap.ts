@@ -52,5 +52,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    {
+      url: `${BASE_URL}/servicios/desarrollo-software-a-medida`,
+      lastModified: new Date("2026-02-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/servicios/automatizacion-de-procesos`,
+      lastModified: new Date("2026-02-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/servicios/integracion-de-sistemas`,
+      lastModified: new Date("2026-02-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/servicios/consultoria-tecnica`,
+      lastModified: new Date("2026-02-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

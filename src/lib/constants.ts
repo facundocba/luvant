@@ -105,6 +105,18 @@ export const FOOTER_LINKS = {
     { label: "Luvant Lens", href: "/productos/lens" },
     { label: "Soluciones", href: "/productos" },
   ],
+  servicios: [
+    {
+      label: "Desarrollo a medida",
+      href: "/servicios/desarrollo-software-a-medida",
+    },
+    { label: "Automatización", href: "/servicios/automatizacion-de-procesos" },
+    {
+      label: "Integración de sistemas",
+      href: "/servicios/integracion-de-sistemas",
+    },
+    { label: "Consultoría técnica", href: "/servicios/consultoria-tecnica" },
+  ],
   empresa: [
     { label: "Nosotros", href: "/nosotros" },
     { label: "Blog", href: "/blog" },

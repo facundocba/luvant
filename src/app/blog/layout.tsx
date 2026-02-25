@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Artículos sobre procesamiento de documentos, OCR, automatización empresarial e ingeniería de software. Contenido técnico desde Luvant, Argentina.",
   alternates: {
     canonical: "/blog",
+    languages: {
+      "es-AR": "https://luvant.com.ar/blog",
+      "x-default": "https://luvant.com.ar/blog",
+    },
   },
   openGraph: {
     title: "Blog | Luvant",

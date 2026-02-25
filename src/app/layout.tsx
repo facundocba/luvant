@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   publisher: "Luvant",
   alternates: {
     canonical: "/",
+    languages: {
+      "es-AR": "https://luvant.com.ar",
+      "x-default": "https://luvant.com.ar",
+    },
   },
   openGraph: {
     type: "website",
@@ -69,8 +73,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/icon", type: "image/png" }, { url: "/favicon.ico" }],
-    apple: [{ url: "/icon", sizes: "32x32", type: "image/png" }],
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
   },
   category: "technology",
 };

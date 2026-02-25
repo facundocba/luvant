@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     "Tu equipo pierde horas por semana tipeando datos de facturas en el sistema. Hay una forma mejor: extracción automática con OCR que se integra con tu software contable.",
   alternates: {
     canonical: "/blog/automatizar-carga-facturas",
+    languages: {
+      "es-AR": "https://luvant.com.ar/blog/automatizar-carga-facturas",
+      "x-default": "https://luvant.com.ar/blog/automatizar-carga-facturas",
+    },
   },
   openGraph: {
     title: "Cómo dejar de cargar facturas a mano",

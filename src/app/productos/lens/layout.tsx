@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Luvant Lens: procesamiento inteligente de documentos con OCR y machine learning. Extracción automática de datos de facturas, remitos y formularios argentinos con +99% de precisión.",
   alternates: {
     canonical: "/productos/lens",
+    languages: {
+      "es-AR": "https://luvant.com.ar/productos/lens",
+      "x-default": "https://luvant.com.ar/productos/lens",
+    },
   },
   openGraph: {
     title: "Luvant Lens | OCR inteligente para documentos empresariales",
