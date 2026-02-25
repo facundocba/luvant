@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -160,24 +161,28 @@ export default function Products() {
           {[
             {
               title: "Automatización de procesos",
+              href: "/servicios/automatizacion-de-procesos",
               icon: <Workflow size={20} strokeWidth={1.5} />,
               description:
                 "Eliminá horas de trabajo manual. Conectamos tus sistemas con flujos que se ejecutan solos.",
             },
             {
               title: "Integración de sistemas",
+              href: "/servicios/integracion-de-sistemas",
               icon: <RefreshCw size={20} strokeWidth={1.5} />,
               description:
                 "Tu ERP, CRM y herramientas internas hablando entre sí. Datos sincronizados en tiempo real.",
             },
             {
               title: "Software a medida",
+              href: "/servicios/desarrollo-software-a-medida",
               icon: <Code size={20} strokeWidth={1.5} />,
               description:
                 "Plataformas, dashboards y APIs diseñadas exclusivamente para tu operación.",
             },
             {
               title: "Consultoría técnica",
+              href: "/servicios/consultoria-tecnica",
               icon: <Lightbulb size={20} strokeWidth={1.5} />,
               description:
                 "Evaluamos tu stack actual y te ayudamos a tomar la decisión tecnológica correcta.",
@@ -190,15 +195,17 @@ export default function Products() {
                 show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
               }}
             >
-              <div className="group h-full rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-5 transition-all duration-300 hover:border-white/[0.08]">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-luvant-800 text-luvant-400 transition-colors group-hover:text-white">
-                  {solution.icon}
+              <Link href={solution.href} className="block h-full">
+                <div className="group h-full rounded-xl border border-luvant-800/60 bg-luvant-900/50 p-5 transition-all duration-300 hover:border-white/[0.08]">
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-luvant-800 text-luvant-400 transition-colors group-hover:text-white">
+                    {solution.icon}
+                  </div>
+                  <h3 className="mb-2 text-sm font-medium">{solution.title}</h3>
+                  <p className="text-xs leading-relaxed text-luvant-500">
+                    {solution.description}
+                  </p>
                 </div>
-                <h3 className="mb-2 text-sm font-medium">{solution.title}</h3>
-                <p className="text-xs leading-relaxed text-luvant-500">
-                  {solution.description}
-                </p>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

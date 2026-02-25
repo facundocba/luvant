@@ -53,6 +53,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/blog/que-es-una-api-y-por-que-importa`,
+      lastModified: new Date("2026-02-20"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/ocr-documentos-argentina`,
+      lastModified: new Date("2026-02-22"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/senales-de-que-necesitas-automatizar`,
+      lastModified: new Date("2026-02-24"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/elegir-proveedor-desarrollo-software`,
+      lastModified: new Date("2026-02-25"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/servicios/desarrollo-software-a-medida`,
       lastModified: new Date("2026-02-25"),
       changeFrequency: "monthly",

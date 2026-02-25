@@ -52,7 +52,10 @@ export default function Navbar() {
           {/* Desktop links — centered */}
           <ul className="hidden items-center gap-1 md:flex">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.label === "Servicios" &&
+                  pathname.startsWith("/servicios"));
               return (
                 <li key={link.href}>
                   <Link

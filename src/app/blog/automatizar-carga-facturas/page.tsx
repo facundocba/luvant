@@ -384,10 +384,10 @@ export default function ArticlePage() {
                   Anterior: Por qué tu empresa necesita software a medida
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/blog/que-es-una-api-y-por-que-importa"
                   className="inline-flex items-center gap-1.5 font-mono text-xs text-luvant-500 transition-colors hover:text-white"
                 >
-                  Volver al blog
+                  Siguiente: Qué es una API y por qué le importa a tu negocio
                   <ArrowRight size={12} />
                 </Link>
               </div>

@@ -8,6 +8,7 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS = [
   { label: "Productos", href: "/productos" },
+  { label: "Servicios", href: "/servicios/desarrollo-software-a-medida" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Blog", href: "/blog" },
   { label: "Contacto", href: "/contacto" },

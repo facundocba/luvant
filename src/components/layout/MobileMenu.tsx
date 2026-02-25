@@ -55,26 +55,32 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             transition={{ delay: 0.1, duration: 0.3 }}
             className="flex flex-col gap-2 px-6 pt-8"
           >
-            {NAV_LINKS.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 + i * 0.05 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={onClose}
-                  className={`block py-3 text-2xl font-medium transition-colors ${
-                    pathname === link.href
-                      ? "text-white"
-                      : "text-luvant-400 hover:text-white"
-                  }`}
+            {NAV_LINKS.map((link, i) => {
+              const isActive =
+                pathname === link.href ||
+                (link.label === "Servicios" &&
+                  pathname.startsWith("/servicios"));
+              return (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05 }}
                 >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={link.href}
+                    onClick={onClose}
+                    className={`block py-3 text-2xl font-medium transition-colors ${
+                      isActive
+                        ? "text-white"
+                        : "text-luvant-400 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              );
+            })}
 
             <motion.div
               initial={{ opacity: 0 }}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
@@ -286,42 +287,48 @@ export default function ProductosPage() {
               {[
                 {
                   title: "Automatización de procesos",
+                  href: "/servicios/automatizacion-de-procesos",
                   icon: <Workflow size={22} strokeWidth={1.5} />,
                   description:
                     "Eliminá tareas manuales repetitivas conectando tus sistemas con flujos inteligentes que se adaptan a tu operación.",
                 },
                 {
                   title: "Integración de sistemas",
+                  href: "/servicios/integracion-de-sistemas",
                   icon: <RefreshCw size={22} strokeWidth={1.5} />,
                   description:
                     "Conectamos tus plataformas para que la información fluya en tiempo real, sin duplicados ni inconsistencias.",
                 },
                 {
                   title: "Desarrollo a medida",
+                  href: "/servicios/desarrollo-software-a-medida",
                   icon: <Code size={22} strokeWidth={1.5} />,
                   description:
                     "Software diseñado para tu negocio. Dashboards internos, plataformas web, APIs y aplicaciones móviles.",
                 },
                 {
                   title: "Consultoría técnica",
+                  href: "/servicios/consultoria-tecnica",
                   icon: <Lightbulb size={22} strokeWidth={1.5} />,
                   description:
                     "Te ayudamos a evaluar, planificar e implementar la solución tecnológica correcta para tu proyecto.",
                 },
               ].map((solution) => (
                 <motion.div key={solution.title} variants={itemVariants}>
-                  <div className="group relative h-full overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-6 transition-all duration-300 hover:border-white/10">
-                    <div className="pointer-events-none absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-white/[0.02] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
-                      {solution.icon}
+                  <Link href={solution.href} className="block h-full">
+                    <div className="group relative h-full overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-6 transition-all duration-300 hover:border-white/10">
+                      <div className="pointer-events-none absolute right-0 top-0 h-20 w-20 bg-gradient-to-bl from-white/[0.02] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
+                        {solution.icon}
+                      </div>
+                      <h3 className="mb-2 text-base font-medium">
+                        {solution.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-luvant-500">
+                        {solution.description}
+                      </p>
                     </div>
-                    <h3 className="mb-2 text-base font-medium">
-                      {solution.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-luvant-500">
-                      {solution.description}
-                    </p>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>

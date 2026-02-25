@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { Code, Plug, Headphones, Shield, Zap } from "lucide-react";
 
@@ -57,52 +58,66 @@ export default function Features() {
             variants={itemVariants}
             className="md:col-span-2 md:row-span-2"
           >
-            <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-7 transition-all duration-300 hover:border-white/10">
-              <div className="absolute right-0 top-0 h-32 w-32 bg-gradient-to-bl from-white/[0.03] to-transparent" />
-              <div className="relative">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
-                  <Code size={22} strokeWidth={1.5} />
+            <Link
+              href="/servicios/desarrollo-software-a-medida"
+              className="block h-full"
+            >
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-7 transition-all duration-300 hover:border-white/10">
+                <div className="absolute right-0 top-0 h-32 w-32 bg-gradient-to-bl from-white/[0.03] to-transparent" />
+                <div className="relative">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
+                    <Code size={22} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="mb-2 text-lg font-medium">
+                    Hecho a tu medida
+                  </h3>
+                  <p className="text-sm leading-relaxed text-luvant-400">
+                    No adaptamos plantillas. Diseñamos y construimos software
+                    desde cero, pensado para cómo opera tu negocio.
+                  </p>
                 </div>
-                <h3 className="mb-2 text-lg font-medium">Hecho a tu medida</h3>
-                <p className="text-sm leading-relaxed text-luvant-400">
-                  No adaptamos plantillas. Diseñamos y construimos software
-                  desde cero, pensado para cómo opera tu negocio.
-                </p>
-              </div>
 
-              {/* Visual: Code-like lines */}
-              <div className="mt-auto pt-8 space-y-2 opacity-40">
-                <div className="flex gap-2">
-                  <div className="h-1 w-8 rounded-full bg-white/20" />
-                  <div className="h-1 w-16 rounded-full bg-white/10" />
-                </div>
-                <div className="flex gap-2 pl-4">
-                  <div className="h-1 w-12 rounded-full bg-white/10" />
-                  <div className="h-1 w-20 rounded-full bg-white/15" />
-                </div>
-                <div className="flex gap-2 pl-4">
-                  <div className="h-1 w-10 rounded-full bg-white/10" />
-                  <div className="h-1 w-14 rounded-full bg-white/10" />
-                </div>
-                <div className="flex gap-2">
-                  <div className="h-1 w-6 rounded-full bg-white/20" />
+                {/* Visual: Code-like lines */}
+                <div className="mt-auto pt-8 space-y-2 opacity-40">
+                  <div className="flex gap-2">
+                    <div className="h-1 w-8 rounded-full bg-white/20" />
+                    <div className="h-1 w-16 rounded-full bg-white/10" />
+                  </div>
+                  <div className="flex gap-2 pl-4">
+                    <div className="h-1 w-12 rounded-full bg-white/10" />
+                    <div className="h-1 w-20 rounded-full bg-white/15" />
+                  </div>
+                  <div className="flex gap-2 pl-4">
+                    <div className="h-1 w-10 rounded-full bg-white/10" />
+                    <div className="h-1 w-14 rounded-full bg-white/10" />
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="h-1 w-6 rounded-full bg-white/20" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </motion.div>
 
           {/* Card 2: Integración — spans 2 cols */}
           <motion.div variants={itemVariants} className="md:col-span-2">
-            <div className="group relative h-full overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-7 transition-all duration-300 hover:border-white/10">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
-                <Plug size={22} strokeWidth={1.5} />
+            <Link
+              href="/servicios/integracion-de-sistemas"
+              className="block h-full"
+            >
+              <div className="group relative h-full overflow-hidden rounded-xl border border-white/[0.06] bg-luvant-950/80 p-7 transition-all duration-300 hover:border-white/10">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.05] text-luvant-300 ring-1 ring-white/[0.08] transition-colors group-hover:text-white">
+                  <Plug size={22} strokeWidth={1.5} />
+                </div>
+                <h3 className="mb-2 text-lg font-medium">
+                  Se conecta con todo
+                </h3>
+                <p className="text-sm leading-relaxed text-luvant-400">
+                  APIs documentadas, webhooks y SDKs. Integramos con tu ERP, CRM
+                  o cualquier sistema que ya uses.
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-medium">Se conecta con todo</h3>
-              <p className="text-sm leading-relaxed text-luvant-400">
-                APIs documentadas, webhooks y SDKs. Integramos con tu ERP, CRM o
-                cualquier sistema que ya uses.
-              </p>
-            </div>
+            </Link>
           </motion.div>
 
           {/* Card 3: Performance — spans 2 cols, with visual */}

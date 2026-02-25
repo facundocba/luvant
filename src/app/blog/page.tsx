@@ -44,7 +44,8 @@ const ARTICLES = [
     title: "Qué es una API y por qué le importa a tu negocio",
     excerpt:
       "Una explicación sin tecnicismos de qué son las APIs, por qué tus sistemas necesitan hablar entre sí, y cómo una buena integración puede ahorrarte horas de trabajo manual.",
-    date: "Próximamente",
+    date: "Febrero 2026",
+    href: "/blog/que-es-una-api-y-por-que-importa",
   },
   {
     slug: "ocr-documentos-argentina",
@@ -52,7 +53,8 @@ const ARTICLES = [
     title: "OCR para documentos argentinos: desafíos y soluciones",
     excerpt:
       "Procesar facturas AFIP, remitos con formato libre y comprobantes con CUIT requiere OCR entrenado para las particularidades locales. Así lo resolvemos con Luvant Lens.",
-    date: "Próximamente",
+    date: "Febrero 2026",
+    href: "/blog/ocr-documentos-argentina",
   },
   {
     slug: "senales-de-que-necesitas-automatizar",
@@ -60,7 +62,8 @@ const ARTICLES = [
     title: "5 señales de que tu empresa necesita automatizar procesos",
     excerpt:
       "Si tu equipo copia datos entre planillas, manda los mismos emails todos los días o depende de una persona para un proceso crítico, es hora de automatizar.",
-    date: "Próximamente",
+    date: "Febrero 2026",
+    href: "/blog/senales-de-que-necesitas-automatizar",
   },
   {
     slug: "elegir-proveedor-desarrollo-software",
@@ -68,7 +71,8 @@ const ARTICLES = [
     title: "Cómo elegir un proveedor de desarrollo de software",
     excerpt:
       "Qué preguntar, qué pedir como prueba y qué señales de alerta buscar antes de contratar a alguien para construir software para tu empresa.",
-    date: "Próximamente",
+    date: "Febrero 2026",
+    href: "/blog/elegir-proveedor-desarrollo-software",
   },
 ];
 
@@ -171,7 +175,7 @@ export default function BlogPage() {
               })}
             </motion.div>
 
-            {/* Newsletter / Coming soon */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -186,14 +190,14 @@ export default function BlogPage() {
 
                   <div className="relative">
                     <span className="mb-4 block font-mono text-caption uppercase tracking-widest text-luvant-600">
-                      Contenido en camino
+                      ¿Tenés un proyecto?
                     </span>
                     <h3 className="mx-auto mb-3 max-w-md text-h3 text-gradient-bright">
-                      Estamos preparando los primeros artículos
+                      Hablemos de cómo resolver tu problema con tecnología
                     </h3>
                     <p className="mx-auto max-w-sm text-sm text-luvant-400">
-                      Mientras tanto, si tenés dudas sobre procesamiento de
-                      documentos o automatización, escribinos.
+                      Si tenés dudas sobre procesamiento de documentos,
+                      automatización o desarrollo a medida, escribinos.
                     </p>
                     <div className="mt-8">
                       <Link
