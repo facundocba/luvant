@@ -73,5 +73,5 @@ export const situationsHeading = {
 
 export const footer = {
   blurb: "Sistemas, automatizaciones y lectura de documentos, escritos para tu operación.",
-  madeIn: "Hecho en Córdoba",
+  madeIn: "Todos los derechos reservados",
 };
