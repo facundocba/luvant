@@ -37,7 +37,7 @@ export default function Desk({ windows, sticker, height, className }: Props) {
       ref={ref}
       style={{ "--h": `${height}px` } as CSSProperties}
       className={cn(
-        "relative -mx-5 mt-7 h-[220px] overflow-hidden lg:mx-0 lg:mt-11 lg:h-[var(--h)] lg:overflow-visible",
+        "relative mb-20 mt-7 lg:mb-0 lg:mt-11 lg:h-[var(--h)]",
         className,
       )}
     >
@@ -56,8 +56,8 @@ export default function Desk({ windows, sticker, height, className }: Props) {
             } as MotionStyle
           }
           className={cn(
-            "absolute lg:left-[var(--l)] lg:right-[var(--rt)] lg:top-[var(--t)] lg:w-[var(--w)]",
-            i === 0 ? "left-5 right-[-40px] top-2.5" : "hidden lg:block",
+            "lg:absolute lg:left-[var(--l)] lg:right-[var(--rt)] lg:top-[var(--t)] lg:w-[var(--w)]",
+            i > 0 && "hidden lg:block",
           )}
         >
           <motion.div
@@ -77,7 +77,7 @@ export default function Desk({ windows, sticker, height, className }: Props) {
           main={sticker.main}
           sub={sticker.sub}
           style={{ "--sl": sticker.left, "--sb": sticker.bottom } as CSSProperties}
-          className="absolute bottom-3.5 left-8 z-10 lg:bottom-[var(--sb)] lg:left-[var(--sl)]"
+          className="absolute -bottom-12 left-5 z-10 lg:bottom-[var(--sb)] lg:left-[var(--sl)]"
         />
       )}
     </div>

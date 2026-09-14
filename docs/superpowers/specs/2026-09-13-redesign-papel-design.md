@@ -271,3 +271,17 @@ Pendiente, a decidir:
 - `out/` sigue trackeado en git y viejo (CI lo regenera y lo sube por FTP); conviene ignorarlo y sacarlo del repo.
 - `/lp/facturas` nombra a Embalse fuera del sticker; está fuera del alcance de esta spec.
 - Deploy: al pushear a `master` (`deploy.yml` corregido), CI construye y sube `out/` por FTP; las redirecciones 301 quedan en `.htaccess` y se verifican en producción.
+
+## 16. Estado (14 de septiembre de 2026): en producción
+
+Commits en `master`, pusheados: `18cd3c5` (rediseño), `819e3f3` (`out/` regenerado), `b136883` (301 como `RewriteRule` + `ErrorDocument 404`).
+
+Cómo se deploya en realidad: el panel de Ferozo hace pull del repo (rama `master`) y Apache sirve `out/` vía el `.htaccess` de la raíz. Consecuencias: `out/` **debe quedar commiteado con cada build** (corrige lo dicho en §15: no sacarlo del repo). El workflow `deploy.yml` (FTP) no es el camino real: su run #1 falló en el paso FTP (secrets nunca configurados); candidato a borrarse.
+
+Verificado en producción: home con título nuevo, cinco servicios, Lens, contacto, gracias, blog, `/lp/facturas`, OG, assets, `/api/contact.php` responde (405 a GET). El form de contacto no se probó end-to-end en producción todavía.
+
+Abierto:
+- Las 301 y la 404 custom no están activas aunque el `.htaccess` de la raíz del servidor tiene el contenido nuevo (pegado a mano). Los 404 de rutas reescritas a `out/` vuelven sin los headers del `.htaccess`, cosa que sí traen `/` y `/api/…`: sospecha de que el docroot del dominio es otra carpeta u otro `.htaccess`. Diagnóstico pendiente: agregar `Header set X-Luvant "v2"` al `.htaccess` del servidor y mirar `curl -I https://luvant.com.ar/`; si no aparece, buscar el directorio raíz real del dominio en el panel.
+- El deploy del panel parece no copiar `.htaccess` (dotfile); sin confirmar.
+- Pie de página: reemplazar "Hecho en Córdoba" (`footer.madeIn` en `src/content/shared.ts`, y el pie del mail a Pablo) por un slogan. Propuestas cortas: "Nunca más a mano." (recomendada), "Nada a mano.", "Que se haga solo.", "Nadie transcribe."; sin decidir.
+- Siguen: Lighthouse perf (GTM + gtag), los dos solapamientos visuales, Embalse en `/lp/facturas`.
