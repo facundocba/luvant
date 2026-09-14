@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #f7efe2; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #a83c26; }
+    .eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: 0.19em; text-transform: uppercase; }
+    .card { border-radius: 5px; overflow: hidden; background: #fffaf2; border: 1px solid rgba(42,33,28,0.10); box-shadow: 0 16px 34px rgba(42,33,28,0.07); }
+    .cbody { padding: 22px 24px 26px; }
+    .ct { font-size: 21px; font-weight: 600; letter-spacing: -0.018em; color: #2a211c; }
+    .cd { margin-top: 8px; font-size: 15.5px; line-height: 1.45; color: rgba(42,33,28,0.66); text-wrap: pretty; }
+    .cw { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(42,33,28,0.12); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(42,33,28,0.5); }
+    .btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 30px; border-radius: 4px; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; }
+    .sg { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.06em; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 2680px; box-sizing: border-box; background: #f7efe2; color: #2a211c; font-family: 'Schibsted Grotesk', system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ HERO: la cuadra dibujada, texto en el cielo ============ -->
+  <div style="position: relative; height: 860px;">
+    <svg viewBox="0 0 1440 860" width="1440" height="860" style="position: absolute; inset: 0; display: block;" aria-label="Ilustración de una cuadra con seis locales">
+      <defs>
+        <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f3e4cd"></stop><stop offset="100%" stop-color="#f9f1e5"></stop>
+        </linearGradient>
+        <pattern id="toldoA" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="#f7efe2"></rect><rect width="17" height="34" fill="#c4552f"></rect></pattern>
+        <pattern id="toldoB" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="#f7efe2"></rect><rect width="17" height="34" fill="#1d5b57"></rect></pattern>
+        <pattern id="toldoC" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="#2a211c"></rect><rect width="17" height="34" fill="#e0a02e"></rect></pattern>
+      </defs>
+
+      <rect width="1440" height="860" fill="url(#cielo)"></rect>
+
+      <!-- cables -->
+      <path d="M0 250 Q 360 300 720 258 T 1440 268" fill="none" stroke="#2a211c" stroke-width="2" opacity="0.34"></path>
+      <path d="M0 292 Q 360 344 720 300 T 1440 312" fill="none" stroke="#2a211c" stroke-width="2" opacity="0.2"></path>
+
+      <!-- 1 · PANADERÍA -->
+      <rect x="0" y="452" width="252" height="288" fill="#c4552f"></rect>
+      <rect x="18" y="470" width="216" height="56" fill="#f7efe2"></rect>
+      <text x="126" y="508" class="sg" font-size="23" fill="#c4552f" text-anchor="middle">PANADERÍA</text>
+      <path d="M6 546 L246 546 L232 604 L20 604 Z" fill="url(#toldoA)"></path>
+      <rect x="34" y="622" width="86" height="118" fill="#f4e2c8"></rect>
+      <rect x="44" y="636" width="66" height="34" fill="#e0a02e" opacity="0.75"></rect>
+      <rect x="44" y="682" width="66" height="30" fill="#e0a02e" opacity="0.55"></rect>
+      <rect x="146" y="622" width="72" height="118" fill="#7d2f18"></rect>
+      <circle cx="208" cy="686" r="4" fill="#e0a02e"></circle>
+
+      <!-- 2 · CONSULTORIO -->
+      <rect x="252" y="404" width="232" height="336" fill="#f3e7d4"></rect>
+      <rect x="252" y="404" width="232" height="16" fill="#1d5b57"></rect>
+      <rect x="270" y="440" width="196" height="54" fill="#1d5b57"></rect>
+      <text x="368" y="477" class="sg" font-size="21" fill="#f7efe2" text-anchor="middle">CONSULTORIO</text>
+      <path d="M258 514 L478 514 L466 566 L270 566 Z" fill="url(#toldoB)"></path>
+      <rect x="278" y="586" width="80" height="76" fill="#cfe0d8"></rect>
+      <rect x="378" y="586" width="80" height="76" fill="#cfe0d8"></rect>
+      <rect x="330" y="672" width="76" height="68" fill="#1d5b57"></rect>
+      <rect x="356" y="700" width="24" height="4" fill="#f7efe2"></rect>
+      <rect x="366" y="690" width="4" height="24" fill="#f7efe2"></rect>
+
+      <!-- 3 · ESTUDIO CONTABLE -->
+      <rect x="484" y="470" width="250" height="270" fill="#1d5b57"></rect>
+      <rect x="502" y="492" width="214" height="50" fill="#f7efe2"></rect>
+      <text x="609" y="527" class="sg" font-size="18" fill="#1d5b57" text-anchor="middle">ESTUDIO CONTABLE</text>
+      <path d="M490 560 L728 560 L716 610 L502 610 Z" fill="url(#toldoC)"></path>
+      <rect x="512" y="630" width="90" height="110" fill="#e8f0ea" opacity="0.9"></rect>
+      <rect x="526" y="648" width="62" height="5" fill="#1d5b57" opacity="0.4"></rect>
+      <rect x="526" y="664" width="62" height="5" fill="#1d5b57" opacity="0.4"></rect>
+      <rect x="526" y="680" width="40" height="5" fill="#1d5b57" opacity="0.4"></rect>
+      <rect x="630" y="630" width="80" height="110" fill="#123f3c"></rect>
+
+      <!-- 4 · INMOBILIARIA -->
+      <rect x="734" y="418" width="228" height="322" fill="#e0a02e"></rect>
+      <path d="M734 418 L848 356 L962 418 Z" fill="#a8791c"></path>
+      <rect x="754" y="446" width="188" height="50" fill="#2a211c"></rect>
+      <text x="848" y="481" class="sg" font-size="19" fill="#e0a02e" text-anchor="middle">INMOBILIARIA</text>
+      <rect x="760" y="524" width="176" height="118" fill="#fdf6e9"></rect>
+      <rect x="776" y="542" width="66" height="42" fill="#e0a02e" opacity="0.5"></rect>
+      <rect x="856" y="542" width="66" height="42" fill="#e0a02e" opacity="0.5"></rect>
+      <rect x="776" y="598" width="66" height="28" fill="#e0a02e" opacity="0.3"></rect>
+      <rect x="856" y="598" width="66" height="28" fill="#e0a02e" opacity="0.3"></rect>
+      <rect x="812" y="664" width="72" height="76" fill="#8a5f12"></rect>
+
+      <!-- 5 · FERRETERÍA -->
+      <rect x="962" y="462" width="240" height="278" fill="#a83c26"></rect>
+      <rect x="978" y="482" width="208" height="60" fill="#f7efe2"></rect>
+      <text x="1082" y="522" class="sg" font-size="24" fill="#a83c26" text-anchor="middle">FERRETERÍA</text>
+      <path d="M968 562 L1196 562 L1184 612 L980 612 Z" fill="url(#toldoA)"></path>
+      <rect x="992" y="632" width="180" height="108" fill="#6d2415"></rect>
+      <rect x="1010" y="650" width="40" height="72" fill="#d8c3a4" opacity="0.6"></rect>
+      <rect x="1064" y="650" width="40" height="72" fill="#d8c3a4" opacity="0.45"></rect>
+      <rect x="1118" y="650" width="40" height="72" fill="#d8c3a4" opacity="0.6"></rect>
+
+      <!-- 6 · MUNICIPALIDAD -->
+      <rect x="1202" y="382" width="238" height="358" fill="#f3e7d4"></rect>
+      <path d="M1202 382 L1321 322 L1440 382 Z" fill="#ded0bb"></path>
+      <rect x="1202" y="382" width="238" height="12" fill="#2a211c" opacity="0.16"></rect>
+      <rect x="1226" y="418" width="190" height="44" fill="#2a211c"></rect>
+      <text x="1321" y="450" class="sg" font-size="17" fill="#f3e7d4" text-anchor="middle">MUNICIPALIDAD</text>
+      <rect x="1230" y="492" width="26" height="248" fill="#e6d7c0"></rect>
+      <rect x="1282" y="492" width="26" height="248" fill="#e6d7c0"></rect>
+      <rect x="1334" y="492" width="26" height="248" fill="#e6d7c0"></rect>
+      <rect x="1386" y="492" width="26" height="248" fill="#e6d7c0"></rect>
+      <rect x="1300" y="640" width="52" height="100" fill="#4a3b32"></rect>
+      <circle cx="1321" cy="360" r="13" fill="#a83c26"></circle>
+
+      <!-- vereda y calle -->
+      <rect x="0" y="740" width="1440" height="54" fill="#e3d5c0"></rect>
+      <rect x="0" y="794" width="1440" height="66" fill="#cdbca4"></rect>
+      <rect x="0" y="794" width="1440" height="4" fill="#2a211c" opacity="0.14"></rect>
+
+      <!-- gente -->
+      <g fill="#2a211c">
+        <circle cx="300" cy="700" r="11"></circle><path d="M289 714h22v40h-22z"></path><path d="M292 754h6v22h-6zM302 754h6v22h-6z"></path>
+        <circle cx="676" cy="706" r="10"></circle><path d="M666 719h20v36h-20z" fill="#a83c26"></path><path d="M669 755h5v20h-5zM678 755h5v20h-5z"></path>
+        <circle cx="1150" cy="698" r="11"></circle><path d="M1139 712h22v40h-22z" fill="#1d5b57"></path><path d="M1142 752h6v24h-6zM1152 752h6v24h-6z"></path>
+      </g>
+      <!-- moto -->
+      <g><circle cx="470" cy="770" r="17" fill="none" stroke="#2a211c" stroke-width="5"></circle><circle cx="544" cy="770" r="17" fill="none" stroke="#2a211c" stroke-width="5"></circle><path d="M470 770 L502 742 L536 742 L544 770" fill="none" stroke="#2a211c" stroke-width="5" stroke-linejoin="round"></path></g>
+      <!-- árbol -->
+      <g><rect x="884" y="700" width="10" height="52" fill="#5c4632"></rect><circle cx="889" cy="686" r="30" fill="#1d5b57" opacity="0.85"></circle><circle cx="866" cy="700" r="19" fill="#1d5b57" opacity="0.7"></circle><circle cx="912" cy="700" r="19" fill="#1d5b57" opacity="0.7"></circle></g>
+    </svg>
+
+    <div style="position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 34px 76px;">
+      <a href="/" style="font-size: 19px; font-weight: 700; letter-spacing: 0.04em;">LUVANT</a>
+      <div style="display: flex; gap: 32px; font-size: 15px; font-weight: 500; color: rgba(42,33,28,0.78);">
+        <a href="/servicios/desarrollo-software-a-medida">Software a medida</a>
+        <a href="/servicios/automatizacion-de-procesos">Automatización</a>
+        <a href="/productos/lens">Luvant Lens</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="/contacto" style="padding: 12px 22px; border: 1px solid rgba(42,33,28,0.4); border-radius: 4px; font-size: 14.5px; font-weight: 600;">Agendá 15 minutos</a>
+    </div>
+
+    <div style="position: absolute; left: 76px; top: 132px; max-width: 720px;">
+      <div class="eyebrow" style="color: {{accent}};">Córdoba, Argentina</div>
+      <h1 style="margin: 18px 0 0; font-size: 74px; font-weight: 600; line-height: 0.99; letter-spacing: -0.035em; text-wrap: balance;">Programas hechos para tu negocio, no para el de otro.</h1>
+      <div style="display: flex; align-items: center; gap: 26px; margin-top: 30px;">
+        <a href="/contacto" class="btn" style="background: {{accent}}; color: #fdf8f0;">Agendá 15 minutos
+          <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#fdf8f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+        <span style="font-size: 15.5px; color: rgba(42,33,28,0.66);">Tocá un local y mirá qué se le hizo ahí.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TIRA ============ -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 30px 76px; border-top: 1px solid rgba(42,33,28,0.12); border-bottom: 1px solid rgba(42,33,28,0.12); font-size: 14.5px; font-weight: 500; color: rgba(42,33,28,0.6);">
+    <span>Panaderías</span><span>Consultorios</span><span>Estudios contables</span><span>Inmobiliarias</span><span>Ferreterías</span><span>Municipalidades</span>
+  </div>
+
+  <!-- ============ LOS SEIS ============ -->
+  <div style="padding: 92px 76px 0;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px;">
+      <h2 style="margin: 0; max-width: 780px; font-size: 52px; font-weight: 600; line-height: 1.05; letter-spacing: -0.028em; text-wrap: balance;">Seis locales de la misma cuadra. Seis programas que no se parecen en nada.</h2>
+      <p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.5; color: rgba(42,33,28,0.62); text-wrap: pretty;">Por eso es a medida. Lo que le sirve a la panadería de la esquina no le sirve al contador de al lado, y ninguno de los dos sirve en la municipalidad.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 54px;">
+
+      <div class="card">
+        <svg viewBox="0 0 400 232" style="display: block; width: 100%; height: 232px;" aria-hidden="true">
+          <rect width="400" height="232" fill="#c4552f"></rect>
+          <path d="M0 0 L400 0 L400 44 L0 44 Z" fill="url(#toldoA)"></path>
+          <ellipse cx="150" cy="150" rx="66" ry="30" fill="#f0d9b4" transform="rotate(-9 150 150)"></ellipse>
+          <ellipse cx="238" cy="168" rx="60" ry="27" fill="#e4c294" transform="rotate(7 238 168)"></ellipse>
+          <path d="M110 138 L190 130 M118 152 L198 144" stroke="#c4552f" stroke-width="4" stroke-linecap="round" opacity="0.6"></path>
+        </svg>
+        <div class="cbody"><div class="ct">La panadería</div><div class="cd">Lee los pedidos que entran por WhatsApp, los arma solos y los deja ordenados por hora de retiro.</div><div class="cw">Puesta en marcha · [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 400 232" style="display: block; width: 100%; height: 232px;" aria-hidden="true">
+          <rect width="400" height="232" fill="#1d5b57"></rect>
+          <path d="M0 0 L400 0 L400 44 L0 44 Z" fill="url(#toldoB)"></path>
+          <rect x="120" y="96" width="160" height="104" rx="6" fill="#e8f0ea"></rect>
+          <rect x="192" y="120" width="16" height="56" fill="#1d5b57"></rect>
+          <rect x="172" y="140" width="56" height="16" fill="#1d5b57"></rect>
+        </svg>
+        <div class="cbody"><div class="ct">El consultorio</div><div class="cd">Da los turnos, los confirma y recuerda el día anterior, sin que nadie deje de atender el mostrador.</div><div class="cw">Puesta en marcha · [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 400 232" style="display: block; width: 100%; height: 232px;" aria-hidden="true">
+          <rect width="400" height="232" fill="#2a211c"></rect>
+          <path d="M0 0 L400 0 L400 44 L0 44 Z" fill="url(#toldoC)"></path>
+          <rect x="128" y="86" width="120" height="120" fill="#f7efe2" transform="rotate(-6 188 146)"></rect>
+          <rect x="156" y="98" width="120" height="120" fill="#fdf8f0"></rect>
+          <rect x="174" y="122" width="84" height="6" fill="#2a211c" opacity="0.35"></rect>
+          <rect x="174" y="142" width="84" height="6" fill="#2a211c" opacity="0.35"></rect>
+          <rect x="174" y="162" width="50" height="6" fill="#e0a02e"></rect>
+        </svg>
+        <div class="cbody"><div class="ct">El estudio contable</div><div class="cd">Lee cada factura de los clientes y la carga en el sistema igual que la cargarías vos.</div><div class="cw">Puesta en marcha · [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 400 232" style="display: block; width: 100%; height: 232px;" aria-hidden="true">
+          <rect width="400" height="232" fill="#a83c26"></rect>
+          <path d="M0 0 L400 0 L400 44 L0 44 Z" fill="url(#toldoA)"></path>
+          <rect x="150" y="150" width="112" height="16" rx="8" fill="#f7efe2" transform="rotate(-38 206 158)"></rect>
+          <rect x="228" y="96" width="46" height="30" rx="5" fill="#f7efe2" transform="rotate(-38 251 111)"></rect>
+        </svg>
+        <div class="cbody"><div class="ct">La ferretería</div><div class="cd">Mira lo que sale y avisa antes de que se termine, con tu propia planilla de siempre.</div><div class="cw">Puesta en marcha · [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <svg viewBox="0 0 400 232" style="display: block; width: 100%; height: 232px;" aria-hidden="true">
+          <rect width="400" height="232" fill="#e0a02e"></rect>
+          <path d="M200 52 L318 112 L82 112 Z" fill="#2a211c"></path>
+          <rect x="96" y="112" width="20" height="88" fill="#2a211c"></rect>
+          <rect x="146" y="112" width="20" height="88" fill="#2a211c"></rect>
+          <rect x="234" y="112" width="20" height="88" fill="#2a211c"></rect>
+          <rect x="284" y="112" width="20" height="88" fill="#2a211c"></rect>
+          <rect x="82" y="200" width="236" height="14" fill="#2a211c"></rect>
+        </svg>
+        <div class="cbody"><div class="ct">La municipalidad</div><div class="cd">Junta los reclamos que entran por cuatro lados, los clasifica y los deriva al área que corresponde.</div><div class="cw">Cliente desde [año]</div></div>
+      </div>
+
+      <div class="card" style="background: {{accent}}; border-color: transparent;">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 30px 28px 28px;">
+          <div>
+            <div class="ct" style="font-size: 27px; letter-spacing: -0.025em; color: #fdf8f0;">El tuyo</div>
+            <div class="cd" style="color: rgba(253,248,240,0.88); font-size: 16.5px;">Contame en quince minutos qué es lo que hacés todos los días y te digo si se puede, cuánto sale y cuánto tarda. Si no te conviene, te lo digo ahí mismo.</div>
+          </div>
+          <a href="/contacto" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; margin-top: 26px; padding: 17px 22px; border-radius: 4px; background: #fdf8f0; color: #2a211c; font-size: 16.5px; font-weight: 600;">Agendá 15 minutos
+            <svg width="19" height="15" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#2a211c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ LA CREDENCIAL ============ -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: center; margin: 104px 76px 0; padding: 54px 60px; border-radius: 5px; background: #2a211c; color: #f7efe2;">
+    <div>
+      <div class="eyebrow" style="color: #e0a02e;">Municipalidad de Embalse, Córdoba</div>
+      <p style="margin: 22px 0 0; font-size: 30px; font-weight: 500; line-height: 1.28; letter-spacing: -0.02em; text-wrap: pretty;">«[Acá va la frase real de quien lo usa en el municipio, con nombre y cargo.]»</p>
+      <p style="margin: 22px 0 0; font-size: 16px; line-height: 1.5; color: rgba(247,239,226,0.66);">[Qué se automatizó, desde cuándo y qué volumen mueve por mes.] Fue el primer municipio con el que trabajé y sigue andando.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div><div style="font-size: 58px; font-weight: 600; letter-spacing: -0.04em; color: #e0a02e;">[N]</div><div style="margin-top: 6px; font-size: 15px; color: rgba(247,239,226,0.64);">años andando sin que nadie lo toque</div></div>
+      <div><div style="font-size: 58px; font-weight: 600; letter-spacing: -0.04em; color: #e0a02e;">[N]</div><div style="margin-top: 6px; font-size: 15px; color: rgba(247,239,226,0.64);">trámites por mes que antes se cargaban a mano</div></div>
+      <div><div style="font-size: 58px; font-weight: 600; letter-spacing: -0.04em; color: #e0a02e;">1</div><div style="margin-top: 6px; font-size: 15px; color: rgba(247,239,226,0.64);">persona que lo programó, y es con la que hablás</div></div>
+      <div><div style="font-size: 58px; font-weight: 600; letter-spacing: -0.04em; color: #e0a02e;">0</div><div style="margin-top: 6px; font-size: 15px; color: rgba(247,239,226,0.64);">sorpresas en el precio: se cierra antes de empezar</div></div>
+    </div>
+  </div>
+
+  <!-- ============ CIERRE ============ -->
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 118px 76px 0;">
+    <h2 style="margin: 0; max-width: 900px; font-size: 60px; font-weight: 600; line-height: 1.03; letter-spacing: -0.032em; text-wrap: balance;">Quince minutos y sabés si te sirve.</h2>
+    <p style="margin: 22px 0 0; max-width: 560px; font-size: 18.5px; line-height: 1.5; color: rgba(42,33,28,0.66); text-wrap: pretty;">Sin propuesta de veinte páginas, sin vendedor en el medio y sin que tengas que saber nada de sistemas.</p>
+    <a href="/contacto" class="btn" style="margin-top: 36px; background: {{accent}}; color: #fdf8f0; font-size: 18px; padding: 20px 34px;">Agendá 15 minutos
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#fdf8f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#a83c26","options":["#a83c26","#1d5b57","#2a211c","#c4552f"]}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#a83c26' };
+  }
+}
+</script>
+</body>
+</html>

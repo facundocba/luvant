@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&family=Barlow+Condensed:wght@700;800&display=swap">
+  <style>
+    body { margin: 0; background: #fafafa; }
+    a { color: #0e0e0e; text-decoration: none; }
+    a:hover { color: #e5322d; }
+    .num { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 0.85; }
+    .lane { position: relative; height: 60px; border-top: 2px dashed #b8b8b8; }
+    .lane:last-child { border-bottom: 2px dashed #b8b8b8; }
+    .lane .lbl { position: absolute; left: 0; top: 14px; font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0.02em; }
+    .lane .mk { position: absolute; top: 16px; width: 26px; height: 26px; }
+    .meta { position: absolute; right: 0; top: 0; width: 24px; height: 100%; background-image: linear-gradient(45deg, #0e0e0e 25%, transparent 25%, transparent 75%, #0e0e0e 75%), linear-gradient(45deg, #0e0e0e 25%, transparent 25%, transparent 75%, #0e0e0e 75%); background-size: 12px 12px; background-position: 0 0, 6px 6px; background-color: #fafafa; }
+    .reto { box-sizing: border-box; min-height: 92px; padding: 14px 18px; border: 2px solid #0e0e0e; }
+    .reto.on { border-color: #e5322d; box-shadow: 4px 4px 0 #e5322d; }
+    .reto .t { font-family: Barlow, sans-serif; font-size: 18px; font-weight: 800; line-height: 1.1; }
+    .reto .c { margin-top: 6px; font-family: Barlow, sans-serif; font-size: 13.5px; font-weight: 600; color: #666; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1800px; box-sizing: border-box; background: #fafafa; color: #0e0e0e; font-family: Barlow, system-ui, sans-serif; overflow: hidden; padding: 0 72px; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ LA LARGADA ============ -->
+  <div style="position: relative; height: 900px;">
+    <a href="/" style="position: absolute; left: 0; top: 36px; font-size: 15px; font-weight: 800; letter-spacing: 0.1em;">LUVANT</a>
+    <a href="/contacto" style="position: absolute; right: 0; top: 34px; font-size: 14px; font-weight: 600;">Menú</a>
+
+    <h1 style="margin: 0; padding-top: 104px; max-width: 1180px; font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; text-wrap: balance;">¿Le ganás a la inteligencia artificial en tu propio trabajo?</h1>
+    <p style="margin: 14px 0 0 0; max-width: 720px; font-size: 19px; font-weight: 600; line-height: 1.35; color: #555;">Elegí un desafío de treinta segundos. La IA corre de verdad, con lo mismo que vos. Después hablamos de lo tuyo.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 30px;">
+      <div class="reto on"><div class="t">Responder 10 pedidos por WhatsApp</div><div class="c">Panadería, rotisería, verdulería</div></div>
+      <div class="reto"><div class="t">Dar 8 turnos sin pisar ninguno</div><div class="c">Consultorio, peluquería, taller</div></div>
+      <div class="reto"><div class="t">Clasificar 20 reclamos vecinales</div><div class="c">Municipio, consorcio, cooperativa</div></div>
+      <div class="reto"><div class="t">Encontrar una cláusula en 40 páginas</div><div class="c">Estudio jurídico, inmobiliaria, vos</div></div>
+    </div>
+
+    <div class="num" style="margin-top: 22px; font-size: 150px; color: #0e0e0e;">00:00,0</div>
+
+    <div style="position: relative; margin-top: 18px;">
+      <div class="lane">
+        <span class="lbl">VOS</span>
+        <span class="mk" style="left: 92px; background: #0e0e0e;"></span>
+        <span class="meta" aria-hidden="true"></span>
+      </div>
+      <div class="lane">
+        <span class="lbl" style="color: #e5322d;">LA IA</span>
+        <span class="mk" style="left: 92px; background: #e5322d;"></span>
+        <span class="meta" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 24px; margin-top: 28px;">
+      <a href="#llegada" style="display: inline-flex; align-items: center; justify-content: center; width: 260px; height: 68px; background: #e5322d; color: #ffffff; font-size: 22px; font-weight: 800; letter-spacing: 0.02em;">Empezar</a>
+      <span style="font-size: 15px; font-weight: 600; color: #555; max-width: 520px; line-height: 1.4;">Sin registrarte. Si no querés jugar, agendá directo: el botón está al final.</span>
+    </div>
+  </div>
+
+  <!-- ============ LA LLEGADA ============ -->
+  <div id="llegada" style="padding-top: 44px; border-top: 3px solid #0e0e0e;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end;">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0.02em;">VOS · 10 pedidos por WhatsApp</div>
+        <div class="num" style="margin-top: 6px; font-size: 160px;">01:12,4</div>
+      </div>
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0.02em; color: #e5322d;">LA IA · los mismos 10</div>
+        <div class="num" style="margin-top: 6px; font-size: 160px; color: #e5322d;">00:06,0</div>
+      </div>
+    </div>
+
+    <div style="position: relative; margin-top: 26px;">
+      <div class="lane">
+        <span class="lbl">VOS</span>
+        <span class="mk" style="left: 196px; background: #0e0e0e;"></span>
+        <span class="meta" aria-hidden="true"></span>
+      </div>
+      <div class="lane">
+        <span class="lbl" style="color: #e5322d;">LA IA</span>
+        <span class="mk" style="left: 1246px; background: #e5322d;"></span>
+        <span class="meta" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: start; margin-top: 44px;">
+      <div>
+        <p style="margin: 0; max-width: 760px; font-size: 40px; font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance;">Esto era un juego. Lo tuyo no: es todos los días, con tus clientes y tus sistemas.</p>
+        <p style="margin: 18px 0 0 0; max-width: 640px; font-size: 18px; font-weight: 600; line-height: 1.4; color: #555;">Hacemos IA a medida: un programa para cómo trabajás vos, conectado a lo que ya usás, con precio cerrado antes de empezar. Para un negocio, un estudio, un municipio, o para vos solo.</p>
+        <p style="margin: 14px 0 0 0; font-size: 13px; color: #888;">Los tiempos de la carrera son de muestra: en la página real se mide cada corrida. La IA corre contra Lens y contra tu propio sistema.</p>
+      </div>
+      <div style="padding-top: 6px;">
+        <a href="#agenda" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 72px; box-sizing: border-box; background: #e5322d; color: #ffffff; font-size: 20px; font-weight: 800;">Agendá 15 minutos</a>
+        <p style="margin: 12px 0 0 0; font-size: 14px; line-height: 1.5; color: #555;">Sin costo. En la llamada te decimos si tiene sentido, qué haría exactamente y cuánto costaría. Si no conviene, también.</p>
+        <p style="margin: 14px 0 0 0; font-size: 14px; line-height: 1.5; color: #555;">Nuestro primer caso fue la Municipalidad de Embalse, Córdoba. Hablás con el que lo construye.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

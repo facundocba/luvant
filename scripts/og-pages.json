@@ -1,0 +1,11 @@
+[
+  { "slug": "home", "eyebrow": "Software a medida · Córdoba", "title": "Dejá de perder horas en lo mismo de ", "accent": "todos los días." },
+  { "slug": "desarrollo-software-a-medida", "eyebrow": "Ficha 01 · Software a medida", "title": "El sistema que tu negocio necesita ", "accent": "y no existe." },
+  { "slug": "automatizacion-con-ia", "eyebrow": "Ficha 02 · Automatización con IA", "title": "Que los correos, las facturas y los pedidos se carguen ", "accent": "solos." },
+  { "slug": "datos-y-tableros", "eyebrow": "Ficha 03 · Datos y tableros", "title": "Todos tus números en una pantalla ", "accent": "que se entiende." },
+  { "slug": "integracion-de-sistemas", "eyebrow": "Ficha 04 · Integración de sistemas", "title": "Tus sistemas hablando entre sí. ", "accent": "Nada cargado dos veces." },
+  { "slug": "web-ecommerce-y-apps", "eyebrow": "Ficha 05 · Web, e-commerce y apps", "title": "Tu sitio, tu tienda o tu app, ", "accent": "conectados a tu negocio." },
+  { "slug": "lens", "eyebrow": "Producto · Luvant Lens", "title": "Dejá de buscar a mano en miles de PDFs. ", "accent": "Lens los lee por vos.", "sticker": "Normativa al día" },
+  { "slug": "contacto", "eyebrow": "Tu caso", "title": "¿Qué es lo que hacés todos los días ", "accent": "a mano?", "sticker": "Gratis · 15 min" },
+  { "slug": "blog", "eyebrow": "Blog", "title": "Lo que aprendimos haciendo software ", "accent": "para otros." }
+]

@@ -1,104 +1,35 @@
 import type { MetadataRoute } from "next";
+import { contact } from "@/content/contact";
+import { home } from "@/content/home";
+import { lens } from "@/content/lens";
+import { service as s1 } from "@/content/services/desarrollo-software-a-medida";
+import { service as s2 } from "@/content/services/automatizacion-con-ia";
+import { service as s3 } from "@/content/services/datos-y-tableros";
+import { service as s4 } from "@/content/services/integracion-de-sistemas";
+import { service as s5 } from "@/content/services/web-ecommerce-y-apps";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = "https://luvant.com.ar";
+const posts: [string, string][] = [
+  ["por-que-tu-empresa-necesita-software-a-medida", "2026-02-01"],
+  ["automatizar-carga-facturas", "2026-09-13"],
+  ["que-es-una-api-y-por-que-importa", "2026-09-13"],
+  ["ocr-documentos-argentina", "2026-09-13"],
+  ["senales-de-que-necesitas-automatizar", "2026-02-24"],
+  ["elegir-proveedor-desarrollo-software", "2026-02-25"],
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const entry = (path: string, date: string, priority: number): MetadataRoute.Sitemap[number] => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date(date),
+    priority,
+  });
   return [
-    {
-      url: BASE_URL,
-      lastModified: new Date("2026-02-15"),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${BASE_URL}/productos`,
-      lastModified: new Date("2026-02-01"),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/productos/lens`,
-      lastModified: new Date("2026-02-01"),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/nosotros`,
-      lastModified: new Date("2026-01-15"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date("2026-02-10"),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/blog/por-que-tu-empresa-necesita-software-a-medida`,
-      lastModified: new Date("2026-02-01"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/automatizar-carga-facturas`,
-      lastModified: new Date("2026-02-10"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/contacto`,
-      lastModified: new Date("2026-01-15"),
-      changeFrequency: "yearly",
-      priority: 0.6,
-    },
-    {
-      url: `${BASE_URL}/blog/que-es-una-api-y-por-que-importa`,
-      lastModified: new Date("2026-02-20"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/ocr-documentos-argentina`,
-      lastModified: new Date("2026-02-22"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/senales-de-que-necesitas-automatizar`,
-      lastModified: new Date("2026-02-24"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/elegir-proveedor-desarrollo-software`,
-      lastModified: new Date("2026-02-25"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/servicios/desarrollo-software-a-medida`,
-      lastModified: new Date("2026-02-25"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/servicios/automatizacion-de-procesos`,
-      lastModified: new Date("2026-02-25"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/servicios/integracion-de-sistemas`,
-      lastModified: new Date("2026-02-25"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/servicios/consultoria-tecnica`,
-      lastModified: new Date("2026-02-25"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    entry("/", home.updatedAt, 1),
+    ...[s1, s2, s3, s4, s5].map((s) => entry(s.path, s.updatedAt, 0.9)),
+    entry(lens.path, lens.updatedAt, 0.9),
+    entry(contact.path, contact.updatedAt, 0.6),
+    entry("/blog", "2026-09-13", 0.7),
+    ...posts.map(([slug, date]) => entry(`/blog/${slug}`, date, 0.6)),
   ];
 }

@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap">
+  <style>
+    body { margin: 0; background: #1e2a23; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #e7dfc9; }
+    .mono { font-family: 'Courier Prime', 'Courier New', monospace; }
+    .eyebrow { font-family: 'Courier Prime', monospace; font-size: 12.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #e7dfc9; }
+    .btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 30px; border-radius: 3px; background: #b0271c; color: #fdfcf7; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em; }
+
+    /* ---- átomos de interfaz (las pantallas) ---- */
+    .win { background: #fdfcf7; color: #1e2a23; border-radius: 10px; overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3); }
+    .winbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid rgba(30,42,35,0.1); background: #f6f2e6; }
+    .winbar .t { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
+    .winbar .s { display: flex; align-items: center; gap: 7px; font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.06em; color: #4a554d; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #3e6e63; }
+    .col { display: flex; flex-direction: column; gap: 8px; }
+    .colh { display: flex; align-items: baseline; justify-content: space-between; padding: 0 2px 6px; border-bottom: 2px solid #1e2a23; }
+    .colh .h { font-family: 'Courier Prime', monospace; font-size: 15px; font-weight: 700; }
+    .colh .n { font-family: 'Courier Prime', monospace; font-size: 10.5px; letter-spacing: 0.08em; color: #8a8272; }
+    .ped { padding: 10px 11px; border-radius: 6px; background: #ffffff; border: 1px solid rgba(30,42,35,0.1); box-shadow: 0 1px 2px rgba(30,42,35,0.05); }
+    .ped .q { font-size: 12.5px; font-weight: 600; }
+    .ped .i { margin-top: 3px; font-size: 11.5px; line-height: 1.35; color: #4a554d; }
+    .ped .st { display: inline-block; margin-top: 7px; padding: 3px 7px; border-radius: 3px; font-family: 'Courier Prime', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ok { background: rgba(62,110,99,0.14); color: #3e6e63; }
+    .pend { background: rgba(176,39,28,0.1); color: #b0271c; }
+    .nuevo { background: #1e2a23; color: #e7dfc9; }
+
+    .phone { width: 272px; height: 556px; border-radius: 34px; background: #1a1a18; padding: 12px; box-shadow: 0 40px 90px rgba(0,0,0,0.55); }
+    .screen { width: 100%; height: 100%; border-radius: 24px; background: #f6f2e6; color: #1e2a23; overflow: hidden; display: flex; flex-direction: column; }
+    .ph { padding: 16px 16px 12px; background: #1e2a23; color: #fdfcf7; }
+    .ph .t { font-size: 13px; font-weight: 600; }
+    .ph .s { display: flex; align-items: center; gap: 6px; margin-top: 3px; font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 0.06em; color: rgba(253,252,247,0.6); }
+    .msgs { display: flex; flex-direction: column; gap: 8px; padding: 14px 12px; }
+    .m { max-width: 86%; padding: 9px 11px; border-radius: 12px; font-size: 12px; line-height: 1.35; }
+    .m.in { align-self: flex-start; background: #ffffff; border: 1px solid rgba(30,42,35,0.1); border-bottom-left-radius: 3px; }
+    .m.out { align-self: flex-end; background: #1e2a23; color: #f6f2e6; border-bottom-right-radius: 3px; }
+    .m .h { display: block; margin-top: 5px; font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.06em; opacity: 0.55; text-align: right; }
+    .det { align-self: stretch; margin: 2px 0; padding: 10px 11px; border-radius: 8px; background: #e7dfc9; border-left: 3px solid #3e6e63; }
+    .det .k { font-family: 'Courier Prime', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #3e6e63; }
+    .det .v { margin-top: 4px; font-size: 12px; font-weight: 600; line-height: 1.35; }
+    .det .c { margin-top: 5px; font-family: 'Courier Prime', monospace; font-size: 10px; color: #4a554d; }
+
+    .card { border-radius: 8px; background: #243128; border: 1px solid rgba(231,223,201,0.1); overflow: hidden; }
+    .crop { position: relative; height: 200px; background: #f6f2e6; color: #1e2a23; overflow: hidden; }
+    .cbody { padding: 22px 24px 26px; }
+    .cr { font-family: 'Courier Prime', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #e7dfc9; }
+    .ct { margin-top: 9px; font-size: 22px; font-weight: 600; line-height: 1.12; letter-spacing: -0.02em; color: #fdfcf7; text-wrap: balance; }
+    .cm { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(231,223,201,0.14); font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(231,223,201,0.6); }
+    .row { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-bottom: 1px solid rgba(30,42,35,0.08); font-size: 12px; }
+    .row .k { font-family: 'Courier Prime', monospace; font-size: 11px; color: #8a8272; }
+    .chk { display: inline-flex; align-items: center; gap: 6px; font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 0.08em; color: #3e6e63; }
+    .pill { padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(231,223,201,0.22); font-size: 14.5px; font-weight: 500; color: rgba(246,242,230,0.85); }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 3040px; box-sizing: border-box; background: #1e2a23; color: #f6f2e6; font-family: 'Familjen Grotesk', system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ NAV ============ -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 30px 72px;">
+    <div style="display: flex; align-items: center; gap: 11px;">
+      <svg width="30" height="30" viewBox="0 0 56 56" aria-hidden="true"><rect width="56" height="56" rx="12" fill="#000"></rect><path d="M14 40L28 16L42 40" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="28" cy="16" r="4" fill="#fff"></circle></svg>
+      <span style="font-size: 19px; font-weight: 500; letter-spacing: 0.04em;">LUVANT</span>
+    </div>
+    <div style="display: flex; gap: 30px; font-size: 15px; font-weight: 500; color: rgba(246,242,230,0.85);">
+      <a href="/servicios/desarrollo-software-a-medida">Software a medida</a>
+      <a href="/servicios/automatizacion-de-procesos">Automatización</a>
+      <a href="/servicios/integracion-de-sistemas">Integración</a>
+      <a href="/productos/lens">Luvant Lens</a>
+      <a href="/nosotros">Nosotros</a>
+    </div>
+    <a href="/contacto" style="padding: 12px 22px; border: 1px solid rgba(231,223,201,0.5); border-radius: 3px; font-size: 14.5px; font-weight: 600;">Pedí tu presupuesto</a>
+  </div>
+
+  <!-- ============ HERO: el título arriba, el software abajo, a lo ancho ============ -->
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 56px 72px 0;">
+    <div class="eyebrow">Programas a medida · Córdoba, Argentina</div>
+    <h1 style="margin: 22px 0 0; max-width: 1000px; font-size: 80px; font-weight: 600; line-height: 0.96; letter-spacing: -0.035em; color: #fdfcf7; text-wrap: balance;">Dejá de perder horas en lo mismo de todos los días.</h1>
+    <p style="margin: 24px 0 0; max-width: 640px; font-size: 20px; line-height: 1.45; color: rgba(246,242,230,0.78); text-wrap: pretty;">Te escribo un programa que lo hace solo: para tu negocio, conectado a lo que ya usás, y con el precio cerrado antes de empezar.</p>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 32px;">
+      <a href="/contacto" class="btn">Pedí tu presupuesto
+        <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#fdfcf7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+      <span style="font-size: 14px; color: rgba(246,242,230,0.58);">Gratis, quince minutos. Salís sabiendo si se puede, cuánto sale y cuánto tarda.</span>
+    </div>
+  </div>
+
+  <!-- la composición de pantallas -->
+  <div style="position: relative; height: 640px; margin: 64px 72px 0;">
+
+    <!-- tablero de pedidos (atrás, centro) -->
+    <div class="win" style="position: absolute; left: 190px; top: 0; width: 900px;">
+      <div class="winbar">
+        <span class="t">Pedidos · jueves 12</span>
+        <span class="s"><span class="dot"></span>Conectado al WhatsApp del local · 09:42</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding: 18px 18px 22px;">
+        <div class="col">
+          <div class="colh"><span class="h">08:30</span><span class="n">3 retiros</span></div>
+          <div class="ped"><div class="q">Marina</div><div class="i">2 doc. medialunas · 1 pan de campo</div><span class="st ok">Confirmado</span></div>
+          <div class="ped"><div class="q">Ruiz</div><div class="i">1 torta de cumpleaños (12 p.)</div><span class="st ok">Confirmado</span></div>
+          <div class="ped"><div class="q">Kiosco 9 de Julio</div><div class="i">6 doc. facturas surtidas</div><span class="st ok">Confirmado</span></div>
+        </div>
+        <div class="col">
+          <div class="colh"><span class="h">09:15</span><span class="n">2 retiros</span></div>
+          <div class="ped"><div class="q">Lucía P.</div><div class="i">1 doc. criollos · 2 baguettes</div><span class="st ok">Confirmado</span></div>
+          <div class="ped"><div class="q">Escuela 104</div><div class="i">40 chipás · 2 tortas</div><span class="st pend">Falta seña</span></div>
+        </div>
+        <div class="col">
+          <div class="colh"><span class="h">10:00</span><span class="n">4 retiros</span></div>
+          <div class="ped" style="border-color: #1e2a23;"><div class="q">Damián</div><div class="i">3 doc. medialunas de manteca</div><span class="st nuevo">Recién entró</span></div>
+          <div class="ped"><div class="q">Carla</div><div class="i">1 pan integral · 1 doc. pepas</div><span class="st ok">Confirmado</span></div>
+          <div class="ped"><div class="q">Bar La Vuelta</div><div class="i">10 doc. medialunas</div><span class="st ok">Confirmado</span></div>
+        </div>
+        <div class="col">
+          <div class="colh"><span class="h">11:30</span><span class="n">1 retiro</span></div>
+          <div class="ped"><div class="q">Fam. Ortiz</div><div class="i">2 tortas · 1 doc. alfajores</div><span class="st ok">Confirmado</span></div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding: 12px 18px; border-top: 1px solid rgba(30,42,35,0.1); background: #f6f2e6;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; color: #4a554d;">HOY · 68 PEDIDOS · 0 PERDIDOS</span>
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; color: #8a8272;">[datos de muestra]</span>
+      </div>
+    </div>
+
+    <!-- teléfono (adelante, izquierda) -->
+    <div class="phone" style="position: absolute; left: 0; top: 84px;">
+      <div class="screen">
+        <div class="ph"><div class="t">Pedidos por WhatsApp</div><div class="s"><span class="dot" style="background: #e7dfc9;"></span>leyendo · 09:41</div></div>
+        <div class="msgs">
+          <div class="m in">Hola! me guardás 3 docenas de medialunas de manteca para las 10? soy Damián<span class="h">09:41</span></div>
+          <div class="det"><div class="k">Pedido detectado</div><div class="v">3 doc. medialunas de manteca</div><div class="c">Damián · retira 10:00 · cargado al tablero</div></div>
+          <div class="m out">Listo Damián, te las guardo para las 10. Son $[X], las pagás al retirar.<span class="h">09:41</span></div>
+          <div class="m in">genial gracias!<span class="h">09:42</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- turnos (adelante, derecha) -->
+    <div class="win" style="position: absolute; right: 0; top: 330px; width: 360px;">
+      <div class="winbar"><span class="t">Turnos · mañana</span><span class="s"><span class="dot"></span>Google Calendar</span></div>
+      <div>
+        <div class="row"><span><span class="k">09:00 </span> Pérez, Ana</span><span class="chk">confirmó</span></div>
+        <div class="row"><span><span class="k">09:30 </span> Gómez, Luis</span><span class="chk">recordado ayer</span></div>
+        <div class="row" style="background: rgba(176,39,28,0.05);"><span><span class="k">10:00 </span> libre</span><span class="mono" style="font-size: 10px; letter-spacing: 0.08em; color: #b0271c;">ofrecido a 2 en espera</span></div>
+        <div class="row"><span><span class="k">10:30 </span> Fernández, M.</span><span class="chk">confirmó</span></div>
+        <div class="row" style="border-bottom: 0;"><span><span class="k">11:00 </span> Sosa, Julia</span><span class="chk">confirmó</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SE CONECTA CON ============ -->
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 80px 72px 0;">
+    <span class="mono" style="margin-right: 10px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(231,223,201,0.6);">Se enchufa a lo que ya usás</span>
+    <span class="pill">WhatsApp</span><span class="pill">Google Calendar</span><span class="pill">Excel y Sheets</span><span class="pill">Tango</span><span class="pill">Mercado Pago</span><span class="pill">AFIP</span><span class="pill">tu sistema, el que sea</span>
+  </div>
+
+  <!-- ============ LO QUE TE HARÍA ============ -->
+  <div style="padding: 96px 72px 0;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px;">
+      <h2 style="margin: 0; max-width: 760px; font-size: 48px; font-weight: 600; line-height: 1.04; letter-spacing: -0.03em; color: #fdfcf7; text-wrap: balance;">Cuatro ejemplos de lo que te haría. El tuyo no se va a parecer a ninguno.</h2>
+      <p style="margin: 0; max-width: 360px; font-size: 16.5px; line-height: 1.5; color: rgba(246,242,230,0.62);">Eso es a medida: no un producto que te calza o no, sino un programa escrito para cómo trabajás vos.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 44px;">
+
+      <div class="card">
+        <div class="crop">
+          <div class="winbar" style="padding: 10px 12px;"><span class="t" style="font-size: 12px;">Pedidos · hoy</span><span class="s" style="font-size: 9.5px;"><span class="dot"></span>WhatsApp</span></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px;">
+            <div class="ped" style="padding: 8px;"><div class="q" style="font-size: 11px;">Marina</div><div class="i" style="font-size: 10px;">2 doc. medialunas</div><span class="st ok">08:30</span></div>
+            <div class="ped" style="padding: 8px; border-color: #1e2a23;"><div class="q" style="font-size: 11px;">Damián</div><div class="i" style="font-size: 10px;">3 doc. manteca</div><span class="st nuevo">Nuevo</span></div>
+            <div class="ped" style="padding: 8px;"><div class="q" style="font-size: 11px;">Ruiz</div><div class="i" style="font-size: 10px;">1 torta 12 p.</div><span class="st ok">08:30</span></div>
+            <div class="ped" style="padding: 8px;"><div class="q" style="font-size: 11px;">Escuela 104</div><div class="i" style="font-size: 10px;">40 chipás</div><span class="st pend">Seña</span></div>
+          </div>
+        </div>
+        <div class="cbody"><div class="cr">Si tenés una panadería</div><div class="ct">70 pedidos por día, y ninguno se pierde.</div><div class="cm">Andando en [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <div class="crop">
+          <div class="winbar" style="padding: 10px 12px;"><span class="t" style="font-size: 12px;">Turnos · mañana</span><span class="s" style="font-size: 9.5px;"><span class="dot"></span>Calendar</span></div>
+          <div class="row" style="font-size: 11px;"><span><span class="k">09:00</span> Pérez</span><span class="chk">confirmó</span></div>
+          <div class="row" style="font-size: 11px;"><span><span class="k">09:30</span> Gómez</span><span class="chk">recordado</span></div>
+          <div class="row" style="font-size: 11px; background: rgba(176,39,28,0.05);"><span><span class="k">10:00</span> libre</span><span class="mono" style="font-size: 9.5px; color: #b0271c;">ofrecido</span></div>
+          <div class="row" style="font-size: 11px;"><span><span class="k">10:30</span> Fernández</span><span class="chk">confirmó</span></div>
+          <div class="row" style="font-size: 11px; border: 0;"><span><span class="k">11:00</span> Sosa</span><span class="chk">confirmó</span></div>
+        </div>
+        <div class="cbody"><div class="cr">Si atendés con turnos</div><div class="ct">Que se den solos, hasta un domingo a las once de la noche.</div><div class="cm">Andando en [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <div class="crop">
+          <div class="winbar" style="padding: 10px 12px;"><span class="t" style="font-size: 12px;">Factura leída</span><span class="s" style="font-size: 9.5px;"><span class="dot"></span>al sistema contable</span></div>
+          <div style="display: flex; gap: 10px; padding: 12px;">
+            <div style="width: 74px; height: 96px; flex: 0 0 auto; border-radius: 3px; background: #ffffff; border: 1px solid rgba(30,42,35,0.15); padding: 8px; display: flex; flex-direction: column; gap: 4px;"><span style="height: 5px; width: 60%; background: #1e2a23; opacity: 0.7;"></span><span style="height: 3px; width: 90%; background: #1e2a23; opacity: 0.2;"></span><span style="height: 3px; width: 80%; background: #1e2a23; opacity: 0.2;"></span><span style="height: 3px; width: 85%; background: #1e2a23; opacity: 0.2;"></span><span style="height: 3px; width: 50%; background: #1e2a23; opacity: 0.2;"></span><span style="margin-top: auto; height: 5px; width: 45%; background: #b0271c; opacity: 0.8; align-self: flex-end;"></span></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; font-size: 11px;">
+              <div><span class="k mono" style="font-size: 9px; color: #8a8272;">PROVEEDOR</span><br>Molinos del Sur S.A. <span class="chk">ok</span></div>
+              <div><span class="k mono" style="font-size: 9px; color: #8a8272;">CUIT</span><br>30-[…]-7 <span class="chk">ok</span></div>
+              <div><span class="k mono" style="font-size: 9px; color: #8a8272;">TOTAL · VENCE</span><br>$184.320 · 30/06 <span class="chk">ok</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cbody"><div class="cr">Si cargás facturas de clientes</div><div class="ct">Dos días por mes cargando. Que sean cero.</div><div class="cm">Andando en [N] semanas</div></div>
+      </div>
+
+      <div class="card">
+        <div class="crop">
+          <div class="winbar" style="padding: 10px 12px;"><span class="t" style="font-size: 12px;">Stock · avisos</span><span class="s" style="font-size: 9.5px;"><span class="dot"></span>tu planilla</span></div>
+          <div class="row" style="font-size: 11px; background: rgba(176,39,28,0.07);"><span>Cemento x50 kg</span><span class="mono" style="font-size: 10px; color: #b0271c;">quedan 3 · pedir</span></div>
+          <div class="row" style="font-size: 11px; background: rgba(176,39,28,0.07);"><span>Disco de corte 115</span><span class="mono" style="font-size: 10px; color: #b0271c;">quedan 6 · pedir</span></div>
+          <div class="row" style="font-size: 11px;"><span>Cinta papel 24 mm</span><span class="chk">ok · 41</span></div>
+          <div class="row" style="font-size: 11px;"><span>Tornillo 8×1½</span><span class="chk">ok · 380</span></div>
+          <div class="row" style="font-size: 11px; border: 0;"><span>Membrana 4 mm</span><span class="chk">ok · 12</span></div>
+        </div>
+        <div class="cbody"><div class="cr">Si vendés de un mostrador</div><div class="ct">Que no se te vaya una venta por no tenerlo.</div><div class="cm">Andando en [N] semanas</div></div>
+      </div>
+
+    </div>
+    <p class="mono" style="margin: 16px 0 0; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(231,223,201,0.45);">Las pantallas son bocetos con datos de muestra. Muestran cómo se vería, no un sistema ya construido.</p>
+  </div>
+
+  <!-- ============ CASO REAL ============ -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin: 96px 72px 0; padding: 52px 56px; border-radius: 8px; background: #243128; border: 1px solid rgba(231,223,201,0.1);">
+    <div>
+      <div class="eyebrow">Caso real · Municipalidad de Embalse, Córdoba</div>
+      <p style="margin: 20px 0 0; font-size: 30px; font-weight: 500; line-height: 1.28; letter-spacing: -0.02em; color: #fdfcf7; text-wrap: pretty;">«[Acá va la frase real de quien lo usa en el municipio, con nombre y cargo.]»</p>
+      <p style="margin: 18px 0 0; font-size: 16px; line-height: 1.5; color: rgba(246,242,230,0.66);">[Qué se automatizó, desde cuándo y qué volumen mueve por mes.] Fue el primer municipio con el que trabajé y sigue andando.</p>
+    </div>
+    <div style="position: relative; height: 300px; border-radius: 6px; overflow: hidden;">
+      <img src="municipio.jpg" alt="Edificio de la municipalidad" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.8) contrast(1.06) brightness(0.85);">
+      <div style="position: absolute; inset: 0; background: #1e2a23; mix-blend-mode: multiply; opacity: 0.3;"></div>
+      <div class="win" style="position: absolute; left: 24px; bottom: 24px; width: 300px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <div class="winbar" style="padding: 9px 12px;"><span class="t" style="font-size: 12px;">[Pantalla real del sistema]</span><span class="s" style="font-size: 9.5px;"><span class="dot"></span>desde [año]</span></div>
+        <div class="row" style="font-size: 11px;"><span>[trámite]</span><span class="chk">derivado</span></div>
+        <div class="row" style="font-size: 11px; border: 0;"><span>[trámite]</span><span class="chk">derivado</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LAS TRES PREGUNTAS ============ -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px; padding: 96px 72px 0;">
+    <div style="padding-top: 22px; border-top: 2px solid #3e6e63;">
+      <div style="font-size: 25px; font-weight: 600; line-height: 1.18; letter-spacing: -0.022em; color: #fdfcf7;">«¿Y si lo mío es un caso raro?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(246,242,230,0.66);">Mejor. Los cuatro ejemplos de arriba no se parecen en nada entre sí. El tuyo tampoco se va a parecer.</p>
+    </div>
+    <div style="padding-top: 22px; border-top: 2px solid #3e6e63;">
+      <div style="font-size: 25px; font-weight: 600; line-height: 1.18; letter-spacing: -0.022em; color: #fdfcf7;">«¿Tengo que cambiar lo que ya uso?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(246,242,230,0.66);">No cambiás nada. Se enchufa a tu WhatsApp, a tu planilla o a tu sistema contable.</p>
+    </div>
+    <div style="padding-top: 22px; border-top: 2px solid #3e6e63;">
+      <div style="font-size: 25px; font-weight: 600; line-height: 1.18; letter-spacing: -0.022em; color: #fdfcf7;">«¿Cuánto sale y cuánto tarda?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(246,242,230,0.66);">Desde [PRECIO] y [N] semanas, cerrado antes de que yo escriba una línea. Si me complico en el medio, lo pago yo.</p>
+    </div>
+  </div>
+
+  <!-- ============ CIERRE ============ -->
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 96px 72px 0; padding: 78px 60px; border-radius: 6px; background: #e7dfc9; color: #1e2a23;">
+    <div class="eyebrow" style="color: rgba(30,42,35,0.62);">Tu caso</div>
+    <h2 style="margin: 18px 0 0; max-width: 900px; font-size: 62px; font-weight: 600; line-height: 0.99; letter-spacing: -0.035em; text-wrap: balance;">Salís de la llamada sabiendo cuánto te sale.</h2>
+    <p style="margin: 20px 0 0; max-width: 620px; font-size: 19px; line-height: 1.5; color: rgba(30,42,35,0.78); text-wrap: pretty;">Contame qué es eso que hacés todos los días a mano. Te digo si se puede, cuánto sale y en cuánto lo tenés andando.</p>
+    <a href="/contacto" class="btn" style="margin-top: 32px; font-size: 18px; padding: 20px 34px;">Pedí tu presupuesto
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#fdfcf7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+    <span class="mono" style="margin-top: 16px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(30,42,35,0.6);">Gratis · Quince minutos · Hablás con Facundo, que es el que lo programa</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

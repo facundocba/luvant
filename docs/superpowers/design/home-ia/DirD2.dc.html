@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #fbfaf7; }
+    a { color: #1c2b2a; text-decoration: none; }
+    a:hover { color: #e2503c; }
+    @keyframes hs { 0% { r: 10; opacity: 0.55; } 100% { r: 26; opacity: 0; } }
+    .hs-ring { animation: hs 1.6s ease-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .hs-ring { animation: none; r: 18; opacity: 0.3; } }
+    .slot { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 12px; border: 1.5px solid rgba(253,252,249,0.6); font-family: Outfit, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #fdfcf9; font-variant-numeric: tabular-nums; }
+    .slot.on { background: #f2c14e; border-color: #f2c14e; color: #1c2b2a; font-weight: 700; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1900px; box-sizing: border-box; background: #fbfaf7; color: #1c2b2a; font-family: Outfit, system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ LA CUADRA: seis frentes, a pantalla completa ============ -->
+  <div style="position: relative; width: 1440px; height: 900px; overflow: hidden;">
+    <svg width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Una cuadra con seis frentes: una panadería, un consultorio, un estudio contable, una inmobiliaria, una ferretería y la municipalidad." style="display: block;">
+      <defs>
+        <pattern id="rayas" width="24" height="32" patternUnits="userSpaceOnUse">
+          <rect width="12" height="32" fill="#e2503c"></rect><rect x="12" width="12" height="32" fill="#fdfcf9"></rect>
+        </pattern>
+        <pattern id="rayasF" width="24" height="32" patternUnits="userSpaceOnUse">
+          <rect width="12" height="32" fill="#f2c14e"></rect><rect x="12" width="12" height="32" fill="#1c2b2a"></rect>
+        </pattern>
+        <pattern id="persiana" width="110" height="10" patternUnits="userSpaceOnUse">
+          <rect width="110" height="3" fill="#1c2b2a" opacity="0.3"></rect>
+        </pattern>
+        <pattern id="calle" width="64" height="6" patternUnits="userSpaceOnUse">
+          <rect width="38" height="6" fill="#f2c14e"></rect>
+        </pattern>
+      </defs>
+
+      <!-- cielo -->
+      <rect x="0" y="0" width="1440" height="220" fill="#bfe0e8"></rect>
+      <circle cx="1310" cy="86" r="38" fill="#f2c14e"></circle>
+      <g fill="#fdfcf9" opacity="0.9">
+        <ellipse cx="760" cy="90" rx="70" ry="20"></ellipse>
+        <ellipse cx="800" cy="78" rx="44" ry="18"></ellipse>
+        <ellipse cx="1080" cy="140" rx="56" ry="16"></ellipse>
+      </g>
+      <rect x="0" y="220" width="1440" height="480" fill="#d9cbb0"></rect>
+
+      <!-- 1 · PANADERÍA -->
+      <rect x="40" y="220" width="210" height="480" fill="#f2c14e" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="50" y="250" width="190" height="50" fill="#1c2b2a"></rect>
+      <text x="145" y="282" text-anchor="middle" font-family="Outfit, sans-serif" font-size="17" font-weight="700" fill="#fdfcf9">PANADERÍA</text>
+      <rect x="45" y="330" width="200" height="32" fill="url(#rayas)" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="60" y="390" width="110" height="150" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <g fill="#c98f5a" stroke="#1c2b2a" stroke-width="1.5">
+        <ellipse cx="90" cy="500" rx="18" ry="10"></ellipse>
+        <ellipse cx="116" cy="478" rx="18" ry="10"></ellipse>
+        <ellipse cx="142" cy="500" rx="18" ry="10"></ellipse>
+      </g>
+      <rect x="185" y="390" width="50" height="310" fill="#8f5a30" stroke="#1c2b2a" stroke-width="2"></rect>
+      <circle cx="225" cy="560" r="4" fill="#1c2b2a"></circle>
+
+      <!-- 2 · CONSULTORIO -->
+      <rect x="270" y="220" width="210" height="480" fill="#e6eef0" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="280" y="250" width="190" height="50" fill="#1c2b2a"></rect>
+      <text x="375" y="282" text-anchor="middle" font-family="Outfit, sans-serif" font-size="17" font-weight="700" fill="#fdfcf9">CONSULTORIO</text>
+      <rect x="290" y="390" width="110" height="150" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="335" y="430" width="20" height="70" fill="#2b6b66"></rect>
+      <rect x="310" y="455" width="70" height="20" fill="#2b6b66"></rect>
+      <rect x="300" y="580" width="90" height="44" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <path d="M312 594 H378 M312 604 H360 M312 614 H370" stroke="#1c2b2a" stroke-width="1.5" opacity="0.6"></path>
+      <rect x="415" y="390" width="50" height="310" fill="#2b6b66" stroke="#1c2b2a" stroke-width="2"></rect>
+      <circle cx="455" cy="560" r="4" fill="#fdfcf9"></circle>
+
+      <!-- 3 · ESTUDIO CONTABLE -->
+      <rect x="500" y="220" width="210" height="480" fill="#96a7ad" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="510" y="250" width="190" height="50" fill="#1c2b2a"></rect>
+      <text x="605" y="276" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="700" fill="#fdfcf9">ESTUDIO</text>
+      <text x="605" y="292" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#fdfcf9">CONTABLE</text>
+      <rect x="520" y="390" width="110" height="150" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="520" y="390" width="110" height="150" fill="url(#persiana)"></rect>
+      <rect x="645" y="390" width="50" height="310" fill="#4a5a60" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="655" y="410" width="30" height="14" fill="#fdfcf9"></rect>
+      <text x="670" y="421" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="700" fill="#1c2b2a">1er P</text>
+      <circle cx="685" cy="560" r="4" fill="#fdfcf9"></circle>
+
+      <!-- 4 · INMOBILIARIA -->
+      <rect x="730" y="220" width="210" height="480" fill="#e2503c" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="740" y="250" width="190" height="50" fill="#1c2b2a"></rect>
+      <text x="835" y="282" text-anchor="middle" font-family="Outfit, sans-serif" font-size="17" font-weight="700" fill="#fdfcf9">INMOBILIARIA</text>
+      <rect x="750" y="390" width="110" height="150" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <g stroke="#1c2b2a" stroke-width="1.5">
+        <rect x="760" y="402" width="42" height="56" fill="#bfe0e8"></rect>
+        <rect x="808" y="402" width="42" height="56" fill="#c98f5a"></rect>
+        <rect x="760" y="470" width="42" height="56" fill="#2b6b66"></rect>
+        <rect x="808" y="470" width="42" height="56" fill="#f2c14e"></rect>
+      </g>
+      <rect x="875" y="390" width="50" height="310" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <circle cx="915" cy="560" r="4" fill="#1c2b2a"></circle>
+
+      <!-- 5 · FERRETERÍA -->
+      <rect x="960" y="220" width="210" height="480" fill="#2b6b66" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="970" y="250" width="190" height="50" fill="#1c2b2a"></rect>
+      <text x="1065" y="282" text-anchor="middle" font-family="Outfit, sans-serif" font-size="17" font-weight="700" fill="#fdfcf9">FERRETERÍA</text>
+      <rect x="965" y="330" width="200" height="32" fill="url(#rayasF)" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="980" y="390" width="110" height="150" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <g stroke="#1c2b2a" stroke-width="2.5" stroke-linecap="round">
+        <path d="M1000 400 V450 M1030 400 V470 M1060 400 V440"></path>
+      </g>
+      <rect x="992" y="448" width="16" height="22" fill="#96a7ad" stroke="#1c2b2a" stroke-width="1.5"></rect>
+      <rect x="1024" y="468" width="12" height="26" fill="#c98f5a" stroke="#1c2b2a" stroke-width="1.5"></rect>
+      <circle cx="1060" cy="446" r="8" fill="#f2c14e" stroke="#1c2b2a" stroke-width="1.5"></circle>
+      <rect x="1105" y="390" width="50" height="310" fill="#8f5a30" stroke="#1c2b2a" stroke-width="2"></rect>
+      <circle cx="1145" cy="560" r="4" fill="#1c2b2a"></circle>
+
+      <!-- 6 · MUNICIPALIDAD -->
+      <rect x="1190" y="220" width="210" height="480" fill="#efe6d6" stroke="#1c2b2a" stroke-width="2"></rect>
+      <polygon points="1190,250 1295,210 1400,250" fill="#efe6d6" stroke="#1c2b2a" stroke-width="2"></polygon>
+      <rect x="1200" y="256" width="190" height="44" fill="#1c2b2a"></rect>
+      <text x="1295" y="284" text-anchor="middle" font-family="Outfit, sans-serif" font-size="15" font-weight="700" fill="#fdfcf9">MUNICIPALIDAD</text>
+      <rect x="1215" y="390" width="18" height="290" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1357" y="390" width="18" height="290" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1260" y="400" width="70" height="280" fill="#8f5a30" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1200" y="680" width="190" height="20" fill="#c9c2b4" stroke="#1c2b2a" stroke-width="2"></rect>
+      <path d="M1380 250 V130" stroke="#1c2b2a" stroke-width="3"></path>
+      <rect x="1381" y="132" width="52" height="34" fill="#bfe0e8" stroke="#1c2b2a" stroke-width="1.5"></rect>
+      <rect x="1381" y="143" width="52" height="12" fill="#fdfcf9"></rect>
+
+      <!-- vereda y calle -->
+      <rect x="0" y="700" width="1440" height="80" fill="#c9c2b4"></rect>
+      <rect x="0" y="700" width="1440" height="4" fill="#1c2b2a" opacity="0.4"></rect>
+      <g stroke="#1c2b2a" stroke-width="1" opacity="0.25">
+        <path d="M120 704 V780 M240 704 V780 M360 704 V780 M480 704 V780 M600 704 V780 M720 704 V780 M840 704 V780 M960 704 V780 M1080 704 V780 M1200 704 V780 M1320 704 V780"></path>
+      </g>
+      <rect x="0" y="780" width="1440" height="120" fill="#2a2f33"></rect>
+      <rect x="0" y="837" width="1440" height="6" fill="url(#calle)"></rect>
+
+      <!-- puntos para tocar -->
+      <g fill="#e2503c">
+        <circle class="hs-ring" cx="115" cy="460" r="18" opacity="0.35"></circle><circle cx="115" cy="460" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="345" cy="460" r="18" opacity="0.35"></circle><circle cx="345" cy="460" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="575" cy="460" r="18" opacity="0.35"></circle><circle cx="575" cy="460" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="805" cy="460" r="18" opacity="0.35"></circle><circle cx="805" cy="460" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="1035" cy="460" r="18" opacity="0.35"></circle><circle cx="1035" cy="460" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="1295" cy="520" r="18" opacity="0.35"></circle><circle cx="1295" cy="520" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+      </g>
+    </svg>
+
+    <!-- marca y menú -->
+    <a href="/" style="position: absolute; left: 72px; top: 30px; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: #1c2b2a;">LUVANT</a>
+    <div style="position: absolute; right: 72px; top: 28px; display: flex; gap: 28px; font-size: 14px; font-weight: 500;">
+      <a href="/servicios/desarrollo-software-a-medida">Servicios</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+
+    <!-- la tarjeta abierta: la panadería -->
+    <div style="position: absolute; left: 72px; top: 68px; width: 360px; box-sizing: border-box; background: #fdfcf9; border: 2px solid #1c2b2a; padding: 16px 20px 14px; box-shadow: 6px 6px 0 #1c2b2a;">
+      <div style="font-size: 19px; font-weight: 700; line-height: 1.1;">La panadería</div>
+      <p style="margin: 8px 0 0 0; font-size: 14.5px; line-height: 1.45; color: #34413f;">Los pedidos entran por WhatsApp desde las 6. La IA los lee, arma la lista de producción y le contesta a cada uno a qué hora pasa a buscar.</p>
+      <a href="#cuadra" style="display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Ver los otros cinco</a>
+    </div>
+
+    <!-- la frase, sobre la calle -->
+    <div style="position: absolute; left: 72px; top: 802px; max-width: 700px;">
+      <p style="margin: 0; font-size: 30px; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: #fdfcf9; text-wrap: balance;">IA a medida para lo que hacés todos los días.</p>
+      <p style="margin: 8px 0 0 0; font-size: 15px; font-weight: 500; color: #d9cbb0;">Tocá cada local y mirá qué haría. Después hablamos del tuyo.</p>
+    </div>
+    <a href="#agenda" style="position: absolute; right: 72px; top: 812px; display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; background: #f2c14e; color: #1c2b2a; font-size: 16px; font-weight: 700; box-shadow: 5px 5px 0 #e2503c;">Agendá 15 minutos</a>
+  </div>
+
+  <!-- ============ LOS SEIS ============ -->
+  <div id="cuadra" style="padding: 80px 72px 0;">
+    <h2 style="margin: 0; max-width: 900px; font-size: 40px; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; text-wrap: balance;">Seis lugares distintos, seis programas distintos. Ninguno sirve para el otro. Eso es a medida.</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; margin-top: 44px;">
+      <div><div style="font-size: 18px; font-weight: 700;">El consultorio</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">Turnos por WhatsApp, recordatorio el día anterior y la historia clínica que se completa hablando en vez de tipeando.</p></div>
+      <div><div style="font-size: 18px; font-weight: 700;">El estudio contable</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">Las facturas de veinte clientes llegan por mail y entran solas al sistema. El estudio revisa sólo lo dudoso.</p></div>
+      <div><div style="font-size: 18px; font-weight: 700;">La inmobiliaria</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">Cada consulta por un departamento se contesta al toque con lo que hay disponible, y se agenda la visita.</p></div>
+      <div><div style="font-size: 18px; font-weight: 700;">La ferretería</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">¿Tenés tornillo de 8 con tuerca? Busca en el stock y responde por WhatsApp mientras vos atendés el mostrador.</p></div>
+      <div><div style="font-size: 18px; font-weight: 700;">La municipalidad</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">Los reclamos vecinales se clasifican y llegan al área que corresponde, con foto y ubicación, sin pasar por tres mesas.</p></div>
+      <div><div style="font-size: 18px; font-weight: 700;">El tuyo</div><p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.45; color: #4d5957;">Un local, un estudio, un consultorio, una fábrica, un municipio, o vos solo con tu trabajo. Contanos qué hacés y te decimos qué haría.</p></div>
+    </div>
+  </div>
+
+  <!-- ============ A MEDIDA QUIERE DECIR ============ -->
+  <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start; margin: 88px 72px 0; padding-top: 48px; border-top: 2px solid #1c2b2a;">
+    <h2 style="margin: 0; font-size: 36px; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em;">A medida quiere decir esto.</h2>
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <p style="margin: 0; font-size: 19px; line-height: 1.45;"><strong>Se construye para tu caso.</strong> No es un chatbot para todos: es un programa hecho para cómo trabajás vos, con tus palabras y tus reglas.</p>
+      <p style="margin: 0; font-size: 19px; line-height: 1.45;"><strong>Se conecta con lo que ya usás.</strong> WhatsApp, el mail, el Excel, el sistema de turnos o de facturación. Nada nuevo que aprender.</p>
+      <p style="margin: 0; font-size: 19px; line-height: 1.45;"><strong>Precio cerrado, en semanas.</strong> Antes de empezar sabés cuánto cuesta y cuándo está andando. Si no conviene, te lo decimos en la llamada, no después.</p>
+      <p style="margin: 6px 0 0 0; font-size: 15px; line-height: 1.5; color: #4d5957;">Lo mismo que hicimos para la Municipalidad de Embalse, Córdoba, se puede hacer para un local, un consultorio o un estudio. Hablás con el que lo construye.</p>
+    </div>
+  </div>
+
+  <!-- ============ AGENDA ============ -->
+  <div id="agenda" style="margin: 80px 72px 0; padding: 48px 56px 52px; background: #2b6b66; color: #fdfcf9;">
+    <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start;">
+      <div>
+        <h2 style="margin: 0; font-size: 36px; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; color: #fdfcf9;">Agendá 15 minutos.</h2>
+        <p style="margin: 14px 0 0 0; font-size: 16px; line-height: 1.5; color: #d6e6e3; max-width: 440px;">Sin costo y sin compromiso. Salís de la llamada sabiendo si la IA tiene lugar en lo tuyo, qué haría exactamente y cuánto costaría.</p>
+        <p style="margin: 18px 0 0 0; font-size: 13px; line-height: 1.5; color: #a9c7c2;">[Se integra con Cal.com o Google Calendar. La llamada es por Meet o por teléfono, lo que prefieras.]</p>
+      </div>
+      <div>
+        <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 600; color: #d6e6e3;">Lun 7</span><span class="slot">10:00</span><span class="slot">11:30</span><span class="slot">16:00</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 600; color: #d6e6e3;">Mar 8</span><span class="slot">10:00</span><span class="slot">15:00</span><span class="slot">17:30</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 600; color: #d6e6e3;">Mié 9</span><span class="slot">09:30</span><span class="slot on">11:30</span><span class="slot">16:00</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 600; color: #d6e6e3;">Jue 10</span><span class="slot">10:00</span><span class="slot">14:00</span><span class="slot">16:30</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 13px; font-weight: 600; color: #d6e6e3;">Vie 11</span><span class="slot">09:00</span><span class="slot">11:00</span><span class="slot">15:00</span></div>
+        </div>
+        <a href="#agenda" style="display: inline-flex; align-items: center; margin-top: 22px; min-height: 56px; padding: 0 26px; background: #1c2b2a; color: #fdfcf9; font-size: 16px; font-weight: 600; box-shadow: 5px 5px 0 #e2503c;">Confirmar miércoles 9, 11:30</a>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

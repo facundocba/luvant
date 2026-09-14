@@ -1,6 +1,12 @@
 RewriteEngine On
 RewriteBase /
 
+# Redirecciones del rediseño (septiembre 2026)
+RedirectMatch 301 ^/servicios/automatizacion-de-procesos/?$ /servicios/automatizacion-con-ia
+RedirectMatch 301 ^/servicios/consultoria-tecnica/?$ /servicios/desarrollo-software-a-medida
+RedirectMatch 301 ^/productos/?$ /productos/lens
+RedirectMatch 301 ^/nosotros/?$ /
+
 # Excluir /api/ del rewrite (PHP directo)
 RewriteRule ^api/ - [L]
 

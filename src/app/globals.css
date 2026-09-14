@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --luvant-black: #000000;
-  --luvant-white: #ffffff;
-  --luvant-gray-950: #0a0a0a;
-  --luvant-gray-900: #111111;
-  --luvant-gray-800: #171717;
-  --luvant-gray-600: #525252;
-  --luvant-gray-400: #a3a3a3;
-  --luvant-gray-200: #e5e5e5;
-  --luvant-accent: #ffffff;
+  /* Sistema "El expediente" — ver tailwind.config.ts para los tokens gemelos */
+  --pp-carton: #e7dfc9;
+  --pp-foja: #fdfcf7;
+  --pp-foja-2: #f6f2e6;
+  --pp-foja-3: #f0ebdc;
+  --pp-tinta: #1e2a23;
+  --pp-tinta-2: #4a554d;
+  --pp-tinta-3: #8a8272;
+  --pp-borde: #c6bda2;
+  --pp-borde-suave: #cfc5a8;
+  --pp-rojo: #b0271c;
+  --pp-verde: #3e6e63;
+  --pp-birome: #2a4b9b;
 }
 
 @layer base {
@@ -24,166 +28,264 @@
   }
 
   body {
-    background-color: var(--luvant-gray-950);
-    color: var(--luvant-white);
-    font-family: var(--font-geist-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background-color: rgba(176, 39, 28, 0.18);
+    color: var(--pp-tinta);
   }
 
   :focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.4);
-    outline-offset: 2px;
+    outline: 2px solid var(--pp-tinta);
+    outline-offset: 3px;
+  }
+
+  body:has([data-tema="papel"]) {
+    background-color: var(--pp-carton);
   }
 }
 
 @layer components {
-  .section-padding {
-    @apply px-6 py-24 md:px-8 lg:py-32;
+  .prose-paper {
+    @apply text-[18px] leading-[1.6] text-papel-tinta;
   }
 
-  .container-main {
-    @apply mx-auto max-w-7xl;
-  }
-
-  /* Gradient border card effect */
-  .gradient-border {
-    position: relative;
-    background: #111111;
-    border-radius: 16px;
-  }
-
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  .gradient-border:hover::before {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0.1) 100%
-    );
-  }
-
-  /* Noise texture overlay */
-  .noise-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
-  /* Glow effect */
-  .glow-sm {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
-  }
-
-  .glow-md {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
-  }
-
-  /* Dotted grid pattern */
-  .dot-grid {
-    background-image: radial-gradient(
-      circle at 1px 1px,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 0
-    );
-    background-size: 32px 32px;
-  }
-
-  /* Cross grid pattern */
-  .cross-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
-
-  /* Blog article prose */
-  .prose-luvant {
-    @apply text-base leading-relaxed text-luvant-400;
-  }
-
-  .prose-luvant p {
+  .prose-paper p {
     @apply mb-6;
   }
 
-  .prose-luvant h2 {
-    @apply mt-12 mb-4 text-2xl font-semibold text-white;
+  .prose-paper h2 {
+    @apply mb-4 mt-12 text-[30px] font-bold leading-[1.05] tracking-[-0.025em];
   }
 
-  .prose-luvant h3 {
-    @apply mt-8 mb-3 text-lg font-medium text-white;
+  .prose-paper h3 {
+    @apply mb-3 mt-8 text-[22px] font-semibold leading-[1.15] tracking-[-0.02em];
   }
 
-  .prose-luvant strong {
-    @apply font-medium text-white;
+  .prose-paper strong {
+    @apply font-semibold;
   }
 
-  .prose-luvant ul,
-  .prose-luvant ol {
+  .prose-paper ul,
+  .prose-paper ol {
     @apply mb-6 ml-6 space-y-3;
   }
 
-  .prose-luvant ul {
+  .prose-paper ul {
     @apply list-disc;
   }
 
-  .prose-luvant ol {
+  .prose-paper ol {
     @apply list-decimal;
   }
 
-  .prose-luvant li {
+  .prose-paper li {
     @apply pl-1;
   }
 
-  .prose-luvant a {
-    @apply text-white underline decoration-luvant-700 underline-offset-4 transition-colors hover:decoration-white;
+  .prose-paper a {
+    @apply underline decoration-papel-rojo decoration-2 underline-offset-4;
   }
 
-  .prose-luvant h2:first-child {
+  .prose-paper h2:first-child {
     @apply mt-0;
   }
 }
 
-@layer utilities {
-  .text-gradient {
-    background: linear-gradient(to right, #ffffff, #a3a3a3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* ==================================================================
+ * SISTEMA "EL EXPEDIENTE"
+ *
+ * Dos intensidades sobre la misma identidad:
+ *   · Alta  — papel, pila de fojas, clip, sello, manuscrito. Home y landings.
+ *   · Baja  — sólo la traza, la marginalia anotada y el rango tipográfico.
+ *             Servicios, productos, nosotros, blog.
+ *
+ * Lo que nunca se apaga y por eso es la identidad real: la traza (rojo
+ * punteado = manual, verde continuo = automatizado; las paradas siempre son
+ * cuadraditos), el corte asimétrico con marginalia, Courier para lo anotado y
+ * Familjen para lo dicho.
+ * ================================================================== */
+
+@layer components {
+  /* Anotación tipeada al margen del expediente */
+  .pp-anotacion {
+    font-family: var(--font-courier), ui-monospace, monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: var(--pp-tinta-2);
   }
 
-  .text-gradient-bright {
-    background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 50%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Etiqueta de campo / foliado */
+  .pp-folio {
+    font-family: var(--font-courier), ui-monospace, monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pp-tinta-3);
+  }
+
+  /* Manuscrito con birome */
+  .pp-birome {
+    font-family: var(--font-caveat), cursive;
+    color: var(--pp-birome);
+    line-height: 1.12;
+  }
+
+  /* La foja: hoja de papel sobre el cartón del legajo */
+  .pp-foja {
+    position: relative;
+    background: var(--pp-foja);
+    border: 1px solid var(--pp-borde);
+    box-shadow: 0 16px 40px rgba(30, 42, 35, 0.14);
+  }
+
+  /* Campo de formulario tipeado sobre la foja */
+  .pp-campo {
+    width: 100%;
+    background: #fffefa;
+    border: 1px solid var(--pp-borde-suave);
+    border-radius: 0;
+    padding: 12px 13px;
+    font-family: var(--font-courier), ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--pp-tinta);
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .pp-campo::placeholder {
+    color: #b3ac9b;
+  }
+
+  .pp-campo:focus {
+    outline: none;
+    border-color: var(--pp-tinta);
+    box-shadow: inset 0 0 0 1px var(--pp-tinta);
+  }
+}
+
+/* ---------- La secuencia que dibuja la traza ----------
+ * Estado inicial en reposo; las clases se activan cuando la pieza entra en
+ * viewport, para que el dibujo no se pierda arriba del fold. */
+.pp-trace-a,
+.pp-trace-b,
+.pp-hand {
+  stroke-dashoffset: var(--pp-len);
+}
+
+.pp-node-a,
+.pp-node-b,
+.pp-hand-txt,
+.pp-payoff,
+.pp-stamp {
+  opacity: 0;
+}
+
+@keyframes pp-draw {
+  from {
+    stroke-dashoffset: var(--pp-len);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pp-ink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pp-stamp {
+  0% {
+    opacity: 0;
+    transform: rotate(-34deg) scale(1.9);
+  }
+  62% {
+    opacity: 1;
+    transform: rotate(-11deg) scale(0.94);
+  }
+  80% {
+    transform: rotate(-15deg) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-13.5deg) scale(1);
+  }
+}
+
+.pp-anim .pp-trace-a {
+  animation: pp-draw 1.7s cubic-bezier(0.35, 0.1, 0.25, 1) 0.15s both;
+}
+.pp-anim .pp-node-a {
+  animation: pp-ink 0.4s ease-out 1.3s both;
+}
+.pp-anim .pp-trace-b {
+  animation: pp-draw 1s cubic-bezier(0.35, 0.1, 0.25, 1) 1.95s both;
+}
+.pp-anim .pp-node-b {
+  animation: pp-ink 0.4s ease-out 2.7s both;
+}
+.pp-anim .pp-payoff {
+  animation: pp-rise 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) 2.95s both;
+}
+.pp-anim .pp-hand {
+  animation: pp-draw 1.1s ease-in-out 3.05s both;
+}
+.pp-anim .pp-hand-txt {
+  animation: pp-rise 0.55s ease-out 3.7s both;
+}
+.pp-anim .pp-stamp {
+  animation: pp-stamp 0.85s cubic-bezier(0.3, 1.5, 0.4, 1) 0.2s both;
+  transform-origin: 50% 50%;
+}
+
+/* El sello cae apenas entra en pantalla, sin esperar la traza */
+.pp-stamp {
+  transform: rotate(-13.5deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-trace-a,
+  .pp-trace-b,
+  .pp-hand {
+    stroke-dashoffset: 0;
+  }
+
+  .pp-node-a,
+  .pp-node-b,
+  .pp-hand-txt,
+  .pp-payoff,
+  .pp-stamp {
+    opacity: 1;
+  }
+
+  .pp-anim .pp-trace-a,
+  .pp-anim .pp-trace-b,
+  .pp-anim .pp-hand,
+  .pp-anim .pp-node-a,
+  .pp-anim .pp-node-b,
+  .pp-anim .pp-hand-txt,
+  .pp-anim .pp-payoff,
+  .pp-anim .pp-stamp {
+    animation: none;
   }
 }

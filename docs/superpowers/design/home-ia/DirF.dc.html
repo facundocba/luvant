@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <style>
+    body { margin: 0; background: #142633; }
+    a { color: #efe6d6; text-decoration: none; }
+    a:hover { color: #f2643f; }
+    .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    .anton { font-family: Anton, Impact, 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; }
+    .hatch { background-image: repeating-linear-gradient(135deg, rgba(239,230,214,0.12) 0, rgba(239,230,214,0.12) 1px, transparent 1px, transparent 14px); }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1800px; box-sizing: border-box; background: #142633; color: #efe6d6; font-family: 'Source Serif 4', Georgia, serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ PORTADA: el lugar ============ -->
+  <div style="position: relative; width: 1440px; height: 900px; overflow: hidden;">
+    <svg width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="El lago de Embalse al atardecer, con las sierras de fondo y el paredón del dique." style="display: block;">
+      <defs>
+        <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f6d29a"></stop>
+          <stop offset="1" stop-color="#ef8a4a"></stop>
+        </linearGradient>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a5f86"></stop>
+          <stop offset="1" stop-color="#142633"></stop>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="1440" height="620" fill="url(#cielo)"></rect>
+      <circle cx="1040" cy="330" r="92" fill="#f2643f"></circle>
+      <path d="M0 480 C 200 400, 380 460, 560 420 S 900 380, 1100 440 S 1350 400, 1440 430 V620 H0 Z" fill="#7a5a78"></path>
+      <path d="M0 560 C 180 500, 300 540, 480 520 S 800 470, 980 530 S 1260 500, 1440 540 V620 H0 Z" fill="#3f4d5c"></path>
+      <rect x="0" y="600" width="1440" height="300" fill="url(#agua)"></rect>
+      <rect x="480" y="556" width="520" height="62" fill="#b8b3a8"></rect>
+      <rect x="480" y="556" width="520" height="8" fill="#e6e1d6"></rect>
+      <g fill="#7a7569">
+        <rect x="520" y="588" width="30" height="30"></rect>
+        <rect x="600" y="588" width="30" height="30"></rect>
+        <rect x="680" y="588" width="30" height="30"></rect>
+        <rect x="760" y="588" width="30" height="30"></rect>
+        <rect x="840" y="588" width="30" height="30"></rect>
+        <rect x="920" y="588" width="30" height="30"></rect>
+      </g>
+      <g fill="#f2a05f" opacity="0.75">
+        <ellipse cx="1040" cy="646" rx="70" ry="5"></ellipse>
+        <ellipse cx="1030" cy="668" rx="52" ry="4"></ellipse>
+        <ellipse cx="1048" cy="690" rx="38" ry="3"></ellipse>
+      </g>
+      <g stroke="#6a9cc0" stroke-width="2" opacity="0.55" stroke-linecap="round">
+        <path d="M120 700 H260 M330 740 H420 M1180 720 H1300 M700 760 H790 M200 800 H330"></path>
+      </g>
+    </svg>
+
+    <a href="/" style="position: absolute; left: 72px; top: 36px; font-family: Anton, Impact, sans-serif; font-size: 18px; letter-spacing: 0.12em; color: #142633;">LUVANT</a>
+    <div class="serif" style="position: absolute; right: 72px; top: 36px; display: flex; gap: 26px; font-size: 16px; color: #142633;">
+      <a href="#pueblo" style="color: #142633; text-decoration: underline; text-underline-offset: 4px;">El pueblo</a>
+      <a href="#mesa" style="color: #142633;">La Mesa de Entradas</a>
+      <a href="#cambio" style="color: #142633;">Lo que cambió</a>
+      <a href="#tuyo" style="color: #142633;">El tuyo</a>
+    </div>
+
+    <div id="pueblo" style="position: absolute; left: 72px; bottom: 64px; max-width: 1000px;">
+      <h1 class="anton" style="margin: 0; font-size: 136px; line-height: 0.9; letter-spacing: 0.01em; color: #efe6d6; text-shadow: 0 4px 24px rgba(20,38,51,0.45);">Embalse, Córdoba.</h1>
+      <p class="serif" style="margin: 18px 0 0 0; max-width: 720px; font-size: 23px; font-style: italic; line-height: 1.35; color: #efe6d6;">Donde hicimos el primer programa para que nadie tipee lo que ya está escrito.</p>
+    </div>
+  </div>
+
+  <!-- ============ CAPÍTULO: la Mesa de Entradas ============ -->
+  <div id="mesa" style="display: grid; grid-template-columns: 620px 1fr; gap: 72px; align-items: start; padding: 72px 72px 0;">
+    <div>
+      <div class="hatch" style="display: flex; align-items: center; justify-content: center; box-sizing: border-box; height: 430px; background-color: #22384a; border: 1px solid rgba(239,230,214,0.25); text-align: center; padding: 40px;">
+        <span class="serif" style="font-size: 17px; font-style: italic; line-height: 1.5; color: rgba(239,230,214,0.85);">[Foto real: la Mesa de Entradas de la Municipalidad de Embalse, con la gente que la atiende. Se saca en la visita.]</span>
+      </div>
+      <p class="serif" style="margin: 12px 0 0 0; font-size: 14.5px; font-style: italic; color: rgba(239,230,214,0.65);">Sin fotos de banco. El lugar y la gente de verdad, con su permiso.</p>
+    </div>
+
+    <div>
+      <h2 class="anton" style="margin: 0; font-size: 62px; line-height: 0.95; letter-spacing: 0.01em; color: #efe6d6;">Antes, cada nota se tipeaba dos veces.</h2>
+      <p class="serif" style="margin: 26px 0 0 0; max-width: 560px; font-size: 19px; line-height: 1.55;">[Qué entraba a mano: notas, expedientes, reclamos. Quién lo hacía y cuánto tardaba cada uno.]</p>
+      <p class="serif" style="margin: 16px 0 0 0; max-width: 560px; font-size: 19px; line-height: 1.55;">[Qué hicimos, en una frase. Desde cuándo está andando y qué pasa hoy cuando entra una nota.]</p>
+      <p class="serif" style="margin: 28px 0 0 0; max-width: 560px; font-size: 24px; font-style: italic; line-height: 1.35; color: #f2a05f;">“[Una frase de quien lo usa todos los días, con nombre y cargo.]”</p>
+    </div>
+  </div>
+
+  <!-- ============ EL TUYO ============ -->
+  <div id="tuyo" style="display: flex; align-items: center; justify-content: space-between; gap: 48px; margin: 88px 72px 0; padding: 40px 48px; border-top: 1px solid rgba(239,230,214,0.25); border-bottom: 1px solid rgba(239,230,214,0.25);">
+    <div>
+      <h2 class="anton" style="margin: 0; font-size: 56px; line-height: 0.95; color: #efe6d6;">¿Y el tuyo?</h2>
+      <p class="serif" style="margin: 12px 0 0 0; max-width: 620px; font-size: 18px; line-height: 1.5; color: rgba(239,230,214,0.85);">Municipio o empresa. Te decimos qué se puede hacer y qué no, antes de cobrarte nada.</p>
+    </div>
+    <a href="#tuyo" class="serif" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; background: #f2643f; color: #142633; font-size: 18px; font-weight: 600; white-space: nowrap;">Contanos tu caso</a>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+  <style>
+    body { margin: 0; background: #f6f3ec; }
+    a { color: #14130f; text-decoration: none; }
+    a:hover { color: #8f2c22; }
+    .nav a { font-size: 14px; font-weight: 500; letter-spacing: -0.005em; color: #4a463c; }
+    .hd { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8271; }
+    .row { display: grid; grid-template-columns: 560px 330px 210px 90px; gap: 30px; align-items: start; padding: 17px 0; border-top: 1px solid rgba(20,19,15,0.14); }
+    .q { font-family: Newsreader, Georgia, serif; font-size: 22px; line-height: 1.28; letter-spacing: -0.003em; color: #14130f; text-wrap: pretty; }
+    .d { font-size: 15.5px; line-height: 1.38; color: #3a362d; }
+    .c { font-size: 15.5px; line-height: 1.38; color: #6e675a; }
+    .w { font-size: 15.5px; font-weight: 600; text-align: right; color: #14130f; }
+    .no .q { color: #8f2c22; }
+    .no .d { color: #8f2c22; }
+    .grp { display: flex; align-items: baseline; gap: 20px; margin: 46px 0 4px; }
+    .grpn { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; color: #8f2c22; }
+    .grpt { font-family: Newsreader, Georgia, serif; font-size: 30px; letter-spacing: -0.01em; color: #14130f; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 2440px; box-sizing: border-box; background: #f6f3ec; color: #14130f; font-family: 'Libre Franklin', system-ui, sans-serif; overflow: hidden; padding: 0 80px; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ NAV: esto es un sitio, no una pieza ============ -->
+  <div class="nav" style="display: flex; align-items: center; justify-content: space-between; padding: 26px 0 20px; border-bottom: 2px solid #14130f;">
+    <a href="/" style="font-size: 17px; font-weight: 700; letter-spacing: 0.03em;">LUVANT</a>
+    <div style="display: flex; gap: 26px;">
+      <a href="/servicios/desarrollo-software-a-medida">Software a medida</a>
+      <a href="/servicios/automatizacion-de-procesos">Automatización</a>
+      <a href="/servicios/integracion-de-sistemas">Integración</a>
+      <a href="/servicios/consultoria-tecnica">Consultoría</a>
+      <a href="/productos/lens">Luvant Lens</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <a href="/contacto" style="font-weight: 600;">Contacto</a>
+  </div>
+
+  <!-- ============ EL ENCABEZADO: no es un hero, es la portada de un índice ============ -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px; padding: 40px 0 26px;">
+    <div style="max-width: 830px;">
+      <h1 style="margin: 0; font-family: Newsreader, Georgia, serif; font-size: 62px; font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance;">Lo que se puede automatizar con inteligencia artificial, y lo que no.</h1>
+      <p style="margin: 20px 0 0; max-width: 700px; font-size: 18.5px; line-height: 1.45; color: #3a362d; text-wrap: pretty;">Un índice de problemas reales, dichos como los dice la gente que los tiene. Buscá el tuyo. Si está en la lista es porque ya lo hice o porque sé cuánto tarda. Si dice que no conviene, es porque no conviene.</p>
+    </div>
+    <div style="flex: 0 0 auto; width: 330px; padding: 24px; border: 2px solid #14130f;">
+      <div style="font-size: 16px; line-height: 1.4; color: #3a362d;">Hago programas con IA para el trabajo de todos los días. Para un negocio, un estudio, un municipio, o para vos solo.</div>
+      <a href="/contacto" style="display: flex; align-items: center; justify-content: center; gap: 11px; margin-top: 18px; padding: 16px 20px; background: {{accent}}; color: #f9f6ef; font-size: 17px; font-weight: 600;">Agendá 15 minutos
+        <svg width="18" height="14" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#f9f6ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+      <div style="margin-top: 13px; font-size: 14px; line-height: 1.35; color: #6e675a;">Hablás con Facundo, que es el que lo programa. No hay vendedor en el medio.</div>
+    </div>
+  </div>
+
+  <!-- ============ EL ÍNDICE ============ -->
+  <div style="display: grid; grid-template-columns: 560px 330px 210px 90px; gap: 30px; padding-bottom: 9px; border-bottom: 2px solid #14130f;">
+    <div class="hd">El quilombo, en tus palabras</div>
+    <div class="hd">Lo que se construye</div>
+    <div class="hd">Se conecta con</div>
+    <div class="hd" style="text-align: right;">Semanas</div>
+  </div>
+
+  <div class="grp" style="margin-top: 30px;"><span class="grpn">01</span><span class="grpt">En un negocio de barrio</span></div>
+  <div class="row"><div class="q">«Me entran setenta pedidos por WhatsApp y algunos se pierden.»</div><div class="d">Lee el WhatsApp, arma el pedido solo y lo deja ordenado por hora de retiro.</div><div class="c">El WhatsApp que ya usás</div><div class="w">[N]</div></div>
+  <div class="row"><div class="q">«Paso media mañana contestando a qué hora abrimos.»</div><div class="d">Contesta lo que se repite y te pasa a vos sólo lo que no sabe.</div><div class="c">WhatsApp, Instagram</div><div class="w">[N]</div></div>
+  <div class="row"><div class="q">«No sé que me falta algo hasta que me falta.»</div><div class="d">Mira lo que sale y avisa antes de que se acabe.</div><div class="c">Tu planilla o tu sistema de ventas</div><div class="w">[N]</div></div>
+  <div class="row no"><div class="q">«Que la IA me ponga los precios.»</div><div class="d">No lo automatices todavía. Sin al menos un año de ventas cargadas te va a inventar números con cara de certeza.</div><div class="c">—</div><div class="w">—</div></div>
+
+  <div class="grp"><span class="grpn">02</span><span class="grpt">En un consultorio o un estudio</span></div>
+  <div class="row"><div class="q">«Los turnos me los da la misma persona que atiende el mostrador.»</div><div class="d">Da turnos, los confirma y recuerda el día anterior.</div><div class="c">Google Calendar, WhatsApp</div><div class="w">[N]</div></div>
+  <div class="row"><div class="q">«Cargar las facturas de los clientes me come dos días al mes.»</div><div class="d">Lee cada factura y la carga igual que la cargás vos.</div><div class="c">Tu sistema contable</div><div class="w">[N]</div></div>
+  <div class="row"><div class="q">«Necesito una cláusula que está en alguno de doscientos contratos.»</div><div class="d">Busca por lo que dice, no por la palabra exacta, y te muestra la página.</div><div class="c">La carpeta donde ya están</div><div class="w">[N]</div></div>
+
+  <div class="grp"><span class="grpn">03</span><span class="grpt">En una municipalidad</span></div>
+  <div class="row"><div class="q">«Los reclamos entran por cuatro lados y se derivan a mano.»</div><div class="d">Los junta, los clasifica y los deriva al área que corresponde.</div><div class="c">[qué usan hoy]</div><div class="w">[N]</div></div>
+  <div class="row"><div class="q">«[Lo que pasaba en Embalse antes de que lo arreglaras]»</div><div class="d">[Qué hace hoy]</div><div class="c">[Con qué]</div><div class="w">[desde cuándo]</div></div>
+  <div class="row no"><div class="q">«Que la IA resuelva el expediente.»</div><div class="d">No. Clasifica, ordena y prepara; la decisión la firma una persona. Cualquiera que te diga lo contrario te está vendiendo un problema.</div><div class="c">—</div><div class="w">—</div></div>
+
+  <div class="grp"><span class="grpn">04</span><span class="grpt">Vos solo, con tu propio trabajo</span></div>
+  <div class="row"><div class="q">«Escribo el mismo presupuesto veinte veces por mes.»</div><div class="d">Lo arma con tus precios y con tu manera de escribir.</div><div class="c">Tu planilla</div><div class="w">[N]</div></div>
+  <div class="row" style="border-bottom: 1px solid rgba(20,19,15,0.14);"><div class="q">«Tengo tres años de audios y de notas y no encuentro nada.»</div><div class="d">Los transcribe y los deja buscables por lo que dicen.</div><div class="c">La carpeta donde ya están</div><div class="w">[N]</div></div>
+
+  <!-- ============ EL CIERRE ============ -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px; margin-top: 40px; padding-top: 26px; border-top: 2px solid #14130f;">
+    <div style="max-width: 760px;">
+      <div style="font-family: Newsreader, Georgia, serif; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em;">¿No está el tuyo? Es lo más probable.</div>
+      <p style="margin: 12px 0 0; font-size: 17px; line-height: 1.45; color: #3a362d; text-wrap: pretty;">La lista tiene trece entradas y el trabajo de la gente tiene miles. Por eso es a medida: el programa se escribe para tu caso, se conecta con lo que ya usás, y el precio queda cerrado antes de que yo empiece.</p>
+      <p style="margin: 10px 0 0; font-size: 14px; color: #8a8271;">Los plazos y los precios van entre corchetes hasta que los confirmes.</p>
+    </div>
+    <a href="/contacto" style="flex: 0 0 auto; display: flex; align-items: center; gap: 12px; padding: 19px 30px; background: {{accent}}; color: #f9f6ef; font-size: 18px; font-weight: 600;">Contame el tuyo en 15 minutos
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#f9f6ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#8f2c22","options":["#8f2c22","#14130f","#2c5a3f","#1c3f6e"]}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#8f2c22' };
+  }
+}
+</script>
+</body>
+</html>

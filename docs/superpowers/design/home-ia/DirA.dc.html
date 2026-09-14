@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #f4f3ef; }
+    a { color: #141613; text-decoration: none; }
+    a:hover { color: #1f6f4a; }
+    .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .nav a { font-family: Archivo, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #5a5f58; }
+    .nav a:hover { color: #141613; }
+    .row { display: grid; grid-template-columns: 118px 1fr; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid #dcdad2; }
+    .row .k { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7a7f77; }
+    .row .v { font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: #141613; }
+    .row .s { display: flex; align-items: center; gap: 7px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #1f6f4a; }
+    mark { background: rgba(255,210,63,0.62); color: inherit; box-shadow: 0 0 0 1px #141613; padding: 0 3px; }
+    mark.rojo { background: rgba(200,50,31,0.16); box-shadow: 0 0 0 1px #c8321f; }
+    .doc { font-family: Archivo, system-ui, sans-serif; color: #1f2320; }
+    .doc td, .doc th { font-size: 12.5px; padding: 8px 6px; border-bottom: 1px solid #e6e4dc; text-align: left; }
+    .doc th { font-weight: 600; color: #5a5f58; }
+    .doc td.n, .doc th.n { text-align: right; font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1720px; box-sizing: border-box; background: #f4f3ef; color: #141613; font-family: Archivo, system-ui, sans-serif; overflow: hidden; padding: 0 72px; -webkit-font-smoothing: antialiased;">
+
+  <nav class="nav" style="display: flex; align-items: center; justify-content: space-between; height: 72px;">
+    <a href="/" style="display: flex; align-items: center; gap: 10px;">
+      <svg width="22" height="22" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+        <rect width="56" height="56" fill="#141613"></rect>
+        <path d="M14 40L28 16L42 40" stroke="#f4f3ef" stroke-width="4" stroke-linecap="square"></path>
+        <circle cx="28" cy="16" r="4" fill="#f4f3ef"></circle>
+      </svg>
+      <span style="font-size: 15px; font-weight: 800; letter-spacing: 0.08em; color: #141613;">LUVANT</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 30px;">
+      <a href="/productos">Productos</a>
+      <a href="/servicios/desarrollo-software-a-medida">Servicios</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/blog">Blog</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO: el titular arriba, y debajo la demostración ocupa el resto del viewport -->
+  <h1 style="margin: 40px 0 0 0; max-width: 1100px; font-size: 64px; font-weight: 800; line-height: 0.98; letter-spacing: -0.032em; text-wrap: balance;">Inteligencia artificial que lee, valida y carga.</h1>
+  <p style="margin: 18px 0 0 0; max-width: 620px; font-size: 18px; font-weight: 500; line-height: 1.4; color: #5a5f58;">Una factura de proveedor, leída por el mismo programa que instalamos en tu empresa.</p>
+
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; margin-top: 34px;">
+
+    <!-- LA FACTURA: el documento a gran escala, con el resaltador encima -->
+    <div class="doc" style="box-sizing: border-box; background: #ffffff; border: 1px solid #dcdad2; box-shadow: 0 1px 2px rgba(20,22,19,0.06), 0 24px 48px rgba(20,22,19,0.08); padding: 34px 38px 30px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 2px solid #1f2320;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em;">FACTURA</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 2px solid #1f2320; font-size: 18px; font-weight: 800;">A</span>
+          <span style="font-size: 11px; font-weight: 600; color: #5a5f58; letter-spacing: 0.06em;">ORIGINAL</span>
+        </div>
+        <div class="mono" style="text-align: right; font-size: 12.5px; line-height: 1.7;">
+          <div>N° <mark>0004-00018342</mark></div>
+          <div>Fecha <mark>02/09/2026</mark></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 16px 0; font-size: 12.5px; line-height: 1.65;">
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Distribuidora Río Tercero S.R.L.</div>
+          <div>Av. San Martín 1240, Río Tercero, Córdoba</div>
+          <div>CUIT <mark class="mono">30-71482236-4</mark></div>
+          <div>IVA Responsable Inscripto</div>
+        </div>
+        <div>
+          <div>Sr./es: <strong>[Tu empresa]</strong></div>
+          <div>CUIT: [ ]</div>
+          <div>Cond. de venta: Cuenta corriente</div>
+          <div>Orden de compra <mark class="mono">OC-1187</mark></div>
+        </div>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse; margin-top: 4px;">
+        <thead>
+          <tr><th class="n" style="width: 56px;">Cant.</th><th>Descripción</th><th class="n">P. unitario</th><th class="n">Subtotal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">120</td><td>Cajas de cartón corrugado 60 × 40</td><td class="n">4.850,00</td><td class="n">582.000,00</td></tr>
+          <tr><td class="n">40</td><td>Film stretch 500 mm</td><td class="n">6.900,00</td><td class="n">276.000,00</td></tr>
+          <tr><td class="n">6</td><td>Pallets de madera 1,00 × 1,20</td><td class="n">32.100,00</td><td class="n">192.600,00</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mono" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; margin-top: 14px; font-size: 12.5px;">
+        <div>Subtotal <span style="display: inline-block; width: 150px; text-align: right;">1.050.600,00</span></div>
+        <div>IVA 21 % <span style="display: inline-block; width: 150px; text-align: right;">220.626,00</span></div>
+        <div style="font-size: 15px; font-weight: 600; margin-top: 4px;">TOTAL <mark style="display: inline-block; width: 150px; text-align: right;">$ 1.271.226,00</mark></div>
+      </div>
+    </div>
+
+    <!-- EL REGISTRO: lo que la IA leyó, fila por fila, y contra qué lo validó -->
+    <div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between;">
+        <span style="font-size: 15px; font-weight: 700;">Registro de lectura</span>
+        <span class="mono" style="font-size: 11.5px; color: #7a7f77;">8 seg desde que llegó el mail</span>
+      </div>
+
+      <div style="margin-top: 14px;">
+        <div class="row">
+          <span class="k">Proveedor</span>
+          <div><div class="v">Distribuidora Río Tercero S.R.L.</div><div class="s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>coincide con tu padrón de proveedores</div></div>
+        </div>
+        <div class="row">
+          <span class="k">CUIT</span>
+          <div><div class="v">30-71482236-4</div><div class="s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>válido</div></div>
+        </div>
+        <div class="row">
+          <span class="k">Número</span>
+          <div><div class="v">0004-00018342</div><div class="s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>no estaba cargada</div></div>
+        </div>
+        <div class="row">
+          <span class="k">Orden de compra</span>
+          <div><div class="v">OC-1187</div><div class="s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>existe y está abierta</div></div>
+        </div>
+        <div class="row">
+          <span class="k">Total</span>
+          <div><div class="v">$ 1.271.226,00</div><div class="s"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>coincide con la orden de compra</div></div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid #dcdad2;">
+          <span class="k">Destino</span>
+          <div><div class="v">Tango, comprobante de compra</div><div class="s">entra sola. Nadie la tipeó.</div></div>
+        </div>
+      </div>
+
+      <a href="#formulario" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; background: #141613; color: #f4f3ef; padding: 16px 24px; font-size: 15px; font-weight: 700;">
+        <span>Probar con 5 documentos</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <p class="mono" style="margin: 12px 0 0 0; font-size: 11.5px; line-height: 1.6; color: #7a7f77; max-width: 420px;">Sin costo. Te devolvemos este mismo registro, hecho con tus documentos.</p>
+    </div>
+  </div>
+
+  <!-- SEGUNDO MOMENTO: la excepción -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-top: 120px; padding-top: 56px; border-top: 1px solid #dcdad2;">
+    <div>
+      <h2 style="margin: 0; font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; text-wrap: balance;">Lo que no cierra, lo ve una persona.</h2>
+      <p style="margin: 20px 0 0 0; max-width: 480px; font-size: 17px; line-height: 1.5; color: #5a5f58;">Si el total no coincide con la orden de compra, el programa no adivina. Marca la diferencia, deja la factura al lado y sigue con la próxima. Compras revisa esa sola.</p>
+      <p class="mono" style="margin: 22px 0 0 0; max-width: 480px; font-size: 12px; line-height: 1.7; color: #7a7f77;">Lo mismo con remitos, formularios, reclamos y mails con la pregunta de siempre. Lo que lee bien, entra. Lo que no, espera a alguien.</p>
+    </div>
+    <div>
+      <div class="row" style="border-top-color: #c8321f;">
+        <span class="k">Total</span>
+        <div><div class="v"><mark class="rojo">$ 1.283.526,00</mark></div><div class="s" style="color: #c8321f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>no coincide con la OC-1187: diferencia $ 12.300,00</div></div>
+      </div>
+      <div class="row" style="border-bottom: 1px solid #dcdad2;">
+        <span class="k">Destino</span>
+        <div><div class="v">Bandeja de Compras</div><div class="s" style="color: #5a5f58;">con la factura y la orden abiertas una al lado de la otra</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIERRE -->
+  <div id="formulario" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 110px; padding: 40px 44px; background: #141613; color: #f4f3ef;">
+    <div>
+      <p style="margin: 0; font-size: 30px; font-weight: 800; line-height: 1.05; letter-spacing: -0.025em;">Mandá 5 documentos y te devolvemos el registro.</p>
+      <p class="mono" style="margin: 10px 0 0 0; font-size: 12px; color: #9ea59b;">Sin reunión previa. Se borran cuando termina la prueba.</p>
+    </div>
+    <a href="#formulario" style="display: inline-flex; align-items: center; gap: 10px; background: #f4f3ef; color: #141613; padding: 16px 24px; font-size: 15px; font-weight: 700; white-space: nowrap;">Probar con 5 documentos</a>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

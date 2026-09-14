@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #12100e; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #d9a441; }
+    .eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+    .banda { position: relative; width: 1440px; height: 390px; overflow: hidden; background: #241f1a; }
+    .banda img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.8) contrast(1.08) brightness(0.88); }
+    .vel-d { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,16,14,0.05) 0%, rgba(18,16,14,0.5) 42%, rgba(18,16,14,0.93) 74%); }
+    .vel-i { position: absolute; inset: 0; background: linear-gradient(270deg, rgba(18,16,14,0.05) 0%, rgba(18,16,14,0.5) 42%, rgba(18,16,14,0.93) 74%); }
+    .cont { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; width: 560px; }
+    .bt { font-size: 40px; font-weight: 600; line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance; }
+    .bd { margin-top: 14px; font-size: 17.5px; line-height: 1.45; color: rgba(244,239,230,0.72); text-wrap: pretty; }
+    .bw { margin-top: 18px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,230,0.5); }
+    .btn { display: inline-flex; align-items: center; gap: 12px; padding: 19px 32px; border-radius: 3px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 3480px; box-sizing: border-box; background: #12100e; color: #f4efe6; font-family: 'Schibsted Grotesk', system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ HERO: una sola imagen, el texto abajo al centro ============ -->
+  <div style="position: relative; height: 800px; overflow: hidden;">
+    <img src="cuadra.jpg" alt="Frente de una ferretería de barrio con el cartel pintado a mano" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.78) contrast(1.1) brightness(0.82);">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,14,0.72) 0%, rgba(18,16,14,0.18) 30%, rgba(18,16,14,0.88) 100%);"></div>
+
+    <div style="position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 32px 72px;">
+      <a href="/" style="font-size: 19px; font-weight: 700; letter-spacing: 0.04em;">LUVANT</a>
+      <div style="display: flex; gap: 30px; font-size: 15px; font-weight: 500; color: rgba(244,239,230,0.84);">
+        <a href="/servicios/desarrollo-software-a-medida">Software a medida</a>
+        <a href="/servicios/automatizacion-de-procesos">Automatización</a>
+        <a href="/servicios/integracion-de-sistemas">Integración</a>
+        <a href="/productos/lens">Luvant Lens</a>
+        <a href="/nosotros">Nosotros</a>
+      </div>
+      <a href="/contacto" style="padding: 12px 22px; border: 1px solid rgba(244,239,230,0.45); border-radius: 3px; font-size: 14.5px; font-weight: 600;">Agendá 15 minutos</a>
+    </div>
+
+    <div style="position: absolute; left: 72px; right: 72px; bottom: 96px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div class="eyebrow" style="color: {{accent}};">Software a medida · Córdoba, Argentina</div>
+      <h1 style="margin: 22px 0 0; max-width: 1080px; font-size: 88px; font-weight: 600; line-height: 0.95; letter-spacing: -0.04em; text-wrap: balance;">Lo que hacés todos los días a mano, hecho por un programa tuyo.</h1>
+      <p style="margin: 24px 0 0; max-width: 680px; font-size: 20px; line-height: 1.45; color: rgba(244,239,230,0.82); text-wrap: pretty;">Cinco negocios de la misma cuadra, cinco programas que no se parecen en nada. Bajá y fijate cuál se parece al tuyo.</p>
+      <a href="/contacto" class="btn" style="margin-top: 30px; background: {{accent}}; color: #12100e;">Agendá 15 minutos
+        <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#12100e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ RESPIRO ============ -->
+  <div style="display: flex; align-items: center; justify-content: center; height: 168px; padding: 0 72px; text-align: center;">
+    <div style="max-width: 1000px;">
+      <p style="margin: 0; font-size: 38px; font-weight: 600; line-height: 1.12; letter-spacing: -0.03em; text-wrap: balance;">No te vendo un sistema hecho. Te escribo el tuyo.</p>
+      <p style="margin: 14px 0 0; font-size: 18px; line-height: 1.45; color: rgba(244,239,230,0.62);">Negocios, estudios profesionales y municipalidades. Córdoba y alrededores. Desde [PRECIO].</p>
+    </div>
+  </div>
+
+  <!-- ============ LAS BANDAS: un rubro por pantalla ============ -->
+  <div class="banda">
+    <img src="panaderia.jpg" alt="Vendedora acomodando pan en una panadería">
+    <span class="vel-d"></span>
+    <div class="cont" style="right: 72px;">
+      <div class="eyebrow" style="color: {{accent}};">La panadería</div>
+      <div class="bt">Setenta pedidos por WhatsApp y ninguno se pierde.</div>
+      <div class="bd">Los lee, arma el pedido solo y te lo deja en la pantalla del local ordenado por hora de retiro. Sobre el mismo WhatsApp que ya usás.</div>
+      <div class="bw">Puesta en marcha · [N] semanas</div>
+    </div>
+  </div>
+
+  <div class="banda">
+    <img src="consultorio.jpg" alt="Recepción de un consultorio">
+    <span class="vel-i"></span>
+    <div class="cont" style="left: 72px;">
+      <div class="eyebrow" style="color: {{accent}};">El consultorio</div>
+      <div class="bt">Los turnos se dan solos. El mostrador sigue atendiendo.</div>
+      <div class="bd">Da el turno, lo confirma y lo recuerda el día anterior. Contra tu Google Calendar de siempre, sin agenda nueva que aprender.</div>
+      <div class="bw">Puesta en marcha · [N] semanas</div>
+    </div>
+  </div>
+
+  <div class="banda">
+    <img src="estudio.jpg" alt="Escritorio con facturas y calculadora">
+    <span class="vel-d"></span>
+    <div class="cont" style="right: 72px;">
+      <div class="eyebrow" style="color: {{accent}};">El estudio contable</div>
+      <div class="bt">Dos días por mes cargando facturas. Ahora, ninguno.</div>
+      <div class="bd">Lee cada factura de los clientes y la carga en tu sistema contable igual que la cargarías vos.</div>
+      <div class="bw">Puesta en marcha · [N] semanas</div>
+    </div>
+  </div>
+
+  <div class="banda">
+    <img src="ferreteria.jpg" alt="Cliente eligiendo herramientas en una ferretería">
+    <span class="vel-i"></span>
+    <div class="cont" style="left: 72px;">
+      <div class="eyebrow" style="color: {{accent}};">La ferretería</div>
+      <div class="bt">Te enterás de que falta antes de que falte.</div>
+      <div class="bd">Mira lo que va saliendo y te avisa cuando algo está por acabarse. Con tu propia planilla, sin sistema nuevo.</div>
+      <div class="bw">Puesta en marcha · [N] semanas</div>
+    </div>
+  </div>
+
+  <div class="banda" style="height: 440px;">
+    <img src="municipio.jpg" alt="Edificio de la municipalidad">
+    <span class="vel-d"></span>
+    <div class="cont" style="right: 72px; width: 600px;">
+      <div class="eyebrow" style="color: {{accent}};">Municipalidad de Embalse, Córdoba</div>
+      <div style="margin-top: 16px; font-size: 30px; font-weight: 500; line-height: 1.28; letter-spacing: -0.022em; text-wrap: pretty;">«[Acá va la frase real de quien lo usa en el municipio, con nombre y cargo.]»</div>
+      <div class="bd">[Qué se automatizó, desde cuándo y qué volumen mueve por mes.] Fue el primer municipio con el que trabajé y sigue andando.</div>
+    </div>
+  </div>
+
+  <!-- ============ LO QUE QUIERE DECIR A MEDIDA ============ -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px; padding: 96px 72px 0;">
+    <div style="padding-top: 22px; border-top: 2px solid {{accent}};">
+      <div style="font-size: 26px; font-weight: 600; line-height: 1.18; letter-spacing: -0.024em;">«¿Y si lo mío es un caso raro?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(244,239,230,0.66); text-wrap: pretty;">Es lo más probable, y es justamente para eso. Ninguno de los cinco programas de acá arriba le sirve al otro.</p>
+    </div>
+    <div style="padding-top: 22px; border-top: 2px solid {{accent}};">
+      <div style="font-size: 26px; font-weight: 600; line-height: 1.18; letter-spacing: -0.024em;">«¿Tengo que cambiar lo que ya uso?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(244,239,230,0.66); text-wrap: pretty;">No. Se conecta con tu WhatsApp, tu planilla o tu sistema contable. Nadie cambia de número ni aprende un programa nuevo.</p>
+    </div>
+    <div style="padding-top: 22px; border-top: 2px solid {{accent}};">
+      <div style="font-size: 26px; font-weight: 600; line-height: 1.18; letter-spacing: -0.024em;">«¿Cuánto sale y cuánto tarda?»</div>
+      <p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.5; color: rgba(244,239,230,0.66); text-wrap: pretty;">Lo sabés antes de que yo escriba una línea: desde [PRECIO] y [N] semanas, cerrado. Si me complico en el medio, es problema mío.</p>
+    </div>
+  </div>
+
+  <!-- ============ CIERRE ============ -->
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 104px 72px 0; padding: 84px 60px; border-radius: 4px; background: {{accent}}; color: #12100e;">
+    <div class="eyebrow" style="color: rgba(18,16,14,0.6);">El tuyo</div>
+    <h2 style="margin: 20px 0 0; max-width: 900px; font-size: 66px; font-weight: 600; line-height: 0.99; letter-spacing: -0.038em; text-wrap: balance;">Quince minutos y sabés si te sirve.</h2>
+    <p style="margin: 22px 0 0; max-width: 620px; font-size: 19px; line-height: 1.5; color: rgba(18,16,14,0.76); text-wrap: pretty;">Contame qué es eso que hacés todos los días a mano. Te digo si se puede, cuánto sale y cuánto tarda. Y si no te conviene, te lo digo ahí mismo y no me pagás nada.</p>
+    <a href="/contacto" class="btn" style="margin-top: 34px; background: #12100e; color: #f4efe6; font-size: 18px; padding: 21px 36px;">Agendá 15 minutos
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#f4efe6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+    <span style="margin-top: 18px; font-size: 15px; color: rgba(18,16,14,0.66);">Hablás con Facundo, que es el que lo programa.</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#d9a441","options":["#d9a441","#e2521f","#5aa88a","#f4efe6"]}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#d9a441' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Caveat:wght@500;600&display=swap">
+  <style>
+    body { margin: 0; background: #efe9d9; }
+    a { color: #1e2a23; text-decoration: none; }
+    a:hover { color: #b0271c; }
+    .anot { font-family: 'Courier Prime', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; letter-spacing: 0.02em; color: #6a7069; }
+    .folio { font-family: 'Courier Prime', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9a958a; }
+    .wire { border: 1.5px dashed #a9a394; background: rgba(255,255,255,0.35); }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; background: #efe9d9; color: #1e2a23; font-family: 'Familjen Grotesk', system-ui, sans-serif; overflow: hidden; padding: 0 64px 0 120px;">
+
+  <div style="position: absolute; left: 24px; top: 0; width: 5px; height: 900px; border-left: 1px dashed #d6a093; border-right: 1px dashed #e7c3b9;"></div>
+  <span class="folio" style="position: absolute; right: 24px; top: 18px; color: #b0271c;">Boceto C · Lo que te venden, lo que hacemos</span>
+
+  <nav style="display: flex; align-items: center; justify-content: space-between; height: 76px;">
+    <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.1em;">LUVANT</span>
+    <div style="display: flex; gap: 30px; font-size: 14px; font-weight: 500; color: #6a7069;">
+      <span>Productos</span><span>Servicios</span><span>Nosotros</span><span>Blog</span><span>Contacto</span>
+    </div>
+  </nav>
+
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 30px;">
+    <h1 style="margin: 0; font-size: 92px; font-weight: 700; line-height: 0.9; letter-spacing: -0.045em;">IA sin humo.</h1>
+    <p class="anot" style="margin: 0 0 10px 0; max-width: 380px; color: #1e2a23; font-size: 13px;">Lee tus documentos, carga los datos en el sistema que ya usás y avisa cuando algo no cierra. Eso es todo lo que hace. Y lo probás con los tuyos.</p>
+  </div>
+
+  <!-- Dos fojas enfrentadas: la de la izquierda es el humo, la de la derecha el trabajo -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+    <div class="wire" style="position: relative; box-sizing: border-box; height: 470px; padding: 26px 30px; transform: rotate(-0.8deg);">
+      <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #1e2a23;">
+        <span class="folio" style="color: #b0271c;">Lo que te venden como IA</span>
+        <span class="folio">Fs. 1</span>
+      </div>
+      <svg viewBox="0 0 520 300" fill="none" style="display: block; width: 100%; margin-top: 20px;" aria-hidden="true">
+        <path d="M30 250 C 90 60, 140 280, 200 120 S 300 260, 330 80 S 420 250, 470 150 S 500 60, 480 230" stroke="#b0271c" stroke-width="2.4" stroke-dasharray="6 5" fill="none"></path>
+        <g font-family="Courier Prime, monospace" font-size="11" fill="#4a554d">
+          <text x="26" y="278">un chat</text>
+          <text x="150" y="60">una demo</text>
+          <text x="250" y="290">un tablero</text>
+          <text x="330" y="60">una presentación</text>
+          <text x="400" y="290">otra reunión</text>
+        </g>
+        <g fill="#fdfcf7" stroke="#b0271c" stroke-width="2">
+          <rect x="23" y="243" width="14" height="14"></rect>
+          <rect x="193" y="113" width="14" height="14"></rect>
+          <rect x="323" y="73" width="14" height="14"></rect>
+          <rect x="463" y="143" width="14" height="14"></rect>
+        </g>
+      </svg>
+      <span style="position: absolute; left: 30px; bottom: 22px; font-family: Caveat, cursive; font-size: 24px; color: #2a4b9b; transform: rotate(-2deg); display: inline-block;">y el dato sigue tipeándose a mano</span>
+    </div>
+
+    <div class="wire" style="position: relative; box-sizing: border-box; height: 470px; padding: 26px 30px; transform: rotate(0.5deg);">
+      <div style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #1e2a23;">
+        <span class="folio" style="color: #3e6e63;">Lo que hacemos</span>
+        <span class="folio">Fs. 2</span>
+      </div>
+      <svg viewBox="0 0 520 300" fill="none" style="display: block; width: 100%; margin-top: 20px;" aria-hidden="true">
+        <path d="M30 150 H490" stroke="#3e6e63" stroke-width="2.8"></path>
+        <g fill="#fdfcf7" stroke="#3e6e63" stroke-width="2">
+          <rect x="23" y="143" width="14" height="14"></rect>
+          <rect x="483" y="143" width="14" height="14"></rect>
+        </g>
+        <rect x="248" y="138" width="24" height="24" fill="#3e6e63"></rect>
+        <g font-family="Courier Prime, monospace" font-size="11" fill="#4a554d">
+          <text x="26" y="180">tu documento</text>
+          <text x="260" y="126" text-anchor="middle" fill="#3e6e63" font-weight="700">LA IA LEE Y VALIDA</text>
+          <text x="497" y="180" text-anchor="end">el dato en tu sistema</text>
+        </g>
+      </svg>
+      <a href="#formulario" style="position: absolute; left: 30px; bottom: 26px; display: inline-flex; align-items: center; gap: 10px; background: #1e2a23; color: #efe9d9; padding: 15px 22px; font-size: 15px; font-weight: 600;">Probar con 5 documentos</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

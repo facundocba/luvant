@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap">
+  <style>
+    body { margin: 0; background: #e9e5db; }
+    a { color: #17150f; text-decoration: none; }
+    a:hover { color: #a83c1e; }
+    .msg { max-width: 300px; padding: 14px 17px; font-size: 17px; line-height: 1.38; letter-spacing: -0.004em; text-wrap: pretty; }
+    .in { align-self: flex-start; background: #fdfcfa; border: 1px solid rgba(23,21,15,0.10); border-radius: 16px 16px 16px 4px; color: #17150f; }
+    .out { align-self: flex-end; background: #17150f; border-radius: 16px 16px 4px 16px; color: #f2ede3; }
+    .meta { display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-top: 8px; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; }
+    .who { margin: 0 0 6px 3px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .day { display: flex; align-items: center; gap: 12px; margin: 8px 0 2px; font-family: 'Instrument Serif', Georgia, serif; font-size: 16px; color: #6f6757; }
+    .day::before, .day::after { content: ""; flex: 1 1 auto; height: 1px; background: rgba(23,21,15,0.14); }
+    .chip { flex: 0 0 auto; padding: 9px 14px; border-radius: 999px; background: #f2eee5; border: 1px solid rgba(23,21,15,0.13); font-size: 13px; font-weight: 500; color: #3d3830; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 390px; height: 1500px; box-sizing: border-box; background: #e9e5db; color: #17150f; font-family: 'Instrument Sans', system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- cabecera = H1 -->
+  <div style="display: flex; align-items: center; gap: 13px; padding: 16px; background: #17150f; color: #f2ede3;">
+    <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="3" y="5" width="26" height="18" rx="4" fill="none" stroke="#f2ede3" stroke-width="2"></rect>
+      <path d="M9 23v6l7-6" fill="none" stroke="#f2ede3" stroke-width="2" stroke-linejoin="round"></path>
+    </svg>
+    <div>
+      <h1 style="margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.15;">Luvant — IA a medida</h1>
+      <div style="display: flex; align-items: center; gap: 7px; margin-top: 4px;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: {{accent}};"></span>
+        <span style="font-size: 11.5px; color: rgba(242,237,227,0.62);">te contesta Facundo, que es el que lo programa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- la lista de hilos, acá como tira -->
+  <div style="display: flex; gap: 8px; padding: 13px 16px; background: #efebe2; border-bottom: 1px solid rgba(23,21,15,0.12); overflow: hidden;">
+    <span class="chip" style="background: {{accent}}; border-color: {{accent}}; color: #fdf8f1;">Panadería</span>
+    <span class="chip">Consultorio</span>
+    <span class="chip">Estudio</span>
+    <span class="chip">Municipio</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 15px; padding: 16px 16px 120px;">
+
+    <div style="align-self: center; padding: 5px 11px; border: 1px dashed rgba(23,21,15,0.3); border-radius: 4px; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #6f6757;">[Hilo de muestra]</div>
+
+    <div class="day">Jueves 12 de junio</div>
+
+    <div style="align-self: flex-start;">
+      <div class="who" style="color: {{accent}};">Marina · Panadería [nombre real]</div>
+      <div class="msg in">hola Facundo, te escribe Marina de la panadería. nos entran como 70 pedidos por whatsapp por día. el sábado se nos perdieron dos encargues de torta y una clienta que no volvió más.
+        <div class="meta" style="color: #a09786;">10:41</div>
+      </div>
+    </div>
+
+    <div class="msg out" style="width: 300px; box-sizing: border-box;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="display: flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%; background: {{accent}};">
+          <svg width="15" height="17" viewBox="0 0 18 20" aria-hidden="true"><path d="M3 2.5v15l13-7.5-13-7.5Z" fill="#fdf8f1"></path></svg>
+        </span>
+        <span style="display: flex; align-items: center; gap: 2px; height: 44px;">
+          <sc-for list="{{bars}}" as="bar" hint-placeholder-count="28">
+            <span style="width: 3px; border-radius: 2px; background: rgba(242,237,227,0.5); height: {{bar.h}}px;"></span>
+          </sc-for>
+        </span>
+        <span style="flex: 0 0 auto; font-size: 12px; color: rgba(242,237,227,0.6);">0:47</span>
+      </div>
+      <div class="meta" style="color: rgba(242,237,227,0.5);">10:52
+        <svg width="15" height="9" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 5.4 3.9 8.4 9.6 1.6M7.6 6.6l1.4 1.8L15.5 1.6" fill="none" stroke="rgba(242,237,227,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+
+    <div style="align-self: flex-end; width: 300px; box-sizing: border-box; padding: 13px 16px; border-left: 2px solid rgba(23,21,15,0.2);">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 14px; color: #6f6757; margin-bottom: 6px;">Transcripción del audio</div>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #3d3830; text-wrap: pretty;">«Marina, buenas. Antes de venderte nada te pregunto una cosa: ¿los pedidos los perdés porque nadie los ve, o porque los ven y se traspapelan? Uno de los dos no necesita que yo haga nada: con media hora tuya y una planilla lo arreglás y no me pagás un peso…»</p>
+    </div>
+
+    <div class="msg in">es el primero. nadie los ve hasta que alguna agarra el teléfono.
+      <div class="meta" style="color: #a09786;">11:03</div>
+    </div>
+
+    <div class="msg out">entonces te sirve. te lo armo para tu caso, conectado al WhatsApp que ya usás, y con el precio cerrado antes de que yo empiece: [PRECIO] y [N] semanas.
+      <div class="meta" style="color: rgba(242,237,227,0.5);">11:09
+        <svg width="15" height="9" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 5.4 3.9 8.4 9.6 1.6M7.6 6.6l1.4 1.8L15.5 1.6" fill="none" stroke="rgba(242,237,227,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+
+    <div class="msg in">y si más adelante quiero que también avise cuando está listo?
+      <div class="meta" style="color: #a09786;">11:12</div>
+    </div>
+
+    <div class="msg out">se agrega. eso es lo que quiere decir a medida: no es un producto que te calza o no te calza, es un programa escrito para cómo trabajás vos.
+      <div class="meta" style="color: rgba(242,237,227,0.5);">11:14
+        <svg width="15" height="9" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 5.4 3.9 8.4 9.6 1.6M7.6 6.6l1.4 1.8L15.5 1.6" fill="none" stroke="rgba(242,237,227,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- la barra = el único pedido -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 20px; background: #f7f4ee; border-top: 1px solid rgba(23,21,15,0.14); box-shadow: 0 -14px 30px rgba(23,21,15,0.07);">
+    <div style="padding: 14px 18px; border-radius: 999px; background: #ffffff; border: 1px solid rgba(23,21,15,0.16); font-size: 15px; color: #8b8371;">Contá qué hacés todos los días…</div>
+    <button style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 22px; border-radius: 999px; background: {{accent}}; color: #fdf8f1; font-size: 16px; font-weight: 600; cursor: pointer;">Agendá 15 minutos
+      <svg width="18" height="14" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 8h17M12 1.5 18.5 8 12 14.5" fill="none" stroke="#fdf8f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#a83c1e","options":["#a83c1e","#17150f","#2f6156","#8a5a12"]}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const hs = [10,18,28,22,36,42,30,44,34,24,16,30,40,44,36,26,18,14,24,32,42,40,30,22,16,26,34,28];
+    return {
+      accent: this.props.accent ?? '#a83c1e',
+      bars: hs.map(function (h) { return { h: h }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

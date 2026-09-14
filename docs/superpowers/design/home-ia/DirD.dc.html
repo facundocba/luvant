@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #fbfaf7; }
+    a { color: #1c2b2a; text-decoration: none; }
+    a:hover { color: #e2503c; }
+    @keyframes hs { 0% { r: 10; opacity: 0.55; } 100% { r: 26; opacity: 0; } }
+    .hs-ring { animation: hs 1.6s ease-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .hs-ring { animation: none; r: 18; opacity: 0.3; } }
+    .chip { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 1.5px solid #1c2b2a; font-family: Outfit, system-ui, sans-serif; font-size: 16px; font-weight: 500; color: #1c2b2a; }
+    .chip.on { background: #2b6b66; border-color: #2b6b66; color: #fdfcf9; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1800px; box-sizing: border-box; background: #fbfaf7; color: #1c2b2a; font-family: Outfit, system-ui, sans-serif; overflow: hidden; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ LA ESCENA: una oficina, a pantalla completa ============ -->
+  <div style="position: relative; width: 1440px; height: 900px; overflow: hidden;">
+    <svg width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Una oficina administrativa: un escritorio con una pila altísima de papeles en la bandeja de entrada, un monitor con una planilla, un teléfono descolgado que pregunta en qué está mi trámite, un calendario con el cierre de mes marcado, un archivador y una impresora trabada." style="display: block;">
+      <defs>
+        <pattern id="blinds" width="316" height="22" patternUnits="userSpaceOnUse">
+          <rect width="316" height="1.5" fill="#1c2b2a" opacity="0.28"></rect>
+        </pattern>
+        <pattern id="grid" width="40" height="22" patternUnits="userSpaceOnUse">
+          <path d="M40 0 V22 M0 22 H40" stroke="#b7c8c4" stroke-width="1" fill="none"></path>
+        </pattern>
+      </defs>
+
+      <!-- pared y piso -->
+      <rect x="0" y="0" width="1440" height="600" fill="#2b6b66"></rect>
+      <rect x="0" y="600" width="1440" height="300" fill="#c98f5a"></rect>
+      <rect x="0" y="592" width="1440" height="10" fill="#1c2b2a" opacity="0.35"></rect>
+
+      <!-- ventana -->
+      <rect x="1000" y="80" width="340" height="300" fill="#1c2b2a"></rect>
+      <rect x="1012" y="92" width="316" height="276" fill="#bfe0e8"></rect>
+      <circle cx="1260" cy="165" r="34" fill="#f2c14e"></circle>
+      <path d="M1012 300 Q1100 240 1170 290 T1328 280 V368 H1012 Z" fill="#6f9e8a"></path>
+      <rect x="1012" y="92" width="316" height="276" fill="url(#blinds)"></rect>
+
+      <!-- calendario -->
+      <rect x="140" y="110" width="170" height="210" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="140" y="110" width="170" height="44" fill="#e2503c"></rect>
+      <text x="225" y="139" text-anchor="middle" font-family="Outfit, sans-serif" font-size="15" font-weight="700" fill="#fdfcf9">SEPTIEMBRE</text>
+      <g stroke="#1c2b2a" stroke-width="1" opacity="0.35">
+        <path d="M140 188 H310 M140 222 H310 M140 256 H310 M140 290 H310"></path>
+        <path d="M164 154 V320 M188 154 V320 M212 154 V320 M236 154 V320 M260 154 V320 M284 154 V320"></path>
+      </g>
+      <circle cx="297" cy="305" r="15" fill="none" stroke="#e2503c" stroke-width="3"></circle>
+      <text x="297" y="310" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="700" fill="#1c2b2a">30</text>
+
+      <!-- archivador -->
+      <rect x="80" y="380" width="250" height="360" fill="#8aa2ad" stroke="#1c2b2a" stroke-width="2"></rect>
+      <g fill="#96a7ad" stroke="#1c2b2a" stroke-width="2">
+        <rect x="95" y="395" width="220" height="100"></rect>
+        <rect x="95" y="510" width="220" height="100"></rect>
+        <rect x="95" y="625" width="220" height="100"></rect>
+      </g>
+      <g fill="#1c2b2a">
+        <rect x="175" y="440" width="60" height="10" rx="3"></rect>
+        <rect x="175" y="555" width="60" height="10" rx="3"></rect>
+        <rect x="175" y="670" width="60" height="10" rx="3"></rect>
+      </g>
+      <g fill="#fdfcf9">
+        <rect x="110" y="405" width="70" height="20"></rect>
+        <rect x="110" y="520" width="70" height="20"></rect>
+        <rect x="110" y="635" width="70" height="20"></rect>
+      </g>
+      <g font-family="Outfit, sans-serif" font-size="11" font-weight="600" fill="#1c2b2a">
+        <text x="145" y="419" text-anchor="middle">2019</text>
+        <text x="145" y="534" text-anchor="middle">2022</text>
+        <text x="145" y="649" text-anchor="middle">2025</text>
+      </g>
+
+      <!-- escritorio -->
+      <rect x="400" y="548" width="22" height="250" fill="#8f5a30"></rect>
+      <rect x="1138" y="548" width="22" height="250" fill="#8f5a30"></rect>
+      <rect x="960" y="548" width="200" height="150" fill="#a86f3f" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1030" y="590" width="60" height="9" rx="3" fill="#1c2b2a"></rect>
+      <rect x="1030" y="655" width="60" height="9" rx="3" fill="#1c2b2a"></rect>
+      <rect x="380" y="520" width="800" height="28" fill="#a86f3f" stroke="#1c2b2a" stroke-width="2"></rect>
+
+      <!-- monitor con la planilla -->
+      <rect x="690" y="496" width="100" height="12" rx="4" fill="#1c2b2a"></rect>
+      <rect x="730" y="440" width="20" height="60" fill="#1c2b2a"></rect>
+      <rect x="570" y="250" width="340" height="210" rx="8" fill="#1c2b2a"></rect>
+      <rect x="582" y="262" width="316" height="186" fill="#dfe9e6"></rect>
+      <rect x="582" y="262" width="316" height="186" fill="url(#grid)"></rect>
+      <rect x="582" y="262" width="316" height="22" fill="#c9d9d5"></rect>
+      <rect x="702" y="328" width="80" height="22" fill="#f2c14e"></rect>
+      <rect x="620" y="556" width="220" height="22" rx="4" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <path d="M640 567 H820" stroke="#1c2b2a" stroke-width="1" opacity="0.35"></path>
+
+      <!-- la bandeja de entrada: una pila que no termina -->
+      <g fill="#f6f1e6" stroke="#1c2b2a" stroke-width="1.5">
+        <rect x="412" y="480" width="130" height="26"></rect>
+        <rect x="408" y="454" width="130" height="26"></rect>
+        <rect x="414" y="428" width="130" height="26"></rect>
+        <rect x="410" y="402" width="130" height="26"></rect>
+        <rect x="416" y="376" width="130" height="26"></rect>
+        <rect x="409" y="350" width="130" height="26"></rect>
+        <rect x="413" y="324" width="130" height="26"></rect>
+        <rect x="407" y="298" width="130" height="26"></rect>
+        <rect x="415" y="272" width="130" height="26"></rect>
+        <rect x="411" y="246" width="130" height="26"></rect>
+        <rect x="414" y="220" width="130" height="26"></rect>
+        <rect x="410" y="194" width="130" height="26"></rect>
+      </g>
+      <g stroke="#1c2b2a" stroke-width="1" opacity="0.5">
+        <path d="M424 202 H500 M424 208 H520 M424 214 H480"></path>
+      </g>
+      <rect x="400" y="500" width="150" height="22" fill="#1c2b2a"></rect>
+      <rect x="432" y="504" width="86" height="14" fill="#fdfcf9"></rect>
+      <text x="475" y="515" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="700" fill="#1c2b2a">ENTRADA</text>
+
+      <!-- teléfono descolgado -->
+      <rect x="930" y="486" width="110" height="34" rx="6" fill="#1c2b2a"></rect>
+      <path d="M985 486 C 985 470, 1010 470, 1010 458" stroke="#1c2b2a" stroke-width="2.5" fill="none"></path>
+      <rect x="960" y="440" width="100" height="22" rx="11" fill="#1c2b2a" transform="rotate(-14 1010 451)"></rect>
+      <rect x="1010" y="372" width="250" height="52" rx="8" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></rect>
+      <polygon points="1030,424 1052,424 1040,442" fill="#fdfcf9" stroke="#1c2b2a" stroke-width="2"></polygon>
+      <rect x="1031" y="420" width="20" height="6" fill="#fdfcf9"></rect>
+      <text x="1135" y="404" text-anchor="middle" font-family="Outfit, sans-serif" font-size="16" font-weight="600" fill="#1c2b2a">¿En qué está mi trámite?</text>
+
+      <!-- mate y termo -->
+      <rect x="1100" y="430" width="34" height="90" rx="6" fill="#96a7ad" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1104" y="422" width="26" height="12" fill="#1c2b2a"></rect>
+      <path d="M1160 490 L1182 452" stroke="#1c2b2a" stroke-width="3" stroke-linecap="round"></path>
+      <ellipse cx="1160" cy="502" rx="20" ry="18" fill="#8f5a30" stroke="#1c2b2a" stroke-width="2"></ellipse>
+
+      <!-- impresora trabada -->
+      <rect x="1200" y="640" width="200" height="12" fill="#a86f3f"></rect>
+      <rect x="1210" y="652" width="14" height="140" fill="#8f5a30"></rect>
+      <rect x="1376" y="652" width="14" height="140" fill="#8f5a30"></rect>
+      <rect x="1330" y="520" width="70" height="60" fill="#f6f1e6" stroke="#1c2b2a" stroke-width="1.5" transform="rotate(18 1365 550)"></rect>
+      <rect x="1210" y="560" width="180" height="80" rx="6" fill="#96a7ad" stroke="#1c2b2a" stroke-width="2"></rect>
+      <rect x="1230" y="556" width="140" height="8" fill="#1c2b2a"></rect>
+      <circle cx="1380" cy="540" r="11" fill="#e2503c"></circle>
+      <text x="1380" y="545" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="700" fill="#fdfcf9">!</text>
+
+      <!-- puntos para tocar -->
+      <g fill="#e2503c">
+        <circle class="hs-ring" cx="480" cy="300" r="18" opacity="0.35"></circle><circle cx="480" cy="300" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="740" cy="350" r="18" opacity="0.35"></circle><circle cx="740" cy="350" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="985" cy="500" r="18" opacity="0.35"></circle><circle cx="985" cy="500" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="225" cy="215" r="18" opacity="0.35"></circle><circle cx="225" cy="215" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+        <circle class="hs-ring" cx="1300" cy="600" r="18" opacity="0.35"></circle><circle cx="1300" cy="600" r="7" stroke="#fdfcf9" stroke-width="2"></circle>
+      </g>
+    </svg>
+
+    <!-- marca y menú, encima de la escena -->
+    <a href="/" style="position: absolute; left: 72px; top: 36px; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: #fdfcf9;">LUVANT</a>
+    <div style="position: absolute; right: 72px; top: 34px; display: flex; gap: 28px; font-size: 14px; font-weight: 500;">
+      <a href="/servicios/desarrollo-software-a-medida" style="color: #fdfcf9;">Servicios</a>
+      <a href="/nosotros" style="color: #fdfcf9;">Nosotros</a>
+      <a href="/contacto" style="color: #fdfcf9;">Contacto</a>
+    </div>
+
+    <!-- la tarjeta abierta: la bandeja de entrada -->
+    <div style="position: absolute; left: 560px; top: 84px; width: 330px; box-sizing: border-box; background: #fdfcf9; border: 2px solid #1c2b2a; padding: 18px 20px 16px; box-shadow: 6px 6px 0 #1c2b2a;">
+      <div style="font-size: 19px; font-weight: 700; line-height: 1.1;">La bandeja de entrada</div>
+      <p style="margin: 8px 0 0 0; font-size: 14.5px; line-height: 1.45; color: #34413f;">Facturas, remitos y notas que alguien lee y tipea. La IA las lee y las carga en el sistema que ya usás. Una persona revisa sólo lo dudoso.</p>
+      <a href="#inventario" style="display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Qué hace con lo demás</a>
+    </div>
+
+    <!-- la frase, sobre el piso -->
+    <div style="position: absolute; left: 72px; bottom: 56px; max-width: 700px;">
+      <p style="margin: 0; font-size: 30px; font-weight: 600; line-height: 1.12; letter-spacing: -0.01em; color: #1c2b2a; text-wrap: balance;">Todo lo que en esta oficina se lee y se tipea, lo puede hacer un programa.</p>
+      <p style="margin: 10px 0 0 0; font-size: 15px; font-weight: 500; color: #4a3a2a;">Tocá cada cosa y te contamos cuál.</p>
+    </div>
+    <a href="#tuya" style="position: absolute; right: 72px; bottom: 64px; display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; background: #1c2b2a; color: #fdfcf9; font-size: 16px; font-weight: 600; box-shadow: 5px 5px 0 #e2503c;">Contanos qué hay en tu oficina</a>
+  </div>
+
+  <!-- ============ EL INVENTARIO ============ -->
+  <div id="inventario" style="padding: 88px 72px 0;">
+    <h2 style="margin: 0; max-width: 860px; font-size: 40px; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; text-wrap: balance;">Lo que hay en casi todas las oficinas, y lo que hace la IA con cada cosa.</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; margin-top: 48px;">
+      <div>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1c2b2a" stroke-width="2" aria-hidden="true"><rect x="8" y="24" width="24" height="6"></rect><rect x="6" y="16" width="24" height="6"></rect><rect x="9" y="8" width="24" height="6"></rect></svg>
+        <div style="margin-top: 12px; font-size: 18px; font-weight: 600;">La bandeja de entrada</div>
+        <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.45; color: #4d5957;">Lee facturas, remitos y notas y las carga. Lo dudoso queda para alguien.</p>
+      </div>
+      <div>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1c2b2a" stroke-width="2" aria-hidden="true"><rect x="5" y="8" width="30" height="20" rx="2"></rect><path d="M14 34 H26 M20 28 V34"></path></svg>
+        <div style="margin-top: 12px; font-size: 18px; font-weight: 600;">La planilla</div>
+        <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.45; color: #4d5957;">El Excel que concilia a mano lo que ya está en dos sistemas. Se conecta y desaparece.</p>
+      </div>
+      <div>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1c2b2a" stroke-width="2" aria-hidden="true"><path d="M10 12 C10 8, 30 8, 30 12 L30 16 L24 16 L22 22 L18 22 L16 16 L10 16 Z"></path><rect x="8" y="26" width="24" height="8" rx="2"></rect></svg>
+        <div style="margin-top: 12px; font-size: 18px; font-weight: 600;">El teléfono</div>
+        <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.45; color: #4d5957;">La misma pregunta veinte veces por día. Responde con datos del sistema; deriva lo que no sabe.</p>
+      </div>
+      <div>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1c2b2a" stroke-width="2" aria-hidden="true"><rect x="6" y="8" width="28" height="26" rx="2"></rect><path d="M6 16 H34 M14 5 V11 M26 5 V11"></path><circle cx="26" cy="26" r="4"></circle></svg>
+        <div style="margin-top: 12px; font-size: 18px; font-weight: 600;">El cierre de mes</div>
+        <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.45; color: #4d5957;">Deja de ser una semana de horas extra si lo de todo el mes entró bien y a tiempo.</p>
+      </div>
+      <div>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1c2b2a" stroke-width="2" aria-hidden="true"><rect x="6" y="16" width="28" height="14" rx="2"></rect><path d="M12 16 V8 H28 V16 M12 30 V36 H28 V30"></path></svg>
+        <div style="margin-top: 12px; font-size: 18px; font-weight: 600;">La impresora</div>
+        <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.45; color: #4d5957;">Lo que se imprime para tipearlo en otro lado no hace falta imprimirlo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LA TUYA ============ -->
+  <div id="tuya" style="margin: 96px 72px 0; padding: 48px 56px 56px; background: #2b6b66; color: #fdfcf9;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+      <div>
+        <h2 style="margin: 0; font-size: 36px; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; color: #fdfcf9;">¿Qué hay en la tuya?</h2>
+        <p style="margin: 14px 0 0 0; font-size: 16px; line-height: 1.5; color: #d6e6e3; max-width: 440px;">Marcá lo que reconocés. Te respondemos con qué se puede automatizar, qué no, y cuánto tarda. Sin costo y sin reunión previa.</p>
+      </div>
+      <div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span class="chip" style="border-color: #fdfcf9; background: #fdfcf9; color: #1c2b2a;">La bandeja de entrada</span>
+          <span class="chip" style="border-color: #fdfcf9; color: #fdfcf9;">La planilla</span>
+          <span class="chip" style="border-color: #fdfcf9; color: #fdfcf9;">El teléfono</span>
+          <span class="chip" style="border-color: #fdfcf9; color: #fdfcf9;">El cierre de mes</span>
+          <span class="chip" style="border-color: #fdfcf9; color: #fdfcf9;">La impresora</span>
+        </div>
+        <a href="#tuya" style="display: inline-flex; align-items: center; margin-top: 22px; min-height: 56px; padding: 0 26px; background: #1c2b2a; color: #fdfcf9; font-size: 16px; font-weight: 600; box-shadow: 5px 5px 0 #e2503c;">Contanos qué hay en tu oficina</a>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

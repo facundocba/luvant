@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #173f33; }
+    a { color: #f3ecdc; text-decoration: none; }
+    a:hover { color: #f0b429; }
+    .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .nav a { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 14px; font-weight: 500; color: rgba(243,236,220,0.72); }
+    .nav a:hover { color: #f3ecdc; }
+    .opt { display: flex; align-items: center; min-height: 72px; box-sizing: border-box; padding: 18px 24px; border: 1px solid rgba(243,236,220,0.35); font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 22px; font-weight: 600; color: #f3ecdc; }
+    .opt.on { background: #f0b429; border-color: #f0b429; color: #173f33; }
+    .seg { height: 3px; width: 56px; background: rgba(243,236,220,0.22); }
+    .seg.on { background: #f0b429; }
+    .campo { display: flex; align-items: center; box-sizing: border-box; height: 54px; padding: 0 16px; border: 1px solid rgba(243,236,220,0.45); font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: rgba(243,236,220,0.55); }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 1720px; box-sizing: border-box; background: #173f33; color: #f3ecdc; font-family: 'Bricolage Grotesque', system-ui, sans-serif; overflow: hidden; padding: 0 72px; -webkit-font-smoothing: antialiased;">
+
+  <nav class="nav" style="display: flex; align-items: center; justify-content: space-between; height: 72px;">
+    <a href="/" style="display: flex; align-items: center; gap: 10px;">
+      <svg width="22" height="22" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+        <rect width="56" height="56" fill="#f3ecdc"></rect>
+        <path d="M14 40L28 16L42 40" stroke="#173f33" stroke-width="4" stroke-linecap="square"></path>
+        <circle cx="28" cy="16" r="4" fill="#173f33"></circle>
+      </svg>
+      <span style="font-size: 15px; font-weight: 800; letter-spacing: 0.08em; color: #f3ecdc;">LUVANT</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 30px;">
+      <a href="/productos">Productos</a>
+      <a href="/servicios/desarrollo-software-a-medida">Servicios</a>
+      <a href="/nosotros">Nosotros</a>
+      <a href="/blog">Blog</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- PREGUNTA 1: la home abre preguntando, no afirmando -->
+  <div style="display: flex; gap: 6px; margin-top: 44px;" aria-hidden="true">
+    <span class="seg on"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 72px; align-items: start; margin-top: 26px;">
+    <div>
+      <h1 style="margin: 0; font-size: 76px; font-weight: 800; line-height: 0.96; letter-spacing: -0.025em; font-variation-settings: 'opsz' 96; text-wrap: balance;">¿Qué entra a mano en tu empresa?</h1>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 40px;">
+        <div class="opt on">Facturas de proveedores</div>
+        <div class="opt">Remitos y órdenes</div>
+        <div class="opt">Formularios o expedientes</div>
+        <div class="opt">Consultas por mail o WhatsApp</div>
+        <div class="opt" style="grid-column: 1 / -1;">Otra cosa que alguien lee y tipea</div>
+      </div>
+      <p class="mono" style="margin: 18px 0 0 0; font-size: 12px; color: rgba(243,236,220,0.6);">Elegí una y seguimos.</p>
+    </div>
+
+    <div style="padding-top: 14px;">
+      <p style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.3; max-width: 420px;">Cinco respuestas. Te devolvemos un plano de tu proceso: dónde entra la inteligencia artificial y dónde no.</p>
+      <div class="mono" style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(243,236,220,0.25); font-size: 12.5px; line-height: 1.8; color: rgba(243,236,220,0.75);">
+        <div>Lo que va a decir el plano:</div>
+        <div>· qué paso hace la IA y qué paso sigue haciendo una persona</div>
+        <div>· cuántas horas por mes se van hoy, con tus números</div>
+        <div>· si te conviene, o si todavía no</div>
+      </div>
+      <p class="mono" style="margin: 26px 0 0 0; font-size: 12px; line-height: 1.7; color: rgba(243,236,220,0.6); max-width: 400px;">Sin registrarte. Si querés el plano en PDF, al final te pedimos un mail.</p>
+    </div>
+  </div>
+
+  <!-- MOMENTO 5: el plano -->
+  <div id="plano" style="margin-top: 128px; padding-top: 56px; border-top: 1px solid rgba(243,236,220,0.25);">
+    <div style="display: flex; gap: 6px;" aria-hidden="true">
+      <span class="seg on"></span><span class="seg on"></span><span class="seg on"></span><span class="seg on"></span><span class="seg on"></span>
+    </div>
+    <h2 style="margin: 22px 0 0 0; font-size: 48px; font-weight: 800; line-height: 1; letter-spacing: -0.025em; font-variation-settings: 'opsz' 96;">Tu plano, en cinco respuestas.</h2>
+
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: start; margin-top: 40px;">
+      <div>
+        <!-- La traza dibujada con lo que respondió -->
+        <svg viewBox="0 0 640 230" fill="none" style="display: block; width: 100%;" role="img" aria-label="Tu proceso: la factura llega por mail, se tipea a mano, se controla y entra a Tango. Con la IA: llega, la IA lee y valida, entra a Tango.">
+          <text x="0" y="14" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#e8846f">HOY · 4 PARADAS</text>
+          <path d="M20 70 C 90 20, 150 120, 230 60 S 380 110, 450 50 S 580 90, 620 62" stroke="#e8846f" stroke-width="2.4" stroke-dasharray="7 5" fill="none"></path>
+          <g fill="#173f33" stroke="#e8846f" stroke-width="2">
+            <rect x="13" y="63" width="14" height="14"></rect>
+            <rect x="443" y="43" width="14" height="14"></rect>
+            <rect x="613" y="55" width="14" height="14"></rect>
+          </g>
+          <rect x="219" y="49" width="22" height="22" fill="#e8846f"></rect>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="rgba(243,236,220,0.75)">
+            <text x="14" y="98">llega por mail</text>
+            <text x="230" y="40" text-anchor="middle" fill="#e8846f" font-weight="600">SE TIPEA A MANO</text>
+            <text x="440" y="80">control</text>
+            <text x="588" y="90">Tango</text>
+          </g>
+          <text x="0" y="150" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#7cc7a1">CON LA IA · 2 PARADAS</text>
+          <path d="M20 190 H620" stroke="#7cc7a1" stroke-width="2.6"></path>
+          <g fill="#173f33" stroke="#7cc7a1" stroke-width="2">
+            <rect x="13" y="183" width="14" height="14"></rect>
+            <rect x="613" y="183" width="14" height="14"></rect>
+          </g>
+          <rect x="309" y="179" width="22" height="22" fill="#7cc7a1"></rect>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="rgba(243,236,220,0.75)">
+            <text x="14" y="218">llega por mail</text>
+            <text x="320" y="170" text-anchor="middle" fill="#7cc7a1" font-weight="600">LA IA LEE Y VALIDA</text>
+            <text x="588" y="218">Tango</text>
+          </g>
+        </svg>
+
+        <div style="display: flex; align-items: flex-end; gap: 26px; margin-top: 28px;">
+          <div>
+            <div style="font-size: 72px; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em; color: #e8846f;">31 h</div>
+            <div class="mono" style="margin-top: 8px; font-size: 11px; color: rgba(243,236,220,0.6);">por mes, hoy</div>
+          </div>
+          <div>
+            <div style="font-size: 72px; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em; color: #7cc7a1;">40 min</div>
+            <div class="mono" style="margin-top: 8px; font-size: 11px; color: rgba(243,236,220,0.6);">por mes, revisando lo dudoso</div>
+          </div>
+        </div>
+        <p class="mono" style="margin: 16px 0 0 0; font-size: 12px; color: rgba(243,236,220,0.7);">380 documentos × 5 min, según lo que respondiste. Y si un 5 % queda dudoso: 19 × 2 min. Tus números, no los nuestros.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="padding: 20px 22px; border: 1px solid #f0b429;">
+          <div class="mono" style="font-size: 11px; color: #f0b429;">Acá entra la IA</div>
+          <p style="margin: 8px 0 0 0; font-size: 19px; font-weight: 600; line-height: 1.3;">La lectura, el control contra la orden de compra y la carga en Tango.</p>
+        </div>
+        <div style="padding: 20px 22px; border: 1px solid rgba(243,236,220,0.35);">
+          <div class="mono" style="font-size: 11px; color: rgba(243,236,220,0.6);">Acá no</div>
+          <p style="margin: 8px 0 0 0; font-size: 19px; font-weight: 600; line-height: 1.3;">La aprobación del gerente sigue siendo del gerente. Eso no se automatiza.</p>
+        </div>
+        <p class="mono" style="margin: 8px 0 0 0; font-size: 12px; line-height: 1.7; color: rgba(243,236,220,0.7);">Si hubieras respondido menos de 40 por mes, el plano diría: todavía no te conviene, hacelo a mano. Y te lo mandamos igual.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 14px;">
+          <div class="campo">vos@empresa.com</div>
+          <a href="#plano" style="display: inline-flex; align-items: center; height: 54px; box-sizing: border-box; padding: 0 24px; background: #f0b429; color: #173f33; font-size: 15px; font-weight: 700; white-space: nowrap;">Mandarme el plano</a>
+        </div>
+        <p class="mono" style="margin: 0; font-size: 11px; color: rgba(243,236,220,0.55);">El PDF llega en el momento. Después te escribimos una vez para preguntarte si querés probarlo con tus documentos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

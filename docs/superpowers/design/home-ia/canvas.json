@@ -1,0 +1,410 @@
+{
+  "artboards": [
+    {
+      "file": "FotoCuadra.dc.html",
+      "title": "1 · La cuadra con fotografía",
+      "page": "page-material",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2680
+    },
+    {
+      "file": "IlusCuadra.dc.html",
+      "title": "2 · La cuadra con ilustración (DESCARTADA)",
+      "page": "page-material",
+      "x": 9360,
+      "y": 0,
+      "w": 1440,
+      "h": 2680
+    },
+    {
+      "file": "MixCuadra.dc.html",
+      "title": "3 · La cuadra en collage (foto recortada sobre color)",
+      "page": "page-material",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2680
+    },
+    {
+      "file": "BandasCuadra.dc.html",
+      "title": "5 · La cuadra en bandas (un rubro por pantalla)",
+      "page": "page-material",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 3480
+    },
+    {
+      "file": "LasPantallas.dc.html",
+      "title": "6 · Las pantallas (el software como protagonista)",
+      "page": "page-material",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 3040
+    },
+    {
+      "file": "AntesDespues.dc.html",
+      "title": "7 · Antes / después (la manija)",
+      "page": "page-material",
+      "x": 6240,
+      "y": 0,
+      "w": 1440,
+      "h": 3620
+    },
+    {
+      "file": "MosaicoCuadra.dc.html",
+      "title": "4 · La cuadra en mosaico (DESCARTADA)",
+      "page": "page-material",
+      "x": 7800,
+      "y": 0,
+      "w": 1440,
+      "h": 2860
+    },
+    {
+      "file": "DirIndice.dc.html",
+      "title": "El índice · escritorio 1440",
+      "page": "page-indice",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2440
+    },
+    {
+      "file": "DirHilo.dc.html",
+      "title": "El hilo · escritorio 1440",
+      "page": "page-hilo",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2500
+    },
+    {
+      "file": "HiloMovil.dc.html",
+      "title": "El hilo · móvil 390 (donde cae el tráfico de Meta)",
+      "page": "page-hilo",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 1500
+    },
+    {
+      "file": "DirD2.dc.html",
+      "title": "D2 · La cuadra: IA a medida, un local por vez",
+      "page": "page-campana",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1900
+    },
+    {
+      "file": "DirE2.dc.html",
+      "title": "E2 · La carrera, en tu propio trabajo",
+      "page": "page-campana",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    {
+      "file": "DirD.dc.html",
+      "title": "D · La oficina: una escena para tocar",
+      "page": "page-lejos",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    {
+      "file": "DirE.dc.html",
+      "title": "E · ¿Le ganás a la IA?: una carrera",
+      "page": "page-lejos",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    {
+      "file": "DirF.dc.html",
+      "title": "F · Embalse: un lugar real, contado",
+      "page": "page-lejos",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    {
+      "file": "DirA.dc.html",
+      "title": "A · La lupa: la IA leyendo una factura",
+      "page": "page-enfoques",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "DirB.dc.html",
+      "title": "B · El diagnóstico: cinco preguntas, un plano",
+      "page": "page-enfoques",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "DirC.dc.html",
+      "title": "C · Precio a la vista",
+      "page": "page-enfoques",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Home · escritorio 1440",
+      "page": "page-home",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 5000
+    },
+    {
+      "file": "HomeMobile.dc.html",
+      "title": "Home · móvil 390 (el fold y el anexo)",
+      "page": "page-home",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 2000
+    },
+    {
+      "file": "AltB.dc.html",
+      "title": "B · El plano primero (boceto)",
+      "page": "page-alt",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "AltC.dc.html",
+      "title": "C · Lo que te venden, lo que hacemos (boceto)",
+      "page": "page-alt",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    }
+  ],
+  "annotations": [
+    {
+      "id": "nota-antesdespues",
+      "page": "page-material",
+      "x": 6240,
+      "y": -700,
+      "w": 500,
+      "text": "7 · ANTES / DESPUÉS\n\nLa promesa de la marca es una sola frase — lo que hacés a mano, hecho por un programa — y este diseño la convierte en el mecanismo de toda la página: cada par muestra a la izquierda el trabajo a mano (foto, apagada, con el dolor escrito) y a la derecha el programa (pantalla sobre tinta, con el resultado). En el medio, la manija: en la página real se arrastra y descubre una sobre la otra.\n\nCÓMO ESTÁ ARMADA:\n· Fondo claro (foja) para que los pares oscuros golpeen. Es la única de las tres vivas que no es toda oscura.\n· El primer par es enorme y va pegado al título: el hero no promete, demuestra.\n· Después tres pares más chicos con la misma manija, y Embalse como el par del caso real, con año.\n· Las fotos sólo aparecen del lado \"antes\", desaturadas: el pasado es gris, el programa tiene color. Ese contraste hace la mitad del trabajo de venta.\n\nPOR QUÉ ES TOP: el antes/después es el recurso de conversión más probado que existe, y acá no es un truco: es literalmente lo que vendés. Y cada par es un anuncio listo para Meta, con la manija como video de 6 segundos.\n\nRIESGO: en celular los pares se apilan (antes arriba, después abajo) y la manija pasa a ser horizontal. Hay que diseñarlo, no dejarlo caer."
+    },
+    {
+      "id": "nota-pantallas",
+      "page": "page-material",
+      "x": 4680,
+      "y": -700,
+      "w": 500,
+      "text": "6 · LAS PANTALLAS\n\nEl agujero de todo lo anterior: mostramos panaderías y consultorios, pero nunca mostramos el software. Una agencia de desarrollo que no muestra pantallas te está pidiendo fe. Las mejores del rubro hacen lo contrario: el producto es el hero.\n\nCÓMO ESTÁ ARMADA:\n· El título va arriba, centrado, y debajo, a lo ancho, tres pantallas encimadas con profundidad: el tablero de pedidos por hora de retiro, el teléfono donde entra el WhatsApp y se convierte en pedido, y la agenda de turnos. Son bocetos de interfaz con datos de muestra, y lo dice en letra chica.\n· Una tira de \"se enchufa a lo que ya usás\" con nombres, no logos: WhatsApp, Google Calendar, Excel, Tango, Mercado Pago, AFIP.\n· Las cuatro ofertas llevan cada una un recorte de su pantalla. El visitante entiende qué compra antes de leer el título.\n· Embalse con la foto y una pantalla real encima, en cuanto la tengas.\n\nPOR QUÉ ES TOP PARA UNA AGENCIA DE SOFTWARE: responde la pregunta que ninguna foto responde — \"¿y qué me van a entregar?\". Y como las pantallas las diseño yo, acá el nivel no depende de conseguir fotos buenas.\n\nRIESGO: si las pantallas se parecen a cualquier dashboard genérico, pierde. Por eso están en la paleta de la marca (foja, tinta, verde, rojo) y hablan de medialunas, no de \"métricas\"."
+    },
+    {
+      "id": "nota-bandas",
+      "page": "page-material",
+      "x": 3120,
+      "y": -640,
+      "w": 500,
+      "text": "5 · LAS BANDAS\n\nNi grilla ni tarjetas. La página es una secuencia de imágenes grandes, una por rubro, cada una ocupando el ancho completo con el texto adentro de la foto. Se recorre como se recorre una cuenta de Instagram: una cosa por vez, a pantalla llena.\n\nPOR QUÉ ES DISTINTA DE LA 1 Y DE LA 3:\n· La 1 tiene una foto grande y después una grilla de tarjetas chicas. Acá NO hay tarjetas: las cinco fotos son igual de grandes que la del hero. Ninguna imagen se achica.\n· El texto alterna de lado en cada banda (derecha, izquierda, derecha...). Eso da ritmo al scroll sin necesidad de cambiar de color ni de estructura.\n· El hero pone el título al centro y abajo, no en una esquina. Es la composición más cinematográfica de las tres.\n· Cada banda tiene su propio título de venta, no una etiqueta. \"Setenta pedidos por WhatsApp y ninguno se pierde\" en vez de \"La panadería\". Cada una vende sola.\n· La credencial de Embalse no es un bloque aparte: es la sexta banda, con la misma forma que las otras. Se lee como una más de la serie.\n· El cierre es un bloque de color entero, no un texto centrado sobre el fondo.\n\nLA VENTAJA PRÁCTICA: cada banda ES un anuncio. Recortás la imagen con su título y ya tenés la creatividad de Meta, sin rediseñar nada. Cinco bandas, cinco anuncios, cinco públicos distintos.\n\nEL RIESGO: es larga. Si el que llega de un anuncio no baja, sólo vio el hero. Se arregla poniendo la banda de su propio rubro primero, según de qué anuncio vino."
+    },
+    {
+      "id": "nota-mosaico",
+      "page": "page-material",
+      "x": 7800,
+      "y": -560,
+      "w": 500,
+      "text": "DESCARTADA el 4 de septiembre de 2026.\n\n4 · EL MOSAICO\n\nLa diferencia con las otras dos no es de color ni de material: es de ESTRUCTURA. Acá no hay hero. La grilla es el hero.\n\nEl primer scroll entero es un mosaico sin separaciones: el título ocupa una celda grande, la foto de la cuadra ocupa otra igual al lado, y abajo corren seis celdas — cinco locales y la sexta, en color, que sos vos. Con eso, antes de leer una sola línea ya entendés que esto es para cualquier rubro. Las otras dos te lo cuentan; esta te lo muestra en el primer golpe de vista.\n\nLO DEMÁS QUE CAMBIA:\n· Es clara donde la 1 es oscura y donde la 3 es de bloques calientes. Fondo hueso, tinta, y un solo bermellón fuerte. Las fotos ponen todo el color.\n· Las tres promesas (se escribe para tu caso, se conecta con lo que ya usás, el precio se cierra antes) suben a un lugar propio y numerado, con aire.\n· Lo que cada local hizo pasa a ser una lista de filas grandes, no tarjetas. Las fotos ya están arriba en el mosaico, así que no se repiten.\n· El cierre no está centrado: título grande a la izquierda, la acción a la derecha.\n\nPARA QUÉ SIRVE MEJOR:\nEs la que mejor aguanta si mañana son diez rubros en vez de seis: se agregan celdas. Y es la más fácil de recortar como pieza de anuncio, porque cada celda del mosaico ya es un cuadrado con foto y título."
+    },
+    {
+      "id": "nota-mix",
+      "page": "page-material",
+      "x": 1560,
+      "y": -560,
+      "w": 500,
+      "text": "3 · EL COLLAGE\n\nLa variante entre las otras dos, sin reemplazar a ninguna: las fotos siguen estando, pero dejan de ser el fondo y pasan a ser material recortado sobre bloques de color plano, con trazos dibujados encima.\n\nQUÉ CAMBIA RESPECTO DE LA 1 Y LA 2:\n· El hero ya no es una foto a sangre: es un bloque terracota con la foto recortada en arco, encimada, y el título pisando el borde. La composición es tuya aunque la foto sea de stock.\n· Cada rubro es un círculo recortado sobre su propio color, con la franja de toldo arriba. Eso arrastra el lenguaje de la cuadra dibujada sin necesitar ilustración.\n· Hay una flecha dibujada a mano en el hero y las franjas de toldo separando secciones. Son los únicos trazos: alcanzan para que no lea como plantilla de fotos.\n· El contraste entre secciones es mucho más fuerte: terracota, crema, verde profundo. Es la más marketinera de las tres.\n\nPOR QUÉ CONVIENE MIRARLA EN SERIO:\nEs la más barata de sostener en el tiempo. No depende de conseguir la foto perfecta (el recorte y el color hacen el trabajo) ni de pagar un ilustrador. Y cuando reemplaces las fotos de stock por fotos tuyas de Córdoba, mejora sola sin tocar el diseño.\n\nLO QUE LE FALTA:\nLos recortes acá son geométricos (arcos y círculos) porque no tengo herramienta para recortar el contorno real de una persona o un local. Con recortes de verdad — la panadera sin fondo, el frente del local sin cielo — sube bastante más."
+    },
+    {
+      "id": "nota-brief-corregido",
+      "page": "page-material",
+      "x": 1090,
+      "y": -560,
+      "w": 450,
+      "text": "CORRECCIÓN DEL BRIEF (4 de septiembre de 2026)\n\nFacundo: \"nunca dije campaña de IA, solo quería hacer publicidad\".\n\nQué cambia: la home deja de ser la landing de una campaña de inteligencia artificial y vuelve a ser la home de Luvant — software a medida para negocios, estudios y municipios. La IA es una de las cosas que hace, no el título.\n\nEn estos dos artboards ya está corregido el copy: el H1 pasó a \"Programas hechos para tu negocio, no para el de otro\" y desapareció la palabra IA del cierre. La cuadra aguanta el cambio sin tocar nada más, porque seis negocios con seis programas distintos ES la definición de a medida.\n\nQUÉ FALTA DEFINIR, Y ES LO QUE MANDA:\nQué se anuncia. La publicidad se paga por búsqueda o por público concreto, no por \"hacemos software\". Lo que ya está trabajado y listo es la carga automática de facturas de proveedores, con landing propia en /lp/facturas. Las otras candidatas son turnos, reclamos vecinales y lectura de documentos con Lens.\n\nEsquema que propongo: la home vende Luvant entero, y cada oferta concreta tiene su landing de campaña. Una sola cosa por anuncio."
+    },
+    {
+      "id": "nota-material",
+      "page": "page-material",
+      "x": 0,
+      "y": -560,
+      "w": 540,
+      "text": "LAS DOS MUESTRAS, MISMO ESQUELETO\n\nMismo concepto (la cuadra, que ya habías aprobado), mismo copy, misma estructura, mismo único pedido. Lo único que cambia es el material con el que está hecho. Eso es lo que estás eligiendo acá, no el concepto.\n\nLo que subí de nivel en las dos respecto de todo lo anterior:\n· Escala tipográfica de verdad. El título va a 82px, no a 40. Contraste fuerte entre el título y todo lo demás.\n· Aire. Márgenes de 76px, secciones separadas de verdad, nada apretado.\n· Profundidad. Sombras largas y suaves en las tarjetas, degradados tonales sobre las imágenes, capas.\n· Una sola acción repetida cuatro veces, siempre con el mismo texto.\n· Estructura de marketing real: gancho, amplitud, prueba, cierre. Con una tarjeta que rompe la grilla y es el CTA (\"El tuyo\").\n\nLo que NO se ve acá y es la mitad del asunto: el movimiento. Cómo entra cada tarjeta al scrollear, el hover de los locales, la transición al abrir uno. Eso no existe en una imagen fija; se ve andando."
+    },
+    {
+      "id": "nota-material-costos",
+      "page": "page-material",
+      "x": 9360,
+      "y": -560,
+      "w": 470,
+      "text": "QUÉ CUESTA CADA UNA, EN SERIO\n\n1 · FOTOGRAFÍA (la de la izquierda)\nLas seis fotos son de Unsplash, gratis y de uso libre. El truco no son las fotos: es que todas pasan por el MISMO tratamiento — misma saturación, mismo contraste, mismo tinte cálido por encima, mismo degradado abajo. Eso es lo que hace que un stock gratis lea como dirección de arte y no como plantilla.\nOJO: la foto del hero es una ferretería, pero no es argentina (las marcas del cartel son colombianas). Para publicar hay que reemplazarla por fotos de acá. Salidas: sacarlas vos con el teléfono en Córdoba, o un banco pago tipo Stocksy.\nCosto: cero a bajo. Tiempo: días.\n\n2 · ILUSTRACIÓN — DESCARTADA el 4 de septiembre de 2026. Queda al final de la fila como referencia de paleta.\nLa cuadra dibujada la hice yo en vectores. Sirve para que veas la composición, la paleta y el aire — NO es el nivel final. Un ilustrador de verdad le pone textura, luz, personajes con carácter y detalles de barrio que yo no puedo dibujar.\nCosto real de encargarla: una escena de este tamaño más seis viñetas ronda los USD 400 a 1.200 según el ilustrador. Tiempo: dos a cuatro semanas.\nA cambio: es lo único de las dos opciones que nadie más puede tener igual. La foto de stock la puede usar cualquiera; la cuadra dibujada es tuya.\n\nMI RECOMENDACIÓN: arrancar con la 1 para salir rápido con la campaña, y encargar la 2 en paralelo. Cuando llega la ilustración, se cambia el material sin tocar la estructura — es la misma página."
+    },
+    {
+      "id": "nota-indice",
+      "page": "page-indice",
+      "x": 0,
+      "y": -480,
+      "w": 540,
+      "text": "EL ÍNDICE\n\nLo que dijiste — que el hilo se aleja de una web — deja algo a la vista que veníamos arrastrando hace cinco rondas: le estoy pidiendo a una sola página que sea la home del sitio Y la creatividad de una campaña, y esas dos cosas tiran para lados opuestos. La campaña quiere una pieza rara que frene el scroll. La home quiere ser un sitio: nav, SEO, y que de ahí cuelguen servicios, productos y el blog.\n\nEsta ataca la home como home. Es lo más lejos que se puede ir sin dejar de ser un sitio.\n\nLA IDEA: la home no dice lo que vendés, lo lista. Es un índice de problemas reales, escritos como los dice la gente que los tiene, con cuatro columnas: el quilombo, lo que se construye, con qué se conecta, cuántas semanas. Nada de adjetivos, nada de promesas. El visitante no lee publicidad: busca su caso en una lista.\n\nPOR QUÉ ES DISTINTA A TODO LO ANTERIOR: no hay hero, no hay escena ilustrada, no hay cronómetro, no hay conversación. Es densa donde todas las demás eran espaciadas, y el lenguaje visual es el de una obra de referencia — una guía, un vademécum — no el de una landing. Tipografías Newsreader para las voces y Libre Franklin para los datos, tinta sobre papel marfil, un solo rojo.\n\nLO QUE LA HACE CREÍBLE: las entradas en rojo, las que dicen que NO conviene automatizar. Que la IA te ponga los precios, que la IA resuelva un expediente. Es lo mismo que hacía bueno al hilo, pero acá entra sin romper la estructura del sitio."
+    },
+    {
+      "id": "nota-indice-canal",
+      "page": "page-indice",
+      "x": 580,
+      "y": -480,
+      "w": 460,
+      "text": "LO QUE ESTO RESUELVE, Y LO QUE NO\n\nRESUELVE:\n· Es un sitio de verdad. Nav arriba con las rutas que ya existen, y la home deja de competir con las páginas de servicio: las alimenta.\n· El SEO que ya pagaste. Cada entrada del índice es una búsqueda real de cola larga, dicha con las palabras de la gente. Es la única de todas las direcciones que suma en orgánico en vez de restar.\n· La amplitud B2B y B2C sin decirla: cuatro grupos (negocio de barrio, consultorio o estudio, municipalidad, vos solo) en vez de una frase que diga para todos.\n· El ticket de B2C: el grupo 04 existe pero es el más chico, y las semanas a la vista filtran solo.\n\nNO RESUELVE:\n· No frena el scroll en Instagram. Es texto denso: para tráfico frío de Meta rinde menos que la cuadra o la carrera.\n\nPOR ESO LA PROPUESTA ES PARTIRLO: esta es la home del sitio, y D2 o E2 se convierte en la landing de campaña en /lp/ia, sin nav y con un solo botón. Cada una hace lo que sabe hacer y dejamos de pedirle a una sola página las dos cosas.\n\nFALTA: la versión móvil (el índice en móvil se apila en dos líneas por entrada) y los datos entre corchetes — plazos, y qué se automatizó en Embalse."
+    },
+    {
+      "id": "nota-hilo",
+      "page": "page-hilo",
+      "x": 0,
+      "y": -420,
+      "w": 520,
+      "text": "EL HILO\n\nLo que compartían todas las propuestas anteriores, incluidas D2 y E2, es que eran páginas diseñadas. Acá no hay página: hay una conversación.\n\nTres piezas del mismo objeto, ninguna sección:\n\n1. LA CABECERA es el título. El nombre del contacto es el H1 real (Luvant — IA a medida), así no se pierde el SEO de la home: Google lee un título, el visitante ve una cabecera de chat.\n\n2. EL HILO es la página entera: un trabajo de punta a punta. El audio de 45 segundos con la transcripción abajo, el quilombo del cliente, la pregunta incómoda, el precio dicho como se dice de verdad, la captura del sistema andando, y el gracias del final. Lo que en una landing serían los bloques de servicios, cómo trabajamos y precios, acá pasa adentro de la charla. Incluido el \"esto no te conviene\": eso es lo que ninguna landing tiene y lo que hace que el resto se crea.\n\n3. LA LISTA (a la derecha, tira de chips en móvil) resuelve la amplitud de la campaña sin agregar una sección: podés cambiar de hilo. Panadería, consultorio, estudio, inmobiliaria, Embalse. Y el último de la lista sos vos, sin leer.\n\nLA BARRA DE ABAJO es el único pedido de toda la página, y no es un botón disfrazado: escribís tu quilombo de verdad, se manda como mensaje del hilo, y recién ahí aparecen los turnos como respuestas rápidas. Agendás adentro de la conversación. La página no promete cómo es trabajar con vos: te lo hace hacer."
+    },
+    {
+      "id": "nota-hilo-falta",
+      "page": "page-hilo",
+      "x": 560,
+      "y": -420,
+      "w": 460,
+      "text": "LO QUE FALTA Y LO QUE NO ES NEGOCIABLE\n\nNADA DE WHATSAPP CALCADO. Ni el verde ni la interfaz: eso la convierte en captura falsa y en imitación de una marca ajena. Se toma la gramática (globos, horas, tildes de leído, separadores de día, la barra de abajo) en paleta propia y a una escala que ningún teléfono tiene: los mensajes van a 26px. En móvil queda casi nativo, que es donde cae el tráfico de Meta.\n\nLOS HILOS TIENEN QUE SER REALES, censurados y con permiso. Una conversación de cliente inventada y presentada como real es justo lo que te vuela el diferencial si alguien tira del hilo. Lo que está dibujado es de muestra y está marcado como tal. Si no conseguís permiso para alguno, va marcado como recreación, a la vista.\n\nQUE TENÉS QUE PASAR VOS:\n· El audio de 45 segundos. Grabalo con el teléfono, sin guion. El de acá es texto de muestra escrito con tu forma de hablar.\n· 2 o 3 hilos reales, tapando nombres.\n· El precio y el plazo (están entre corchetes).\n· Qué se automatizó en Embalse, desde cuándo.\n\nTipografía: Instrument Sans para lo que se dice, Instrument Serif sólo para las fechas y los títulos chicos. Sin mono: la etiqueta mono para los datos es la que ya marcaste como patrón de IA."
+    },
+    {
+      "id": "nota-contenido",
+      "page": "page-campana",
+      "x": 0,
+      "y": -560,
+      "w": 520,
+      "text": "EL CONTENIDO, CORREGIDO CON LO QUE DIJISTE\n\nLa campaña vende IA a medida, de todo, para negocios y para personas. La acción es agendar una llamada. Entonces cambió todo el texto de D y E, no la forma:\n\n· El mensaje: IA a medida para lo que hacés todos los días. A medida quiere decir tres cosas concretas: se construye para tu caso, se conecta con lo que ya usás, precio cerrado en semanas.\n· La prueba de amplitud: en vez de una factura, seis lugares distintos con seis programas distintos (panadería, consultorio, estudio contable, inmobiliaria, ferretería, municipalidad) y un séptimo: el tuyo. Ninguno sirve para el otro; eso es lo que demuestra a medida sin decir la palabra IA veinte veces.\n· Un solo pedido en toda la página: Agendá 15 minutos. Sin formulario de documentos, sin WhatsApp como salida principal (se puede sumar cuando tengas el número).\n· B2C: aparece como vos solo con tu trabajo y en los desafíos (encontrar una cláusula, dar turnos). Ojo con el ticket: un desarrollo a medida para una persona necesita un mínimo claro o te llenás de llamadas que no cierran. Lo definimos en la spec.\n\nLo que no cambió: la escena de D y la carrera de E, que ya te cerraban."
+    },
+    {
+      "id": "nota-canal",
+      "page": "page-campana",
+      "x": 560,
+      "y": -560,
+      "w": 460,
+      "text": "EL CANAL, YA QUE NO ESTÁ DEFINIDO\n\nPara una oferta amplia (de todo, B2B y B2C) con acción agendar, propongo:\n\n1. Meta (Instagram y Facebook) como canal principal. La gente no busca IA a medida: hay que mostrársela. D2 y E2 son creatividades listas: cada local de la cuadra es un anuncio (¿Tenés una panadería? Mirá qué hace la IA con los pedidos por WhatsApp) y la carrera es un video de 15 segundos. Público: dueños, profesionales y funcionarios, Córdoba primero.\n\n2. Google Search chica, sólo intenciones concretas: agente de IA para mi negocio, chatbot whatsapp con IA, automatizar con inteligencia artificial, desarrollo de IA a medida, implementar IA en mi empresa. Negativas: curso, gratis, chatgpt, qué es, carrera, empleo, imágenes, generar.\n\n3. LinkedIn después, para municipios y empresas medianas, con la credencial de Embalse.\n\nConversión: el turno agendado (evento en Cal.com o Google Calendar) y no el click al botón. Sin eso, Meta optimiza a ciegas."
+    },
+    {
+      "id": "nota-d2",
+      "page": "page-campana",
+      "x": 1060,
+      "y": -560,
+      "w": 440,
+      "text": "D2 · LA CUADRA\n\nLa oficina se convirtió en una cuadra porque la campaña es para cualquiera: seis frentes, cada uno con su punto para tocar y su tarjeta con qué haría la IA ahí. Abajo, los seis en texto, la definición de a medida, y la agenda con turnos.\n\nPara la ilustración final: mismo estilo plano de trazo, pero con más detalle (carteles reales de barrio, gente en la vereda, el kiosco). En móvil la cuadra se recorre de costado, un local por pantalla.\n\nLos horarios de la agenda son de muestra: en la página real vienen de tu calendario."
+    },
+    {
+      "id": "nota-e2",
+      "page": "page-campana",
+      "x": 1560,
+      "y": -560,
+      "w": 440,
+      "text": "E2 · LA CARRERA, A MEDIDA\n\nLa carrera ya no es tipear una factura: elegís un desafío de tu rubro (pedidos por WhatsApp, turnos, reclamos vecinales, una cláusula en 40 páginas). La IA corre de verdad contra vos con lo mismo. Al final, el mensaje de a medida y el botón de agendar.\n\nHay que construir cuatro mini desafíos (o arrancar con dos). Cada corrida real es un dato: cuánto tarda la gente de verdad en su propio trabajo, por rubro.\n\nLos tiempos que ves son de muestra."
+    },
+    {
+      "id": "nota-lejos",
+      "page": "page-lejos",
+      "x": 0,
+      "y": -300,
+      "w": 520,
+      "text": "D · E · F, PRIMERA VERSIÓN\n\nD y E aprobadas en dirección; el contenido (factura, documentos) no servía para la campaña. Ver la página siguiente con D2 y E2. F (Embalse) queda como recurso para la credencial dentro de cualquier enfoque."
+    },
+    {
+      "id": "nota-enfoques",
+      "page": "page-enfoques",
+      "x": 0,
+      "y": -300,
+      "w": 520,
+      "text": "A · B · C: DESCARTADOS POR PARECIDOS\n\nCambiaban el concepto pero compartían el lenguaje. Quedan como referencia de contenido."
+    },
+    {
+      "id": "nota-lectura",
+      "page": "page-home",
+      "x": 0,
+      "y": -420,
+      "w": 460,
+      "text": "LA HOME COMO EXPEDIENTE\n\nDirección I compuesta para la home. Descartada por parecerse a lo ya visto."
+    },
+    {
+      "id": "nota-alt-b",
+      "page": "page-alt",
+      "x": 0,
+      "y": -300,
+      "w": 460,
+      "text": "B · EL PLANO PRIMERO\n\nLa dirección I al pie de la letra."
+    },
+    {
+      "id": "nota-alt-c",
+      "page": "page-alt",
+      "x": 1560,
+      "y": -300,
+      "w": 460,
+      "text": "C · LO QUE TE VENDEN, LO QUE HACEMOS\n\nHero comparativo."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "page-material"
+  },
+  "pages": [
+    {
+      "id": "page-material",
+      "name": "El nivel: foto vs ilustración"
+    },
+    {
+      "id": "page-indice",
+      "name": "El índice (nueva dirección)"
+    },
+    {
+      "id": "page-hilo",
+      "name": "El hilo (se aleja de un sitio)"
+    },
+    {
+      "id": "page-campana",
+      "name": "D2 · E2 con el contenido de campaña"
+    },
+    {
+      "id": "page-lejos",
+      "name": "D · E · F (primera versión)"
+    },
+    {
+      "id": "page-enfoques",
+      "name": "A · B · C (descartados)"
+    },
+    {
+      "id": "page-home",
+      "name": "Expediente (descartado)"
+    },
+    {
+      "id": "page-alt",
+      "name": "Expediente · variantes de hero"
+    }
+  ]
+}
