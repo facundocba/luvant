@@ -17,7 +17,7 @@ Bocetos aprobados (HTML, en `.superpowers/brainstorm/943-1789315814/content/`): 
 3. Las ofertas se escriben en condicional ("Si te llegan facturas… te haríamos…"), nunca como caso. El único cliente nombrado es la Municipalidad de Embalse, y solo en el sticker del hero: "Cliente · Municipalidad de Embalse · Córdoba". Sin cita, sin datos, sin foto.
 4. No se usa la palabra "digesto". Se dice "normativa", "ordenanzas, decretos y resoluciones", "texto al día", "texto ordenado".
 5. No se compromete canal ni plazo de respuesta: el contacto es por correo, "te escribimos para coordinar". WhatsApp aparece solo como sistema del cliente al que nos conectamos.
-6. "Hablás con quien lo programa", sin nombre propio.
+6. Pie del cierre: "Te escribimos para coordinar", sin nombre propio.
 7. Datos de muestra en las ventanas: normas inventadas pero verosímiles (Ordenanza 1.234/2019, Decreto 456/2021, Ordenanza 1.402/2022, Ordenanza 987/2015), "tu organismo" en lugar de un nombre, "Proveedor S.A." y "Distribuidora Norte" como proveedores.
 
 ## 3. Estructura y URLs
@@ -89,7 +89,7 @@ Los textos viven en `src/content/` (`home.ts`, `shared.ts`, `lens.ts`, `contacto
 
 **Botón principal**: "Pedí tu presupuesto →". Pie: "Gratis, quince minutos. Salís sabiendo cuánto sale."
 
-**Cierre** (home, fichas): eyebrow "Tu caso" · h2 "¿Qué es lo que hacés todos los días a mano?" · "Contá qué es eso que hacés todos los días a mano. Salís sabiendo si se puede, cuánto sale y en cuánto lo tenés andando. Y si no te conviene, te lo decimos ahí mismo." · botón · pie "Gratis · Quince minutos · Hablás con quien lo programa".
+**Cierre** (home, fichas): eyebrow "Tu caso" · h2 "¿Qué es lo que hacés todos los días a mano?" · "Contá qué es eso que hacés todos los días a mano. Salís sabiendo si se puede, cuánto sale y en cuánto lo tenés andando. Y si no te conviene, te lo decimos ahí mismo." · botón · pie "Gratis · Quince minutos · Te escribimos para coordinar".
 
 **Cómo trabajamos** (fichas):
 1. "Quince minutos" · "Nos contás qué hacés a mano y qué usás hoy." · "Salís sabiendo si se puede, cuánto sale y cuánto tarda."
@@ -168,7 +168,7 @@ Según `lens-papel-v2.html`.
 - Cómo funciona (sobre cartón; h2 "De una carpeta de PDFs a un buscador con el texto al día."), cuatro fichas: "Subís los documentos" · "Una carpeta, un disco, o directo por API. Escaneados o nativos." (`Codigo`: POST /api/v1/documents) / "Lens los lee" · "OCR si hace falta; después saca número, fecha, órgano, tema y qué modifica o deroga." (`Codigo`: campos extraídos) / "Tu equipo revisa lo dudoso" · "Solo lo que Lens no está seguro llega al panel. Se confirma con un clic." (tarea Sí/No) / "Queda publicado y buscable" · "Buscador para tu gente o para el público, con el texto ordenado al día." (`Buscador` chico).
 - Para quién: "Organismos y empresas con normativa propia" · "Ordenanzas, decretos, resoluciones, reglamentos internos, contratos con adendas: todo lo que se modifica con el tiempo y hay que saber qué está vigente." · chips: vigencia, texto al día, buscador público, panel de revisión, historial. / "Integradores y sistemas de gestión" · "Lens como pieza de tu sistema: mandás PDFs, recibís los datos por webhook, exportás todo cuando quieras." · chips: API REST, webhooks firmados, keys con permisos, export completo.
 - Preguntas: «¿Sirve para documentos que no son normativa?» "Sí. Reglamentos internos, contratos con adendas, convenios: cualquier cosa que se modifique con el tiempo y haya que saber qué versión vale." · «¿Y si son escaneos viejos?» "Lens los pasa por OCR primero. Si una página sale mal, lo marca para que alguien la mire; no inventa." · «¿Dónde quedan mis documentos?» "Donde vos digas: en tu servidor o en el nuestro. Podés exportar todo, cuando quieras, en un solo archivo."
-- Cierre: eyebrow "Tu caso" · h2 "¿Cuántos documentos tenés sin leer?" · "Mandanos una muestra. Te mostramos cómo quedan leídos, ordenados y buscables, y te decimos cuánto sale para el total." · "Pedí una demo →" (lleva a `/contacto?tema=lens`) · pie "Con tus propios documentos · Sin cargo · Hablás con quien lo programa".
+- Cierre: eyebrow "Tu caso" · h2 "¿Cuántos documentos tenés sin leer?" · "Mandanos una muestra. Te mostramos cómo quedan leídos, ordenados y buscables, y te decimos cuánto sale para el total." · "Pedí una demo →" (lleva a `/contacto?tema=lens`) · pie "Con tus propios documentos · Sin cargo · Te escribimos para coordinar".
 
 ### 7.5 Contacto (`/contacto`) y gracias (`/contacto/gracias`)
 

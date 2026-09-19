@@ -10,7 +10,7 @@ export const closing = {
   eyebrow: "Tu caso",
   title: "¿Qué es lo que hacés todos los días a mano?",
   text: "Contá qué es eso que hacés todos los días a mano. Salís sabiendo si se puede, cuánto sale y en cuánto lo tenés andando. Y si no te conviene, te lo decimos ahí mismo.",
-  note: "Hablás con quien lo programa.",
+  note: "Te escribimos para coordinar.",
 };
 
 export const howWeWork = [

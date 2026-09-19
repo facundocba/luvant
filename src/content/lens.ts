@@ -87,7 +87,7 @@ export const lens = {
     eyebrow: "Tu caso",
     title: "¿Cuántos documentos tenés sin leer?",
     text: "Mandanos una muestra. Te mostramos cómo quedan leídos, ordenados y buscables, y te decimos cuánto sale para el total.",
-    note: "Con tus propios documentos · Hablás con quien lo programa.",
+    note: "Con tus propios documentos · Te escribimos para coordinar.",
   },
 };
 

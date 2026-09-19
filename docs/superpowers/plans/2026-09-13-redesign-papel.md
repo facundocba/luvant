@@ -562,7 +562,7 @@ export const closing = {
   eyebrow: "Tu caso",
   title: "¿Qué es lo que hacés todos los días a mano?",
   text: "Contá qué es eso que hacés todos los días a mano. Salís sabiendo si se puede, cuánto sale y en cuánto lo tenés andando. Y si no te conviene, te lo decimos ahí mismo.",
-  note: "Gratis · Quince minutos · Hablás con quien lo programa",
+  note: "Gratis · Quince minutos · Te escribimos para coordinar",
 };
 
 export const howWeWork = [
@@ -3037,7 +3037,7 @@ export const lens = {
     eyebrow: "Tu caso",
     title: "¿Cuántos documentos tenés sin leer?",
     text: "Mandanos una muestra. Te mostramos cómo quedan leídos, ordenados y buscables, y te decimos cuánto sale para el total.",
-    note: "Con tus propios documentos · Sin cargo · Hablás con quien lo programa",
+    note: "Con tus propios documentos · Sin cargo · Te escribimos para coordinar",
   },
 };
 
