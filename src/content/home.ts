@@ -9,7 +9,6 @@ export const home = {
   h1Accent: "todos los días.",
   intro:
     "Software a medida y automatizaciones con IA para tu empresa, tu estudio o tu organismo. Precio cerrado antes de empezar.",
-  sticker: { cap: "Cliente", main: "Municipalidad de Embalse", sub: "Córdoba" },
   cards: {
     eyebrow: "Qué hacemos",
     title: "Seis maneras de sacarte trabajo de encima.",

@@ -54,7 +54,6 @@ export default function Home() {
               { spec: salesWindow, left: "39%", top: "0px", width: "30%", rotate: 1.2, z: 1 },
               { spec: invoicesWindow, right: "0%", top: "46px", width: "34%", rotate: -0.6, z: 3 },
             ]}
-            sticker={{ ...home.sticker, left: "33%", bottom: "20px" }}
           />
         </section>
 
