@@ -22,6 +22,11 @@ export const home = {
     ] as { sketch: SketchKind; text: string }[],
     lens: { text: "Miles de documentos leídos y buscables. Para organismos e integradores.", cta: "ver Lens →" },
   },
+  beforeAfter: {
+    eyebrow: "Antes y después",
+    title: "Lo mismo de todos los días, sin hacerlo a mano.",
+    text: "Llega una factura por correo. Antes, alguien la copiaba campo por campo a la planilla. Ahora se lee, se carga y te avisa en segundos.",
+  },
   lens: {
     eyebrow: "Producto · Luvant Lens",
     title: "Miles de documentos leídos, ordenados y buscables.",
